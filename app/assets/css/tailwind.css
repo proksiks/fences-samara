@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-gotham: 'Gotham Pro', sans-serif;
+  /* colors */
+  --color-green-105: #83cd20;
+  --color-green-505: #034833;
+
+  --color-gray-105: #f8f8f8;
+  --color-gray-150: #727272;
+  --color-gray-155: #f1f5eb;
+  --color-gray-205: #5b5b5b;
+  --color-gray-250: #e3dbd8;
+
+  /* font-size */
+  --font-size-3xl: 2rem;
+
+  --leading-snug: 1.4;
+  --leading-small: 1.2;
+}
