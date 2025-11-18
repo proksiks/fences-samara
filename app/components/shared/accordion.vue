@@ -8,13 +8,13 @@
         </span>
       </button>
 
-      <Transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave">
+      <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave">
         <div v-show="isOpen" class="overflow-hidden">
           <div class="py-4 opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': isOpen }">
             <slot name="content" />
           </div>
         </div>
-      </Transition>
+      </transition>
     </div>
   </div>
 </template>

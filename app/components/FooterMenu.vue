@@ -1,8 +1,8 @@
 <template>
-  <footer class="bg-green-505 pt-20 text-white hidden md:block">
+  <footer class="bg-green-505 md:pt-20 pt-16 text-white">
     <div class="container">
-      <div class="mb-20 flex justify-between gap-4">
-        <div class="max-w-121.5">
+      <div class="mb-12 md:mb-20 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
+        <div class="max-w-121.5 md:order-0 order-1">
           <div class="flex items-center gap-2 uppercase font-bold text-2xl">
             <span>забор</span>
             <span class="text-green-505 bg-white rounded-sm p-1">163</span>
@@ -37,11 +37,51 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="md:max-w-52.25 w-full md:mt-0 mt-8">
           <h3 class="font-medium text-lg">Каталог</h3>
+
+          <ul>
+            <li class="mt-3">
+              <button class="text-medium flex items-center gap-2 cursor-pointer" @click="fencesOpen = !fencesOpen">
+                Заборы <icon name="name:arrow-up" class="w-5! h-5! bg-green-105!" />
+              </button>
+
+              <transition
+                @before-enter="beforeEnter"
+                @enter="enter"
+                @after-enter="afterEnter"
+                @before-leave="beforeLeave"
+                @leave="leave"
+                @after-leave="afterLeave"
+              >
+                <div v-show="fencesOpen" class="overflow-hidden">
+                  <ul class="opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': fencesOpen }">
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Забор из профнастила</nuxt-link>
+                    </li>
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Забор на ленточном фундаменте</nuxt-link>
+                    </li>
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Забор из сетки рабицы</nuxt-link>
+                    </li>
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Газонные ограждения</nuxt-link>
+                    </li>
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Забор из 3D сетки</nuxt-link>
+                    </li>
+                    <li class="mt-5">
+                      <nuxt-link class="hover:underline" to="/">Забор из штакетника</nuxt-link>
+                    </li>
+                  </ul>
+                </div>
+              </transition>
+            </li>
+          </ul>
         </div>
         <div>
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-6 md:mt-0 mt-8">
             <div class="md:block hidden">
               <icon name="name:phone" class="w-6! h-6! bg-green-105! block!" />
             </div>
@@ -55,7 +95,7 @@
               <a class="block mt-3 text-lg font-medium hover:underline" href="tel:+79203447027">+7 (920) 344 70 27</a>
             </div>
           </div>
-          <div class="flex items-center gap-6 mt-6">
+          <div class="flex items-center gap-6 md:mt-6 mt-8">
             <div class="md:block hidden">
               <icon name="name:calendar" class="w-6! h-6! bg-green-105! block!" />
             </div>
@@ -69,7 +109,7 @@
               <span class="block mt-3 text-lg font-medium">09:00 - 18:00 СБ, ВС - выходные</span>
             </div>
           </div>
-          <div class="flex items-center gap-6 mt-6">
+          <div class="flex items-center gap-6 md:mt-6 mt-8">
             <div class="md:block hidden">
               <icon name="name:location" class="w-6! h-6! bg-green-105! block!" />
             </div>
@@ -93,3 +133,48 @@
     </div>
   </footer>
 </template>
+
+<script lang="ts" setup>
+const fencesOpen = ref(false);
+
+function beforeEnter(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = '0px';
+  }
+}
+function enter(el: Element) {
+  if (el instanceof HTMLElement) {
+    const h = el.scrollHeight;
+    el.style.transition = 'height 220ms cubic-bezier(.4,0,.2,1)';
+    requestAnimationFrame(() => {
+      el.style.height = h + 'px';
+    });
+  }
+}
+function afterEnter(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = 'auto';
+    el.style.transition = '';
+  }
+}
+function beforeLeave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = el.scrollHeight + 'px';
+    el.style.transition = '';
+  }
+}
+function leave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.transition = 'height 200ms cubic-bezier(.4,0,.2,1)';
+    requestAnimationFrame(() => {
+      el.style.height = '0px';
+    });
+  }
+}
+function afterLeave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = '0px';
+    el.style.transition = '';
+  }
+}
+</script>
