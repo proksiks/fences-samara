@@ -34,7 +34,7 @@
               <div class="w-18 h-18 bg-green-105 rounded-full flex items-center justify-center">
                 <nuxt-picture src="/images/icons/fence.svg" width="42" height="42" alt="Иконка забора" loading="lazy" />
               </div>
-              <h3 class="text-xl font-bold mt-6">Персональный подход</h3>
+              <h3 class="text-xl font-bold mt-6 text-green-505">Персональный подход</h3>
               <p class="my-3 text-gray-150">Разработаем индивидуальный план проекта, учитывая ваши пожелания и особенности участка.</p>
 
               <shared-button
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="md:py-14 md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
-            <ul class="flex md:flex-row flex-col items-center justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
+            <ul class="flex md:flex-row flex-col justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
               <li>
                 <p class="text-5xl leading-small font-bold">5000+</p>
                 <h4>

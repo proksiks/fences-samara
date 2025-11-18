@@ -105,30 +105,49 @@
 
 <script lang="ts" setup>
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Controller, EffectFade } from 'swiper/modules';
+
+let imageSwiper: Swiper;
+let reviewSwiper: Swiper;
 
 onMounted(() => {
-  new Swiper('.reviews-slider', {
-    modules: [Pagination],
+  imageSwiper = new Swiper('.reviews-slider-image', {
+    modules: [Pagination, Controller, EffectFade],
     grabCursor: true,
     slidesPerView: 'auto',
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
     },
+    loop: true,
     pagination: {
       el: '.reviews-slider-pagination',
       clickable: true,
     },
   });
-  new Swiper('.reviews-slider-image', {
+
+  reviewSwiper = new Swiper('.reviews-slider', {
+    modules: [Pagination, Controller, EffectFade],
     grabCursor: true,
     slidesPerView: 'auto',
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
     },
+    loop: true,
+    pagination: {
+      el: '.reviews-slider-pagination',
+      clickable: true,
+    },
+    controller: {
+      control: imageSwiper,
+    },
   });
+
+  // Установка двунаправленной связи
+  if (imageSwiper.controller && reviewSwiper.controller) {
+    imageSwiper.controller.control = reviewSwiper;
+  }
 });
 </script>
 
@@ -139,6 +158,15 @@ onMounted(() => {
 }
 .reviews-slider-image .swiper-slide {
   height: auto;
+}
+.reviews-slider {
+  position: relative;
+}
+.reviews-slider .reviews-slider-pagination {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  z-index: 2;
 }
 .reviews-slider-image img {
   height: 100%;
