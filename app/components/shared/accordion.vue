@@ -1,10 +1,10 @@
 <template>
   <div class="py-6 px-4 border border-black/10 rounded-[1.25rem]">
     <div>
-      <button class="flex items-center justify-between w-full cursor-pointer text-[1.375rem] font-bold leading-small text-green-505" @click="toggle">
+      <button class="flex items-center justify-between w-full cursor-pointer text-[1.375rem] font-bold leading-small text-green-505 text-left" @click="toggle">
         <slot name="title" />
-        <span class="p-2 bg-gray-155 block rounded-full transition-transform duration-300" :class="{ 'rotate-180': isOpen }">
-          <icon name="name:short-arrow" class="w-6! h-6! fill-green-505 block!" />
+        <span class="p-2 bg-gray-155 block rounded-full transition duration-300" :class="{ '-rotate-90 bg-green-105': isOpen }">
+          <icon name="name:short-arrow" class="w-6! h-6! block! transition duration-300" :class="{ 'bg-white!': isOpen, 'bg-green-505!': !isOpen }" />
         </span>
       </button>
 
@@ -41,32 +41,44 @@ function toggle() {
   isOpen.value = !isOpen.value;
 }
 
-function beforeEnter(el: HTMLElement) {
-  el.style.height = '0px';
-}
-function enter(el: HTMLElement) {
-  const h = el.scrollHeight;
-  el.style.transition = 'height 220ms cubic-bezier(.4,0,.2,1)';
-  requestAnimationFrame(() => {
-    el.style.height = h + 'px';
-  });
-}
-function afterEnter(el: HTMLElement) {
-  el.style.height = 'auto';
-  el.style.transition = '';
-}
-function beforeLeave(el: HTMLElement) {
-  el.style.height = el.scrollHeight + 'px';
-  el.style.transition = '';
-}
-function leave(el: HTMLElement) {
-  el.style.transition = 'height 200ms cubic-bezier(.4,0,.2,1)';
-  requestAnimationFrame(() => {
+function beforeEnter(el: Element) {
+  if (el instanceof HTMLElement) {
     el.style.height = '0px';
-  });
+  }
 }
-function afterLeave(el: HTMLElement) {
-  el.style.height = '0px';
-  el.style.transition = '';
+function enter(el: Element) {
+  if (el instanceof HTMLElement) {
+    const h = el.scrollHeight;
+    el.style.transition = 'height 220ms cubic-bezier(.4,0,.2,1)';
+    requestAnimationFrame(() => {
+      el.style.height = h + 'px';
+    });
+  }
+}
+function afterEnter(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = 'auto';
+    el.style.transition = '';
+  }
+}
+function beforeLeave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = el.scrollHeight + 'px';
+    el.style.transition = '';
+  }
+}
+function leave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.transition = 'height 200ms cubic-bezier(.4,0,.2,1)';
+    requestAnimationFrame(() => {
+      el.style.height = '0px';
+    });
+  }
+}
+function afterLeave(el: Element) {
+  if (el instanceof HTMLElement) {
+    el.style.height = '0px';
+    el.style.transition = '';
+  }
 }
 </script>
