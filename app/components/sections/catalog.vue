@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-15 mt-10 md:mt-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 2xl:gap-15 mt-10 md:mt-14">
         <div v-for="item in catalog" :key="item.image">
           <shared-card :image="item.image" :shield="item.shield" :title="item.title" :price="item.price" :tags="item.tags" :description="item.description" />
         </div>
