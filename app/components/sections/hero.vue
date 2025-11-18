@@ -20,7 +20,7 @@
           </div>
 
           <div class="md:mt-15">
-            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green">
+            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow" variant="green">
               Заказать звонок <icon name="name:arrow" class="w-5! h-5!" />
             </shared-button>
           </div>

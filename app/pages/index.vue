@@ -1,8 +1,10 @@
 <template>
   <div>
-    <sections-hero />
-    <sections-features />
-    <sections-banner />
+    <lazy-sections-hero />
+    <lazy-sections-features />
+    <lazy-sections-banner />
+    <lazy-sections-slider />
+    <lazy-sections-catalog />
   </div>
 </template>
 
