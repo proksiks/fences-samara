@@ -2,8 +2,10 @@
   <div class="bg-gray-105 pt-10 md:pt-14 pb-16 md:pb-20">
     <div class="container">
       <div class="flex xl:flex-row flex-col gap-6 xl:gap-7.5">
-        <div class="xl:max-w-102.5 bg-white py-10 md:px-6 px-4 rounded-lg">
-          <h1 class="text-2xl md:text-3xl text-green-505 font-medium md:text-left text-center">Установка забора под ключ в Самаре и&nbsp;Самарской области</h1>
+        <div class="xl:max-w-102.5 bg-white py-10 md:px-6 px-4 rounded-[1.25rem]">
+          <h1 class="text-2xl md:text-[2rem] text-green-505 font-medium md:text-left text-center">
+            Установка забора под&nbsp;ключ в Самаре и&nbsp;Самарской области
+          </h1>
           <p class="mt-6 md:mt-10 text-gray-205 leading-snug md:text-left text-center">
             В нашей компании «Забор163» вы можете заказать металлический забор любой сложности. Изготовим забор под ключ, обеспечивая надежные решения для
             вашего дома или дачи.
@@ -35,7 +37,10 @@
               <h3 class="text-xl font-medium mt-6">Персональный подход</h3>
               <p class="my-3 text-gray-150">Разработаем индивидуальный план проекта, учитывая ваши пожелания и особенности участка.</p>
 
-              <shared-button class="md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm" variant="border">
+              <shared-button
+                class="md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm"
+                variant="border"
+              >
                 Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505" />
               </shared-button>
             </div>
@@ -49,7 +54,7 @@
               />
             </div>
           </div>
-          <div class=" md:py-14 md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
+          <div class="md:py-14 md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
             <ul class="flex md:flex-row flex-col items-center justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
               <li>
                 <p class="text-5xl leading-small font-bold">5000+</p>

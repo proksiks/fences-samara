@@ -5,6 +5,8 @@
     <lazy-sections-banner />
     <lazy-sections-slider />
     <lazy-sections-catalog />
+    <lazy-sections-installment />
+    <lazy-sections-recommended />
   </div>
 </template>
 

@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="flex items-center mt-3">
-          <div class="text-[1.25rem] font-medium">от {{ price }} <span class="text-base">₽</span>/п.м.</div>
+          <div class="text-[1.25rem] font-medium" v-html="price"></div>
           <div class="flex gap-3 text-[0.5rem] mx-auto">
             <div v-for="tag in tags" :key="tag" class="px-4 py-1 text-green-105 border border-green-105 rounded-4xl font-medium">{{ tag }}</div>
           </div>
