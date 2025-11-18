@@ -4,7 +4,16 @@
       <div class="flex justify-between gap-8 lg:flex-row flex-col-reverse">
         <div class="lg:flex hidden lg:justify-start justify-center shrink-0 gap-7.5">
           <div>
-            <div><nuxt-picture src="/images/sections/recommended/1.jpg" width="300" height="468" /></div>
+            <div>
+              <nuxt-picture
+                class="overflow-hidden rounded-3xl block"
+                quality="5"
+                alt="Серый забор"
+                width="300"
+                height="470"
+                src="/images/sections/recommended/1.jpg"
+              />
+            </div>
             <div class="flex items-center gap-4 px-4.5 mt-7">
               <div>
                 <div class="flex items-center justify-center bg-green-105 rounded-full size-13.75">
@@ -13,19 +22,19 @@
               </div>
               <div class="leading-small">
                 <div class="text-green-505 font-medium">Нужна помощь?</div>
-                <a class="block mt-2 text-lg text-green-505 font-medium" href="tel:+79203447027">+7 (920) 344 70 27</a>
+                <a class="block mt-2 text-lg text-green-505 font-bold" href="tel:+79203447027">+7 (920) 344 70 27</a>
               </div>
             </div>
           </div>
           <div>
-            <div><nuxt-picture src="/images/sections/recommended/2.jpg" width="270" height="181" /></div>
-            <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.jpg" width="270" height="353" /></div>
+            <div><nuxt-picture src="/images/sections/recommended/2.png" quality="20" width="270" height="181" alt="Коричневый забор" /></div>
+            <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="270" height="353" alt="Чёрный забор" /></div>
           </div>
         </div>
         <div class="lg:hidden flex flex-col items-center">
-          <div><nuxt-picture src="/images/sections/recommended/1_m.jpg" width="358" height="240" /></div>
-          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/2_m.jpg" width="358" height="468" /></div>
-          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/3_m.jpg" width="358" height="558" /></div>
+          <div><nuxt-picture src="/images/sections/recommended/1.jpg" quality="20" width="358" height="240" alt="Серый забор" /></div>
+          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/2.png" quality="20" width="358" height="468" alt="Коричневый забор" /></div>
+          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="358" height="558" alt="Чёрный забор" /></div>
           <div class="flex items-center gap-4 px-4.5 mt-7">
             <div>
               <div class="flex items-center justify-center bg-green-105 rounded-full size-13.75">
@@ -34,7 +43,7 @@
             </div>
             <div class="leading-small">
               <div class="text-green-505 font-medium">Нужна помощь?</div>
-              <a class="block mt-2 text-lg text-green-505 font-medium" href="tel:+79203447027">+7 (920) 344 70 27</a>
+              <a class="block mt-2 text-lg text-green-505 font-bold" href="tel:+79203447027">+7 (920) 344 70 27</a>
             </div>
           </div>
         </div>
@@ -51,7 +60,7 @@
           <div>
             <div class="mt-10">
               <div>
-                <shared-accordion>
+                <shared-accordion show>
                   <template #title>Под ключ</template>
                   <template #content>
                     <p class="text-gray-205 leading-snug">

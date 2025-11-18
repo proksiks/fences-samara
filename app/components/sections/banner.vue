@@ -18,10 +18,10 @@
     />
     <div class="container relative">
       <div class="md:flex gap-12 items-center justify-center px-4 py-16 md:py-22 md:text-left text-center">
-        <h2 class="text-3xl md:text-4xl uppercase text-white max-w-200 md:font-normal font-bold">сделай предзаказ забора вне сезон по скидке, получи весной</h2>
+        <h2 class="text-3xl md:text-4xl uppercase text-white max-w-200 font-bold">сделай предзаказ забора вне сезон по скидке, получи весной</h2>
         <div class="md:mt-0 mt-8">
           <shared-button
-            class="md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm"
+            class="md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-bold inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm"
             variant="border"
           >
             Перейти к предложению <icon name="name:arrow" class="w-5! h-5! fill-green-505" />

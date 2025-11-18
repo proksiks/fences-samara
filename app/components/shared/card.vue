@@ -1,8 +1,10 @@
 <template>
   <div class="catalog-card">
     <div class="relative">
-      <nuxt-picture class="block w-full" :src="image" :alt="shield" />
-      <div class="absolute py-1 px-4 bg-green-105 text-white top-6 right-px rounded-l-4xl font-medium">{{ shield }}</div>
+      <div class="w-107.5 h-85">
+        <nuxt-picture class="block w-full overflow-hidden rounded-xl" :src="image" :alt="shield" />
+      </div>
+      <div class="absolute py-1 px-4 bg-green-105 text-white top-6 right-0 rounded-l-4xl">{{ shield }}</div>
     </div>
 
     <div class="-mt-20 relative pl-7">

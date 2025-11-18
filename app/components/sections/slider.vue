@@ -26,13 +26,13 @@
           <div class="swiper main-slider mt-8 md:mt-14">
             <div class="swiper-wrapper">
               <div v-for="(img, index) in 7" :key="index" class="swiper-slide">
-                <div>
+                <div class="h-full">
                   <nuxt-picture
-                    class="block overflow-hidden md:rounded-[1.25rem] rounded-lg"
-                    :src="`/images/sections/slider/slide-${index + 1}.jpg`"
-                    width="594"
-                    height="422"
+                    class="block overflow-hidden md:rounded-[1.25rem] rounded-lg slider-image h-full"
+                    :src="`/images/sections/slider/slide-${index + 1}.webp`"
                     alt="Фотография забора с участка"
+                    width="594"
+                    height="464"
                   />
                 </div>
               </div>
@@ -70,11 +70,16 @@ onMounted(() => {
 }
 .main-slider .swiper-slide {
   max-width: 37.125rem;
+  height: auto;
 }
 .main-slider .swiper-slide:not(:last-child) {
   margin-right: 1.5rem;
 }
-
+.slider-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .main-slider-button-prev,
 .main-slider-button-next {
   border: 1px solid var(--color-green-105);

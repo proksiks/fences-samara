@@ -14,7 +14,7 @@
         </div>
         <div class="flex items-center gap-5">
           <shared-button
-            class="md:inline-flex hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium items-center justify-center gap-2 md:text-default text-sm button_shadow"
+            class="md:inline-flex hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium items-center justify-center gap-2 md:text-default text-sm"
           >
             Поможем выбрать <icon name="name:arrow" class="w-5! h-5!" />
           </shared-button>
@@ -29,7 +29,7 @@
 
       <div class="mt-10">
         <shared-button
-          class="md:hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 md:text-default text-sm button_shadow"
+          class="md:hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 md:text-default text-sm"
         >
           Поможем выбрать <icon name="name:arrow" class="w-5! h-5!" />
         </shared-button>
@@ -41,7 +41,7 @@
 <script lang="ts" setup>
 const catalog = [
   {
-    image: '/images/catalog/1.jpg',
+    image: '/images/catalog/1.png',
     shield: 'Забор из профнастила',
     title: 'Из профнастила',
     price: 'от 3 200 <span class="text-base">₽</span>/п.м.',
@@ -49,8 +49,8 @@ const catalog = [
     description: 'Прочный и долговечный забор из профнастила обеспечивает отличную защиту и низкие затраты на обслуживание.',
   },
   {
-    image: '/images/catalog/2.jpg',
-    shield: 'Забор из профнастила',
+    image: '/images/catalog/2.png',
+    shield: 'Забор на ленточном фундаменте',
     title: 'На ленточном фундаменте',
     price: 'от 13 500 <span class="text-base">₽</span>/п.м.',
     tags: ['Рассрочка', 'Подарки'],
@@ -58,7 +58,7 @@ const catalog = [
       'Установка забора из профнастила на ленточном фундаменте гарантирует устойчивость и надежность, что особенно важно для участков с нестабильным грунтом.',
   },
   {
-    image: '/images/catalog/3.jpg',
+    image: '/images/catalog/3.png',
     shield: 'Забор из сетки рабицы',
     title: 'Из сетки рабицы',
     price: 'от 2 500 <span class="text-base">₽</span>/п.м.',
@@ -66,7 +66,7 @@ const catalog = [
     description: 'Легкий и экономичный забор из сетки рабицы обеспечивает хорошую видимость и вентиляцию, идеально подходят для ограждения садов и участков.',
   },
   {
-    image: '/images/catalog/4.jpg',
+    image: '/images/catalog/4.png',
     shield: 'Газонные ограждения',
     title: 'Ограждения',
     price: 'от 3 000 <span class="text-base">₽</span>/п.м.',
@@ -74,7 +74,7 @@ const catalog = [
     description: 'Эстетически привлекательные газонные ограждения гармонично вписываются в ландшафт и защищают растения от повреждений.',
   },
   {
-    image: '/images/catalog/5.jpg',
+    image: '/images/catalog/5.png',
     shield: 'Забор из 3D сетки',
     title: '3D сетка',
     price: 'от 4 000 <span class="text-base">₽</span>/п.м.',
@@ -82,7 +82,7 @@ const catalog = [
     description: 'Забор из 3D сетки сочетает в себе высокую прочность и современный дизайн, обеспечивая безопасность и стильный внешний вид.',
   },
   {
-    image: '/images/catalog/6.jpg',
+    image: '/images/catalog/6.png',
     shield: 'Забор из штакетника',
     title: 'Металлический штакетник',
     price: 'от 6 500 <span class="text-base">₽</span>/п.м.',
@@ -108,7 +108,7 @@ const catalog = [
   },
   {
     image: '/images/catalog/9.png',
-    shield: 'Ворота из профнастила',
+    shield: 'Калитки из профнастила',
     title: 'Калитки',
     price: 'от 15 000 <span class="text-base">₽</span>',
     tags: ['Рассрочка', 'Подарки'],
@@ -116,7 +116,7 @@ const catalog = [
   },
   {
     image: '/images/catalog/10.png',
-    shield: 'Ворота из профнастила',
+    shield: 'Навесы',
     title: 'Навесы для автомобиля',
     price: 'от 6 500 <span class="text-base">₽</span>',
     tags: ['Рассрочка', 'Подарки'],
