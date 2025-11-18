@@ -22,8 +22,8 @@
           </div>
 
           <div class="md:mt-15">
-            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow" variant="green">
-              Заказать звонок <icon name="name:arrow" class="w-5! h-5!" />
+            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group" variant="green">
+              Заказать звонок <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
           </div>
         </div>
@@ -38,10 +38,10 @@
               <p class="my-3 text-gray-150">Разработаем индивидуальный план проекта, учитывая ваши пожелания и особенности участка.</p>
 
               <shared-button
-                class="md:w-auto w-full font-bold mt-auto py-4 md:px-8 px-2 rounded-4xl inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm"
+                class="md:w-auto w-full font-bold mt-auto py-4 md:px-8 px-2 rounded-4xl inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm group"
                 variant="border"
               >
-                Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505" />
+                Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
               </shared-button>
             </div>
             <div class="shrink-0 flex justify-center">

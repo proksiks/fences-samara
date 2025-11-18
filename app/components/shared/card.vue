@@ -10,7 +10,7 @@
     <div class="-mt-20 relative pl-7">
       <div class="bg-white p-6 rounded-[1.25rem] catalog-card_shadow">
         <div class="flex justify-between">
-          <div class="text-green-505 font-bold text-[1.375rem]">{{ title }}</div>
+          <div class="text-green-505 font-bold text-[1.375rem] pr-6">{{ title }}</div>
           <div>
             <shared-button class="p-4.5 rounded-[1.25rem]">
               <icon name="name:basket" class="w-6! h-6! block!" />

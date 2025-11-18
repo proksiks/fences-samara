@@ -4,5 +4,6 @@
     <div class="relative">
       <slot />
     </div>
+    <footer-menu />
   </div>
 </template>

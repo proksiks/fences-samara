@@ -15,6 +15,7 @@ const props = withDefaults(defineProps<Button>(), {
   variant: 'green',
 });
 
+
 const componentTag = computed(() => {
   if (props.to && props.target !== '_blank') return resolveComponent('nuxt-link');
   if (props.target === '_blank') return 'a';

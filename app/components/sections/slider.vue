@@ -23,12 +23,12 @@
               </button>
             </div>
           </div>
-          <div class="swiper main-slider mt-8 md:mt-14">
+          <div class="works-slider main-slider mt-8 md:mt-14">
             <div class="swiper-wrapper">
               <div v-for="(img, index) in 7" :key="index" class="swiper-slide">
                 <div class="h-full">
                   <nuxt-picture
-                    class="block overflow-hidden md:rounded-[1.25rem] rounded-lg slider-image h-full"
+                    class="block overflow-hidden rounded-[1.25rem] slider-image h-full"
                     :src="`/images/sections/slider/slide-${index + 1}.webp`"
                     alt="Фотография забора с участка"
                     width="594"
@@ -49,7 +49,7 @@ import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 onMounted(() => {
-  new Swiper('.swiper', {
+  const swiper = new Swiper('.works-slider', {
     modules: [Navigation, Pagination],
     grabCursor: true,
     slidesPerView: 'auto',
@@ -57,6 +57,10 @@ onMounted(() => {
       nextEl: '.main-slider-button-next',
       prevEl: '.main-slider-button-prev',
     },
+  });
+
+  onBeforeUnmount(() => {
+    swiper.destroy();
   });
 });
 </script>

@@ -2,7 +2,7 @@
   <div class="bg-gray-155 md:py-20 py-16">
     <div class="container-small">
       <div class="flex items-center justify-between lg:flex-row flex-col-reverse gap-8">
-        <div class="md:min-w-157.5 bg-white md:p-10 p-6 rounded-[1.25rem]">
+        <div class="md:max-w-157.5 bg-white md:p-10 p-6 rounded-[1.25rem]">
           <form>
             <div class="flex md:items-center md:flex-row flex-col gap-6 md:gap-7.5">
               <shared-input id="callback-telegram" label-text="Почта" class="flex-1" placeholder="Почта" icon-name="telegram" />
@@ -11,12 +11,15 @@
             <shared-input id="callback-location" label-text="Район" class="flex-1 mt-6 block" placeholder="Район" icon-name="location" />
             <shared-textarea id="callback-textarea" label-text="Комментарий" class="flex-1 mt-6 block" placeholder="Комментарий" icon-name="message" />
 
-            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6" variant="green">
-              Поможем выбрать <icon name="name:arrow" class="w-5! h-5!" />
+            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group" variant="green">
+              Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
 
-            <span class="text-center text-black/25 block text-xs mt-3 max-w-102.5 mx-auto">
-              Нажимая кнопку «Отправить» я ознакомился с политикой конфиденциальности и принимаю пользовательское соглашение
+            <span class="text-center text-black/25 block text-xs mt-3">
+              Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной
+              офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса Российской Федерации. Для получения подробной информации о наличии и
+              стоимости указанных товаров и (или) услуг, пожалуйста, обращайтесь к менеджерам отдела клиентского обслуживания с помощью специальной формы связи
+              или по телефону.
             </span>
           </form>
         </div>
@@ -87,7 +90,8 @@
           полностью компенсируется продавцом. Пос-кредит (займ) — это форма кредита (займа), предоставленная непосредственно в точке продаж или на сайте
           интернет-магазина. АО "ТБанк": полная стоимость потребительского кредита (займа) — от 0% до 60% годовых, процентная ставка от 0% до 100%
           годовых,Минимальная сумма - 3000 р., максимальная сумма — 500 000 рублей. Срок предоставления — от 3 до 36 месяцев. Условия обслуживания будут
-          определены по результатам рассмотрения заявки. <nuxt-link class="underline" to="/">Подробные условия</nuxt-link>.
+          определены по результатам рассмотрения заявки.
+          <a class="underline" href="https://acdn.tinkoff.ru/static/documents/b5802475-a663-4ac2-90b3-aeb7781df0a9.pdf" target="_blank">Подробные условия</a>.
         </p>
       </div>
     </div>
