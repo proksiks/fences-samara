@@ -7,6 +7,7 @@
     <lazy-sections-catalog />
     <lazy-sections-installment />
     <lazy-sections-recommended />
+    <lazy-sections-reviews />
   </div>
 </template>
 

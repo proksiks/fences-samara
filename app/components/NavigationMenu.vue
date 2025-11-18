@@ -19,6 +19,18 @@
           <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects">Наши проекты</nuxt-link>
         </li>
       </ul>
+
+      <span class="flex items-center gap-6 ml-auto">
+        <div>
+          <a
+            href="tel:+79203447027"
+            class="bg-gray-105 flex items-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
+          </a>
+        </div>
+        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green"> Заказать </shared-button>
+      </span>
     </nav>
   </header>
 </template>
