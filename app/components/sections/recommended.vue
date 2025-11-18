@@ -36,8 +36,21 @@
               <shared-accordion>
                 <template #title>Под ключ</template>
                 <template #content>
+                  <p class="text-gray-205 leading-snug">Мы самостоятельно проводим все этапы работы: от замера до конечного монтажа забора и сдачи проекта.</p>
+                </template>
+              </shared-accordion>
+              <shared-accordion>
+                <template #title>Сертификат гарантии</template>
+                <template #content>
+                  <p class="text-gray-205 leading-snug">Мы самостоятельно проводим все этапы работы: от замера до конечного монтажа забора и сдачи проекта.</p>
+                </template>
+              </shared-accordion>
+              <shared-accordion>
+                <template #title>Команда профессионалов</template>
+                <template #content>
                   <p class="text-gray-205 leading-snug">
-                    Мы самостоятельно проводим все этапы работы: от замера до конечного монтажа забора и сдачи проекта.
+                    Всю работу над проектом выполняет наша собственная команда, имеющая большой опыт в монтаже заборов под ключ. Мы реализуем проекты любой
+                    сложности и учитываем любые пожелания клиента.
                   </p>
                 </template>
               </shared-accordion>
