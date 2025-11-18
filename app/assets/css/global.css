@@ -21,6 +21,13 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.container-small {
+  max-width: 1322px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 body {
   font-family: var(--font-gotham);

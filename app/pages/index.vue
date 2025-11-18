@@ -8,6 +8,7 @@
     <lazy-sections-installment />
     <lazy-sections-recommended />
     <lazy-sections-reviews />
+    <lazy-sections-callback />
   </div>
 </template>
 

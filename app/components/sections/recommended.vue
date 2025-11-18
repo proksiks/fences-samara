@@ -22,7 +22,7 @@
               </div>
               <div class="leading-small">
                 <div class="text-green-505 font-medium">Нужна помощь?</div>
-                <a class="block mt-2 text-lg text-green-505 font-bold" href="tel:+79203447027">+7 (920) 344 70 27</a>
+                <a class="block mt-2 text-lg text-green-505 font-bold hover:underline" href="tel:+79203447027">+7 (920) 344 70 27</a>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
             </div>
             <div class="leading-small">
               <div class="text-green-505 font-medium">Нужна помощь?</div>
-              <a class="block mt-2 text-lg text-green-505 font-bold" href="tel:+79203447027">+7 (920) 344 70 27</a>
+              <a class="block mt-2 text-lg text-green-505 font-bold hover:underline" href="tel:+79203447027">+7 (920) 344 70 27</a>
             </div>
           </div>
         </div>

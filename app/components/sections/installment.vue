@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-105 md:py-24 py-16 overflow-hidden">
-    <div class="container">
+    <div class="container-small">
       <div class="flex items-center lg:flex-row flex-col-reverse bg-white rounded-[1.25rem] sm:gap-4">
         <div class="xl:pl-20 xl:pr-0 pr-6 pl-6 py-6 xl:py-16">
           <h2 class="text-[2rem] sm:text-[3rem] text-green-505 font-medium leading-small sm:text-left text-center">Забор под ключ в&nbsp;рассрочку</h2>
