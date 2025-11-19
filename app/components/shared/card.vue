@@ -12,7 +12,7 @@
         <div class="flex justify-between">
           <div class="text-green-505 font-bold text-[1.375rem] pr-6">{{ title }}</div>
           <div>
-            <shared-button class="p-4.5 rounded-[1.25rem]">
+            <shared-button class="p-4.5 rounded-[1.25rem]" @click="openModal">
               <icon name="name:basket" class="w-6! h-6! block!" />
             </shared-button>
           </div>
@@ -32,6 +32,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useCallbackModalStore } from '~/stores/modal/callback';
+
 interface Props {
   image: string;
   shield: string;
@@ -40,7 +42,18 @@ interface Props {
   tags: string[];
   description: string;
 }
-defineProps<Props>();
+
+const props = defineProps<Props>();
+const callbackModalStore = useCallbackModalStore();
+
+const openModal = () => {
+  callbackModalStore.data.title = props.title;
+  callbackModalStore.data.tags = props.tags;
+  callbackModalStore.data.text = props.description;
+  callbackModalStore.data.image = props.image;
+  callbackModalStore.data.priceText = props.price;
+  callbackModalStore.open();
+};
 </script>
 
 <style>

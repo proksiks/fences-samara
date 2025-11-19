@@ -9,25 +9,26 @@ interface Button {
   to?: string;
   target?: string;
   variant?: 'green' | 'white' | 'border';
+  tag?: 'a' | 'nuxt-link' | 'button';
 }
 
 const props = withDefaults(defineProps<Button>(), {
   variant: 'green',
 });
 
-
 const componentTag = computed(() => {
+  if (props.tag) return props.tag;
   if (props.to && props.target !== '_blank') return resolveComponent('nuxt-link');
   if (props.target === '_blank') return 'a';
   return 'button';
 });
 
 const componentProps = computed(() => {
-  if (props.to && props.target !== '_blank') {
-    return { to: props.to };
-  }
-  if (props.target === '_blank') {
+  if (props.tag === 'a' || props.target === '_blank') {
     return { href: props.to, target: props.target };
+  }
+  if (props.to && !props.target && !props.tag) {
+    return { to: props.to };
   }
   return {};
 });

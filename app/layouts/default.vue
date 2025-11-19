@@ -5,7 +5,7 @@
       <slot />
     </div>
     <footer-menu />
-    <shared-callback-modal v-model="show" :text="data.text" :title="data.title" :tags="data.tags" :image="data.image" />
+    <shared-callback-modal v-model="show" :text="data.text" :title="data.title" :tags="data.tags" :image="data.image" :price="data.priceText" />
     <modals-container />
   </div>
 </template>

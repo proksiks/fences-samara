@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <lazy-sections-hero />
     <lazy-sections-features />
     <lazy-sections-banner />
@@ -9,7 +9,7 @@
     <lazy-sections-recommended />
     <lazy-sections-reviews />
     <lazy-sections-callback />
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

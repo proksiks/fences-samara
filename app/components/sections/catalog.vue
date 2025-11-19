@@ -15,7 +15,7 @@
         <div class="flex items-center gap-5">
           <shared-button
             class="md:inline-flex hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium items-center justify-center gap-2 md:text-default text-sm group"
-            @click="show = true"
+            @click="openCallbackModal"
           >
             Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
           </shared-button>
@@ -31,6 +31,7 @@
       <div class="mt-10">
         <shared-button
           class="md:hidden md:w-auto w-full mt-auto py-4 md:px-8 px-2 rounded-4xl font-medium inline-flex items-center justify-center gap-2 md:text-default text-sm group"
+          @click="openCallbackModal"
         >
           Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
         </shared-button>
@@ -40,7 +41,13 @@
 </template>
 
 <script lang="ts" setup>
-const { show } = storeToRefs(useCallbackModalStore());
+import { useCallbackModalStore } from '~/stores/modal/callback';
+
+const callbackModalStore = useCallbackModalStore();
+
+const openCallbackModal = () => {
+  callbackModalStore.open();
+};
 const catalog = [
   {
     image: '/images/catalog/1.png',

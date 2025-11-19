@@ -7,6 +7,7 @@ interface Props {
   tags: string[];
   text: string;
   image: string;
+  price?: string;
 }
 
 defineProps<Props>();
@@ -28,21 +29,17 @@ const closeModal = () => {
     <div class="md:max-w-157.5 m-auto">
       <div class="rounded-3xl bg-white flex items-center">
         <div class="flex-1 flex items-center justify-center lg:justify-end">
-          <nuxt-picture
-            class="modal-image rounded-3xl overflow-hidden w-full"
-            :src="image"
-            width="420"
-            height="363"
-            alt="Зелёный забор"
-          />
+          <nuxt-picture class="modal-image rounded-3xl overflow-hidden w-full" :src="image" width="420" height="363" alt="Зелёный забор" />
         </div>
 
         <div class="p-4">
-          <h2 class="text-green-505 font-medium text-xl">
-            {{ title }}
-          </h2>
+          <h2 class="text-green-505 font-medium text-xl" v-html="title"></h2>
 
-          <div class="flex items-center gap-3 mt-2" >
+          <template v-if="price">
+            <div class="text-[1.125rem] font-medium mt-2" v-html="price"></div>
+          </template>
+
+          <div class="flex items-center gap-3 mt-2">
             <div v-for="tag in tags" :key="tag" class="px-4 py-1 text-[0.5rem] text-green-105 border border-green-105 rounded-4xl font-medium">
               {{ tag }}
             </div>
@@ -97,7 +94,7 @@ const closeModal = () => {
 
 .modal-image img {
   width: 100%;
-  max-height: 10rem;
+  max-height: 12rem;
   object-fit: cover;
 }
 </style>

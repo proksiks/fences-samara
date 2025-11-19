@@ -13,12 +13,15 @@
             <shared-button
               class="sm:w-auto w-full py-4 px-8 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
               variant="green"
+              @click="show = true"
             >
               Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
             <shared-button
               class="md:w-auto w-full py-4 md:px-8 px-2 rounded-4xl font-bold inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm group"
               variant="border"
+              tag="a"
+              href="tel:+79203447027"
             >
               Звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
@@ -26,16 +29,14 @@
         </div>
         <div class="xl:shrink-0 sm:px-0 sm:pt-0 px-6 pt-6 xl:max-w-169 lg:max-w-139 w-full">
           <div class="lg:-mr-10 lg:-mt-10 flex justify-center">
-            <nuxt-picture
-              src="/images/sections/installment/installment.png"
-              width="676"
-              height="451"
-              alt="Забор под ключ в рассрочку"
-              loading="lazy"
-            />
+            <nuxt-picture src="/images/sections/installment/installment.png" width="676" height="451" alt="Забор под ключ в рассрочку" loading="lazy" />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+const { show } = storeToRefs(useCallbackModalStore());
+</script>
