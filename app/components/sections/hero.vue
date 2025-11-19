@@ -56,6 +56,7 @@
                 width="420"
                 height="363"
                 alt="Зелёный забор"
+                loading="lazy"
               />
             </div>
           </div>

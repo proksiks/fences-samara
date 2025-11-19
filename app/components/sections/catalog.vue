@@ -5,7 +5,7 @@
         <div class="md:pl-0 pl-6">
           <div class="flex items-center gap-2.5">
             <div>
-              <nuxt-picture src="/images/icons/fence-green.svg" />
+              <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" />
             </div>
             <div class="uppercase font-bold text-green-505">КАТАЛОГ ЗАБОРОВ</div>
           </div>

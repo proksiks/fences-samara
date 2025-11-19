@@ -7,7 +7,7 @@
             <div>
               <div class="flex items-center gap-2.5">
                 <div>
-                  <nuxt-picture src="/images/icons/cases.svg" />
+                  <nuxt-picture src="/images/icons/cases.svg" width="24" height="24" alt="Иконка" />
                 </div>
                 <div class="uppercase font-bold">Наши проекты</div>
               </div>
@@ -15,10 +15,16 @@
               <h2 class="text-[2rem] lg:text-5xl font-medium mt-4 leading-small">Примеры наших работ</h2>
             </div>
             <div class="flex items-center gap-5">
-              <button class="main-slider-button-prev md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer">
+              <button
+                class="main-slider-button-prev md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer"
+                aria-label="Предыдущий слайд"
+              >
                 <icon name="name:arrow" class="w-5! h-5! fill-green-505 rotate-180" />
               </button>
-              <button class="main-slider-button-next md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer">
+              <button
+                class="main-slider-button-next md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer"
+                aria-label="Следующий слайд"
+              >
                 <icon name="name:arrow" class="w-5! h-5! fill-green-505" />
               </button>
             </div>

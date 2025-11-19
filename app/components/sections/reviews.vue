@@ -6,18 +6,18 @@
         <div class="2xl:shrink-0 w-full max-w-[712px] mx-auto overflow-hidden rounded-3xl">
           <div class="reviews-slider-image max-h-140 lg:max-h-none">
             <div class="swiper-wrapper">
-              <div class="swiper-slide md:pr-4">
+              <div class="swiper-slide">
                 <div class="h-full">
                   <nuxt-picture
                     class="block overflow-hidden rounded-3xl h-full"
                     src="/images/sections/reviews/slide_1.webp"
-                    width="712"
-                    height="693"
+                    width="816"
+                    height="794"
                     alt="Забор "
                   />
                 </div>
               </div>
-              <div class="swiper-slide md:pr-4">
+              <div class="swiper-slide">
                 <div>
                   <nuxt-picture class="block overflow-hidden rounded-3xl" src="/images/sections/reviews/slide_2.png" width="712" height="693" alt="Забор " />
                 </div>
@@ -36,7 +36,7 @@
 
             <div class="reviews-slider lg:-ml-25 md:mt-5 bg-white reviews_shadow relative z-2 rounded-[1.25rem]">
               <div class="swiper-wrapper">
-                <div class="swiper-slide md:pr-4">
+                <div class="swiper-slide">
                   <div class="md:py-15 py-8 md:px-10 px-6">
                     <div>
                       <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор " />
@@ -67,7 +67,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide md:pr-4">
+                <div class="swiper-slide">
                   <div class="md:py-15 py-8 md:px-10 px-6">
                     <div>
                       <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор " />

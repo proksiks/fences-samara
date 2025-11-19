@@ -67,7 +67,7 @@
           <div class="flex items-center gap-2.5">
             <div class="text-sm text-green-505 leading-snug font-bold uppercase">Отвечаем на вопросы</div>
             <div>
-              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" />
+              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" alt="Иконка" />
             </div>
           </div>
           <h2 class="text-[2rem] lg:text-[3rem] font-bold leading-small text-green-505 mt-2.5">Почему выбирают нас?</h2>

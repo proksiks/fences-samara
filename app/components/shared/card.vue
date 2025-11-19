@@ -12,7 +12,7 @@
         <div class="flex justify-between">
           <div class="text-green-505 font-bold text-[1.375rem] pr-6">{{ title }}</div>
           <div>
-            <shared-button class="p-4.5 rounded-[1.25rem]" @click="openModal">
+            <shared-button class="p-4.5 rounded-[1.25rem]" aria-label="Оставить заявку" @click="openModal">
               <icon name="name:basket" class="w-6! h-6! block!" />
             </shared-button>
           </div>

@@ -17,6 +17,8 @@
                 class="size-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 transition"
                 href="https://t.me/zaborsmr163"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Телеграм"
               >
                 <icon name="name:telegram-border" class="w-6! h-6!" />
               </a>
