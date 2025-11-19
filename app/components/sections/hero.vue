@@ -22,7 +22,11 @@
           </div>
 
           <div class="md:mt-15">
-            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group" variant="green">
+            <shared-button
+              class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
+              variant="green"
+              @click="show = true"
+            >
               Заказать звонок <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
           </div>
@@ -88,6 +92,10 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+const { show } = storeToRefs(useCallbackModalStore());
+</script>
 
 <style>
 .hero-image img {

@@ -1,0 +1,144 @@
+<template>
+  <form @submit.prevent="submitForm">
+    <div class="flex md:items-center md:flex-row flex-col gap-6 md:gap-7.5">
+      <shared-input
+        id="callback-telegram"
+        v-model="formData.email"
+        label-text="Почта"
+        class="flex-1"
+        type="email"
+        placeholder="Почта"
+        icon-name="telegram"
+        :is-error="v$.email.$error"
+        :error-text="getErrorText(v$.email)"
+      />
+      <shared-input
+        id="callback-phone"
+        v-model="formData.phone"
+        label-text="Номер"
+        class="flex-1"
+        placeholder="+7 (777) 777 77 77"
+        icon-name="phone"
+        :is-error="v$.phone.$error"
+        :error-text="getErrorText(v$.phone)"
+        mask="+7 (000) 000 00 00"
+      />
+    </div>
+    <shared-input
+      id="callback-location"
+      v-model="formData.district"
+      label-text="Район"
+      class="flex-1 mt-6 block"
+      placeholder="Район"
+      icon-name="location"
+      :is-error="v$.district.$error"
+      :error-text="getErrorText(v$.district)"
+    />
+    <shared-textarea
+      id="callback-textarea"
+      v-model="formData.comment"
+      label-text="Комментарий"
+      class="flex-1 mt-6 block"
+      placeholder="Комментарий"
+      icon-name="message"
+    />
+
+    <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group" variant="green" type="submit">
+      Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
+    </shared-button>
+
+    <span class="text-center text-black/25 block text-xs mt-3">
+      Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
+      определяемой положениями Статьи 437 (2) Гражданского кодекса Российской Федерации. Для получения подробной информации о наличии и стоимости указанных
+      товаров и (или) услуг, пожалуйста, обращайтесь к менеджерам отдела клиентского обслуживания с помощью специальной формы связи или по телефону.
+    </span>
+  </form>
+</template>
+
+<script lang="ts" setup>
+import { useVuelidate } from '@vuelidate/core';
+import { required, email, minLength, helpers } from '@vuelidate/validators';
+
+const formData = reactive({
+  email: '',
+  phone: '',
+  district: '',
+  comment: '',
+});
+
+watch(
+  () => formData.email,
+  () => {
+    v$.value.email.$touch();
+  },
+);
+
+watch(
+  () => formData.phone,
+  () => {
+    v$.value.phone.$touch();
+  },
+);
+
+watch(
+  () => formData.district,
+  () => {
+    v$.value.district.$touch();
+  },
+);
+
+watch(
+  () => formData.comment,
+  () => {},
+);
+
+const rules = computed(() => {
+  return {
+    email: {
+      required: helpers.withMessage('Некорректный email', required),
+      email: helpers.withMessage('Некорректный email', email),
+    },
+    phone: {
+      required: helpers.withMessage('Некорректный номер телефона', required),
+      validPhone: helpers.withMessage('Некорректный номер телефона', (value: string) => {
+        if (!value) return true;
+
+        const phoneRegex = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/;
+        return phoneRegex.test(value);
+      }),
+    },
+    district: {
+      required: helpers.withMessage('Район должен быть длиннее 3-х символов', required),
+      minLength: helpers.withMessage('Район должен быть длиннее 3-х символов', minLength(4)),
+      notOnlySpaces: helpers.withMessage('Район должен быть длиннее 3-х символов', (value: string) => {
+        if (!value) return true;
+        return value.trim().length >= 4;
+      }),
+    },
+  };
+});
+
+const v$ = useVuelidate(rules, formData, { $autoDirty: true });
+
+const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
+  if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
+    return field.$errors[0].$message as string;
+  }
+  return '';
+};
+
+const submitForm = async (e: Event) => {
+  e.preventDefault();
+  const result = await v$.value.$validate();
+  if (result) {
+    const message = `
+      Данные формы:\n
+      Почта: ${formData.email}\n
+      Номер: ${formData.phone}\n
+      Район: ${formData.district}\n
+      Комментарий: ${formData.comment || 'Не указан'}
+    `;
+    alert(message);
+  }
+};
+</script>

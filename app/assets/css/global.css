@@ -44,16 +44,20 @@ body {
   width: 100%;
 }
 
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0.3125rem;
   background: transparent;
 }
-html::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: var(--color-green-105);
   padding: 1.875rem 0;
   border-radius: 20.9375rem;
 }
-html::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 20.9375rem;
+}
+
+html .vfm--overlay {
+  backdrop-filter: blur(0.625rem);
 }
