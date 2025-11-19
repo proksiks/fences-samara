@@ -4,7 +4,7 @@
       <h2 class="lg:hidden text-[2rem] leading-small font-bold text-green-505 text-center">Отзывы</h2>
       <div class="lg:flex lg:mt-0 mt-10">
         <div class="2xl:shrink-0 w-full max-w-[712px] mx-auto overflow-hidden rounded-3xl">
-          <div class="reviews-slider-image">
+          <div class="reviews-slider-image max-h-140 lg:max-h-none">
             <div class="swiper-wrapper">
               <div class="swiper-slide md:pr-4">
                 <div class="h-full">

@@ -13,7 +13,7 @@
 
           <div class="flex justify-center items-center my-8 md:my-15 gap-2">
             <div>
-              <nuxt-picture class="md:max-w-none max-w-15 block" src="/images/pages/main/prize.png" width="111" height="92" alt="prize" loading="lazy" />
+              <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="111" height="92" alt="prize" loading="lazy" />
             </div>
             <div>
               <h2 class="text-green-505 font-bold text-lg">Выезд и замер бесплатно</h2>
@@ -44,9 +44,9 @@
                 Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
               </shared-button>
             </div>
-            <div class="shrink-0 flex justify-center">
+            <div class="lg:shrink-0 flex justify-center">
               <nuxt-picture
-                class="block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden"
+                class="hero-image block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden w-full"
                 src="/images/pages/main/fence.png"
                 width="420"
                 height="363"
@@ -72,9 +72,7 @@
               </li>
               <li>
                 <p class="text-5xl leading-small font-bold">1 год</p>
-                <h4>
-                  Гарантия
-                </h4>
+                <h4>Гарантия</h4>
               </li>
               <li>
                 <p class="text-5xl leading-small font-bold">100+</p>
@@ -91,4 +89,11 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<style>
+.hero-image img {
+  width: 100%;
+  max-height: 20rem;
+  object-position: center;
+  object-fit: cover;
+}
+</style>

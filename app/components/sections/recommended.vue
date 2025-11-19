@@ -31,10 +31,16 @@
             <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="270" height="353" alt="Чёрный забор" /></div>
           </div>
         </div>
-        <div class="lg:hidden flex flex-col items-center">
-          <div><nuxt-picture src="/images/sections/recommended/1_m.jpg" quality="20" width="358" height="240" alt="Серый забор" /></div>
-          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/2_m.jpg" quality="20" width="358" height="468" alt="Коричневый забор" /></div>
-          <div class="mt-10"><nuxt-picture src="/images/sections/recommended/3_m.jpg" quality="20" width="358" height="558" alt="Чёрный забор" /></div>
+        <div class="lg:hidden flex flex-col lg:items-center">
+          <div>
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1_m.jpg" quality="20" width="358" height="240" alt="Серый забор" />
+          </div>
+          <div class="mt-10">
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/3.png" quality="20" width="358" height="468" alt="Коричневый забор" />
+          </div>
+          <div class="mt-10">
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1.jpg" quality="20" width="358" height="558" alt="Чёрный забор" />
+          </div>
           <div class="flex items-center gap-4 px-4.5 mt-7">
             <div>
               <div class="flex items-center justify-center bg-green-105 rounded-full size-13.75">
@@ -98,3 +104,13 @@
     </div>
   </div>
 </template>
+
+<style>
+.recommended-image img {
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  max-height: 26.25rem;
+  border-radius: 1.25rem;
+}
+</style>

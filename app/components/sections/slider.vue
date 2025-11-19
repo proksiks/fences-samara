@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:py-15 lg:px-15 px-4 py-16">
+  <div class="lg:py-15 xl:px-15 px-4 py-16">
     <div class="bg-green-505 md:rounded-[3.125rem] rounded-[1.25rem] md:py-20 md:px-4 py-6 px-2 overflow-hidden">
       <div class="container">
         <div class="text-white">
