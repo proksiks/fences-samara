@@ -17,7 +17,7 @@
         ]"
         :type="inputType"
         :inputmode="inputMode"
-      >
+      />
       <transition name="error-message">
         <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block absolute -bottom-4">{{ errorText }}</span>
       </transition>
@@ -31,6 +31,7 @@
 
 <script lang="ts" setup>
 import IMask from 'imask';
+
 import { onMounted, ref, watch, onUnmounted, computed } from 'vue';
 
 interface Props {
@@ -48,8 +49,13 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'text',
 });
 
+const emit = defineEmits(['update:modelValue']);
+
+const model = defineModel();
+
 const inputRef = ref<HTMLInputElement | null>(null);
-let maskInstance: unknown = null;
+
+let maskInstance = null;
 
 const inputType = computed(() => {
   if (props.mask) return 'text';
@@ -68,13 +74,31 @@ onMounted(() => {
     maskInstance = IMask(inputRef.value, {
       mask: props.mask,
     });
+
+    if (model.value) {
+      maskInstance.value = model.value;
+    }
+
+    maskInstance.on('accept', () => {
+      emit('update:modelValue', maskInstance?.value);
+    });
+  } else if (inputRef.value) {
+    inputRef.value.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement;
+      emit('update:modelValue', target.value);
+    });
+  }
+
+  if (model.value && inputRef.value && !props.mask) {
+    inputRef.value.value = String(model.value);
   }
 });
+
 watch(
   () => props.mask,
   (newMask) => {
     if (maskInstance) {
-      (maskInstance as { destroy: () => void }).destroy();
+      maskInstance.destroy();
       maskInstance = null;
     }
 
@@ -82,13 +106,29 @@ watch(
       maskInstance = IMask(inputRef.value, {
         mask: newMask,
       });
+
+      if (model.value) {
+        maskInstance.value = model.value;
+      }
+
+      maskInstance.on('accept', () => {
+        emit('update:modelValue', maskInstance?.value);
+      });
     }
   },
 );
 
+watch(model, (newValue) => {
+  if (maskInstance) {
+    maskInstance.value = newValue || '';
+  } else if (inputRef.value) {
+    inputRef.value.value = String(newValue || '');
+  }
+});
+
 onUnmounted(() => {
   if (maskInstance) {
-    (maskInstance as { destroy: () => void }).destroy();
+    maskInstance.destroy();
   }
 });
 </script>

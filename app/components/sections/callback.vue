@@ -149,6 +149,32 @@ const formData = reactive({
   comment: '',
 });
 
+watch(
+  () => formData.email,
+  () => {
+    v$.value.email.$touch();
+  },
+);
+
+watch(
+  () => formData.phone,
+  () => {
+    v$.value.phone.$touch();
+  },
+);
+
+watch(
+  () => formData.district,
+  () => {
+    v$.value.district.$touch();
+  },
+);
+
+watch(
+  () => formData.comment,
+  () => {},
+);
+
 const rules = computed(() => {
   return {
     email: {
@@ -159,8 +185,8 @@ const rules = computed(() => {
       required: helpers.withMessage('Некорректный номер телефона', required),
       validPhone: helpers.withMessage('Некорректный номер телефона', (value: string) => {
         if (!value) return true;
-        // Проверяем, что номер соответствует формату +7 (XXX) XXX-XX-XX
-        const phoneRegex = /^\+7\s\(\d{3}\)\s\d{3}s\\d{2}s\\d{2}$/;
+
+        const phoneRegex = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/;
         return phoneRegex.test(value);
       }),
     },
@@ -168,14 +194,14 @@ const rules = computed(() => {
       required: helpers.withMessage('Район должен быть длиннее 3-х символов', required),
       minLength: helpers.withMessage('Район должен быть длиннее 3-х символов', minLength(4)),
       notOnlySpaces: helpers.withMessage('Район должен быть длиннее 3-х символов', (value: string) => {
-        if (!value) return false;
+        if (!value) return true;
         return value.trim().length >= 4;
       }),
     },
   };
 });
 
-const v$ = useVuelidate(rules, formData);
+const v$ = useVuelidate(rules, formData, { $autoDirty: true });
 
 const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
   if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
@@ -184,10 +210,18 @@ const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unkno
   return '';
 };
 
-const submitForm = async () => {
+const submitForm = async (e: Event) => {
+  e.preventDefault();
   const result = await v$.value.$validate();
   if (result) {
-    console.log('Форма отправлена', formData);
+    const message = `
+      Данные формы:\n
+      Почта: ${formData.email}\n
+      Номер: ${formData.phone}\n
+      Район: ${formData.district}\n
+      Комментарий: ${formData.comment || 'Не указан'}
+    `;
+    alert(message);
   }
 };
 </script>
