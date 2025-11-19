@@ -53,7 +53,7 @@
       </span>
     </nav>
   </header>
-  <div class="mobile-menu fixed top-0 left-0 bottom-0 z-9 w-full bg-white flex flex-col py-10 px-6 overflow-auto" :class="{ _active: showMenu }">
+  <div class="mobile-menu fixed top-0 left-0 bottom-0 z-9 w-full bg-white flex flex-col py-10 px-6 overflow-auto lg:hidden" :class="{ _active: showMenu }">
     <div class="pt-20">
       <ul class="text-right">
         <li>

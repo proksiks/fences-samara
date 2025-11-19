@@ -106,7 +106,7 @@
                 </div>
                 График работы:
               </div>
-              <span class="block mt-3 text-lg font-medium">09:00 - 18:00 СБ, ВС - выходные</span>
+              <span class="block mt-3 text-lg font-medium">Ежедневно с 8:00 - 20:00</span>
             </div>
           </div>
           <div class="flex items-center gap-6 md:mt-6 mt-8">

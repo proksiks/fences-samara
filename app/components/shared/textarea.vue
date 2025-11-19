@@ -15,7 +15,9 @@
           isError ? 'border-red-500 focus:ring-red-500' : ''
         ]"
       />
-      <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block">{{ errorText }}</span>
+      <transition name="error-message">
+        <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block">{{ errorText }}</span>
+      </transition>
 
       <template v-if="iconName">
         <icon :name="`name:${iconName}`" class="w-5! h-5! bg-green-505! absolute top-4 right-4 pointer-events-none" />
@@ -37,4 +39,15 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<style scoped></style>
+<style scoped>
+.error-message-enter-active,
+.error-message-leave-active {
+  transition: all 0.3s ease;
+}
+
+.error-message-enter-from,
+.error-message-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>

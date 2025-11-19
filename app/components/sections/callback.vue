@@ -15,15 +15,16 @@
                 :is-error="v$.email.$error"
                 :error-text="getErrorText(v$.email)"
               />
-              <shared-input 
-                id="callback-phone" 
-                label-text="Номер" 
-                class="flex-1" 
-                placeholder="Номер" 
+              <shared-input
+                id="callback-phone"
+                label-text="Номер"
+                class="flex-1"
+                placeholder="Номер"
                 icon-name="phone"
                 v-model="formData.phone"
                 :is-error="v$.phone.$error"
                 :error-text="getErrorText(v$.phone)"
+                v-phone-mask
               />
             </div>
             <shared-input 
@@ -99,7 +100,7 @@
                 </div>
                 График работы:
               </div>
-              <span class="block mt-3 text-lg text-green-505 font-medium">09:00 - 18:00 СБ, ВС - выходные</span>
+              <span class="block mt-3 text-lg text-green-505 font-medium">Ежедневно с 8:00 - 20:00</span>
             </div>
           </div>
           <div class="flex items-center gap-6 mt-6">
@@ -138,7 +139,7 @@
 
 <script lang="ts" setup>
 import { useVuelidate } from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
+import { required, email, minLength, helpers } from '@vuelidate/validators'
 
 const formData = reactive({
   email: '',
@@ -150,15 +151,25 @@ const formData = reactive({
 const rules = computed(() => {
   return {
     email: {
-      required,
-      email
+      required: helpers.withMessage('Некорректный email', required),
+      email: helpers.withMessage('Некорректный email', email)
     },
     phone: {
-      required,
-      minLength: minLength(10)
+      required: helpers.withMessage('Некорректный номер телефона', required),
+      validPhone: helpers.withMessage('Некорректный номер телефона', (value: string) => {
+        if (!value) return true
+        // Проверяем, что введено 10 цифр
+        const digitsOnly = value.replace(/\D/g, '')
+        return digitsOnly.length === 10
+      })
     },
     district: {
-      required
+      required: helpers.withMessage('Район должен быть длиннее 3-х символов', required),
+      minLength: helpers.withMessage('Район должен быть длиннее 3-х символов', minLength(4)),
+      notOnlySpaces: helpers.withMessage('Район должен быть длиннее 3-х символов', (value: string) => {
+        if (!value) return false
+        return value.trim().length >= 4
+      })
     }
  }
 })
@@ -175,9 +186,7 @@ const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unkno
 const submitForm = async () => {
   const result = await v$.value.$validate()
   if (result) {
-    // Форма валидна, можно отправлять
     console.log('Форма отправлена', formData)
-    // Здесь будет логика отправки формы
   }
 }
 </script>

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   },
   css: ['./app/assets/css/tailwind.css', './app/assets/css/global.css', './app/assets/css/fonts.css'],
   modules: ['@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxt/eslint'],
+  plugins: ['~/plugins/directives.ts'],
   icon: {
     size: '',
     customCollections: [

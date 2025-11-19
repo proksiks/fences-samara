@@ -6,7 +6,7 @@
       </label>
     </template>
 
-    <span class="relative">
+    <span class="relative block">
       <input
         :id="id"
         :placeholder="placeholder"
@@ -16,7 +16,9 @@
         ]"
         type="text"
       />
-      <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block">{{ errorText }}</span>
+      <transition name="error-message">
+        <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block absolute -bottom-4">{{ errorText }}</span>
+      </transition>
 
       <template v-if="iconName">
         <icon :name="`name:${iconName}`" class="w-5! h-5! bg-green-505! absolute top-1/2 right-4 -translate-y-1/2" />
@@ -38,4 +40,15 @@ interface Props {
 defineProps<Props>();
 </script>
 
-<style scoped></style>
+<style scoped>
+.error-message-enter-active,
+.error-message-leave-active {
+  transition: all 0.3s ease;
+}
+
+.error-message-enter-from,
+.error-message-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+</style>

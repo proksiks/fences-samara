@@ -10,7 +10,7 @@
                 <div class="h-full">
                   <nuxt-picture
                     class="block overflow-hidden rounded-3xl h-full"
-                    src="/images/sections/reviews/slide_1.png"
+                    src="/images/sections/reviews/slide_1.webp"
                     width="712"
                     height="693"
                     alt="Забор "
