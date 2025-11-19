@@ -30,6 +30,13 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.container-big {
+  max-width: 1650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 body {
   font-family: var(--font-gotham);

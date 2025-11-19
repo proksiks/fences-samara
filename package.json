@@ -12,7 +12,8 @@
     "lint:format": "prettier --check ."
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "sass-embedded": "^1.93.3"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.10.0",
