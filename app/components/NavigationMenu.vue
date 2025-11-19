@@ -7,16 +7,22 @@
       </span>
       <ul class="hidden lg:flex items-center gap-8 ml-4 xl:ml-32">
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/">Главная</nuxt-link>
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/" @click="closeMenu">Главная</nuxt-link>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/catalog">Каталог</nuxt-link>
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/catalog" @click="closeMenu"
+            >Каталог</nuxt-link
+          >
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts">Контакты</nuxt-link>
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu"
+            >Контакты</nuxt-link
+          >
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects">Наши проекты</nuxt-link>
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu"
+            >Наши проекты</nuxt-link
+          >
         </li>
       </ul>
 
@@ -51,7 +57,12 @@
     <div class="pt-20">
       <ul class="text-right">
         <li>
-          <nuxt-link class="inline-block border-b-2 border-white transition-colors text-[1.5rem]" active-class="border-green-105! font-medium" to="/">
+          <nuxt-link
+            class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
+            active-class="border-green-105! font-medium"
+            to="/"
+            @click="closeMenu"
+          >
             Главная
           </nuxt-link>
         </li>
@@ -83,22 +94,22 @@
                       <div class="opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': showFences }">
                         <ul>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Забор из профнастила</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор из профнастила</nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Забор на ленточном фундаменте</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор на ленточном фундаменте</nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Забор из сетки рабицы</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор из сетки рабицы</nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Газонные ограждения</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Газонные ограждения</nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Забор из 3D сетки</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор из 3D сетки</nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/">Забор из штакетника</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор из штакетника</nuxt-link>
                           </li>
                         </ul>
                       </div>
@@ -110,12 +121,22 @@
           </transition>
         </li>
         <li class="mt-6">
-          <nuxt-link class="inline-block border-b-2 border-white transition-colors text-[1.5rem]" active-class="border-green-105! font-medium" to="/contacts">
+          <nuxt-link
+            class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
+            active-class="border-green-105! font-medium"
+            to="/contacts"
+            @click="closeMenu"
+          >
             Контакты
           </nuxt-link>
         </li>
         <li class="mt-6">
-          <nuxt-link class="inline-block border-b-2 border-white transition-colors text-[1.5rem]" active-class="border-green-105! font-medium" to="/projects">
+          <nuxt-link
+            class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
+            active-class="border-green-105! font-medium"
+            to="/projects"
+            @click="closeMenu"
+          >
             Наши проекты
           </nuxt-link>
         </li>
@@ -125,12 +146,25 @@
 </template>
 
 <script lang="ts" setup>
-const showMenu = ref(true);
+const showMenu = ref(false);
 
 const showCatalog = ref(false);
 const showFences = ref(false);
 
+const route = useRoute();
+
+watch(
+  () => route.path,
+  () => {
+    showMenu.value = false;
+  },
+);
+
 const { beforeEnter, enter, afterEnter, beforeLeave, leave, afterLeave } = useHeightAnimation();
+
+const closeMenu = () => {
+  showMenu.value = false;
+};
 </script>
 
 <style>
