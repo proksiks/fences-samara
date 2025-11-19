@@ -19,7 +19,7 @@
         :inputmode="inputMode"
       />
       <transition name="error-message">
-        <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block absolute -bottom-4">{{ errorText }}</span>
+        <span v-if="isError && errorText" class="text-red-500 text-sm mt-1 block absolute">{{ errorText }}</span>
       </transition>
 
       <template v-if="iconName">

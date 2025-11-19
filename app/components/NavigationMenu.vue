@@ -5,7 +5,7 @@
   >
     <nav class="container flex items-center">
       <span class="flex items-center gap-2 uppercase font-bold text-2xl py-6 lg:py-0">
-        <span>забор</span>
+        <span class="logo-text transition-colors duration-300">забор</span>
         <span class="text-white bg-green-105 rounded-sm p-1">163</span>
       </span>
       <ul class="hidden lg:flex items-center gap-8 ml-4 xl:ml-32">
@@ -306,5 +306,15 @@ function disableScroll() {
 
 .header-effect {
   backdrop-filter: blur(1rem);
+}
+
+.header-effect .burger .burger-line {
+  background-color: white;
+}
+.header-effect .burger._active .burger-line {
+  background-color: black;
+}
+.header-effect:has(.burger._active) .logo-text {
+  color: black;
 }
 </style>

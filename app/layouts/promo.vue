@@ -29,7 +29,7 @@ const { show, data } = storeToRefs(useCallbackModalStore());
 </script>
 
 <style lang="scss">
-@use "sass:math";
+@use 'sass:math';
 .layout-promo-bg img {
   object-fit: cover;
   width: 100%;

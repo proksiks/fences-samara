@@ -1,5 +1,5 @@
 <template>
-  <footer class="md:pt-20 pt-16 text-white relative z-10" :class="{ 'with-effect': transparent, 'bg-green-505': !transparent }">
+  <footer class="md:pt-20 pt-16 text-white relative z-10" :class="{ 'with-effect border-t border-white/50': transparent, 'bg-green-505': !transparent }">
     <div class="container">
       <div class="mb-12 md:mb-20 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
         <div class="max-w-121.5 md:order-0 order-1">
@@ -128,7 +128,7 @@
         </div>
       </div>
       <div class="border-t border-white/20">
-        <div class="text-center pt-8 pb-10 text-sm leading-snug">Copyright © «Забор163», 2025 гг. Все права защищены.</div>
+        <div class="text-center pt-8 pb-10 text-sm leading-snug">Copyright © «Забор163», {{ getYear }} г. Все права защищены.</div>
       </div>
     </div>
   </footer>
@@ -142,11 +142,13 @@ interface Props {
   transparent?: boolean;
 }
 defineProps<Props>();
+
+const getYear = computed(() => new Date().getFullYear());
 </script>
 
 <style>
 .with-effect {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1.5rem);
 }
 </style>

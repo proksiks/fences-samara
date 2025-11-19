@@ -2,26 +2,26 @@
   <div class="text-white">
     <div>
       <div class="container">
-        <div class="flex justify-between pt-36.5 pb-20">
+        <div class="flex lg:flex-row flex-col justify-between pt-10 pb-10 lg:pt-36.5 lg:pb-20 gap-20">
           <div class="max-w-181.25">
-            <h1 class="text-[3.5rem] font-bold leading-none">
-              Готовьтесь к весне <br />
+            <h1 class="text-[2.375rem] lg:text-[3.5rem] font-bold leading-none lg:text-left text-center">
+              Готовьтесь к весне <br class="sm:block hidden" />
               с умом:
               <span class="text-green-105">
-                забор со <br />
+                забор со <br class="sm:block hidden" />
                 скидкой!
               </span>
             </h1>
-            <p class="text-[1.5rem] mt-10">
+            <p class="text-[1.5rem] mt-10 lg:text-left text-center">
               Зафиксируйте зимнюю цену на забор сейчас, <br />
               а мы установим его весной в первую очередь. <br />
               Не переплачивайте в сезон — экономьте сегодня.
             </p>
 
-            <button class="promo-green-button">предзаказ</button>
+            <button class="promo-green-button" @click="show = true">предзаказ</button>
           </div>
           <div>
-            <div class="relative">
+            <div class="relative lg:pl-0 pl-20 max-w-100 lg:max-w-none mx-auto">
               <nuxt-picture
                 class="block p-4 bg-white promo-image-bg"
                 src="/images/pages/promo/promo-intro.jpg"
@@ -44,12 +44,14 @@
       </div>
     </div>
 
-    <div class="py-20">
+    <div class="pt-40 pb-12 md:py-20">
       <div class="container-big">
-        <div class="py-10 px-26.25 custom-features">
-          <h2 class="text-[3rem] font-medium leading-small">Почему предзаказ — это выгодно и удобно?</h2>
-          <div class="grid lg:grid-cols-3 gap-6 mt-10">
-            <div class="p-8 border border-black/10 rounded-3xl promo-card-feature">
+        <div class="py-10 px-4 md:px-26.25 custom-features">
+          <h2 class="text-[2rem] md:text-[3rem] font-medium leading-small md:text-left text-center">
+            Почему предзаказ — это <span class="text-green-105">выгодно</span> и удобно?
+          </h2>
+          <div class="grid lg:grid-cols-3 gap-6 mt-6 md:mt-10">
+            <div class="pt-4 pb-8 pl-4 pr-4 md:p-8 border border-black/10 rounded-3xl promo-card-feature">
               <div class="flex items-center gap-5">
                 <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
                   <nuxt-picture src="/images/icons/doc-star.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />
@@ -58,7 +60,7 @@
               </div>
               <p class="mt-5">Получите лучшую цену года. Весной стоимость материалов и работ неизбежно вырастет.</p>
             </div>
-            <div class="p-8 border border-black/10 rounded-3xl promo-card-feature">
+            <div class="pt-4 pb-8 pl-4 pr-4 md:p-8 border border-black/10 rounded-3xl promo-card-feature">
               <div class="flex items-center gap-5">
                 <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
                   <nuxt-picture src="/images/icons/present.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />
@@ -67,7 +69,7 @@
               </div>
               <p class="mt-5">Ваш монтаж будет в числе первых. Не ждите в очереди, когда забор нужен «еще вчера».</p>
             </div>
-            <div class="p-8 border border-black/10 rounded-3xl promo-card-feature">
+            <div class="pt-4 pb-8 pl-4 pr-4 md:p-8 border border-black/10 rounded-3xl promo-card-feature">
               <div class="flex items-center gap-5">
                 <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
                   <nuxt-picture src="/images/icons/mingcute.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />
@@ -81,13 +83,20 @@
       </div>
     </div>
 
-    <div class="py-20">
+    <div class="py-10 md:py-20">
       <div class="container-big">
-        <div class="bg-[#F2F8FF] text-black p-10 rounded-[1.25rem]">
-          <h2 class="text-green-505 text-[3rem] font-medium text-center leading-small">Готовы сделать умный ход?</h2>
-          <p class="max-w-221 mx-auto text-center text-[1.5rem] leading-small text-green-505 mt-6">
+        <div class="bg-[#F2F8FF] text-black p-4 md:p-10 rounded-[1.25rem]">
+          <h2 class="text-green-505 text-[2rem] md:text-[3rem] font-medium text-center leading-small">Готовы сделать умный ход?</h2>
+          <p class="max-w-221 mx-auto text-center text-lg md:text-[1.5rem] leading-small text-green-505 mt-6">
             Оставьте заявку, и наш менеджер подготовит для вас точный расчет c учетом зимней скидки. Это бесплатно и ни к чему вас не обязывает!
           </p>
+          <div class="mt-6 max-w-321.5 mx-auto">
+            <div class="bg-white py-6 md:py-10 px-4 form_shadow rounded-[1.25rem]">
+              <div class="max-w-207 mx-auto">
+                <shared-callback-form-promo />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -98,6 +107,8 @@
 definePageMeta({
   layout: 'promo',
 });
+
+const { show } = storeToRefs(useCallbackModalStore());
 </script>
 
 <style>
@@ -113,8 +124,32 @@ definePageMeta({
     -29px 176px 71px 0px #031f3014,
     -45px 276px 78px 0px #031f3003;
 }
+@media (max-width: 1365px) {
+  .promo-image-bg {
+    max-width: 26.25rem;
+  }
+}
+@media (max-width: 1280px) {
+  .promo-image-bg {
+    max-width: 20rem;
+  }
+}
+@media (max-width: 1024px) {
+  .promo-image-bg {
+    margin-top: 0;
+  }
+}
 .promo-image-bg img {
   border-radius: 1.25rem;
+}
+@media (max-width: 480px) {
+  .promo-image-bg {
+    padding: 0.375rem;
+    border-radius: 1rem;
+  }
+  .promo-image-bg img {
+    border-radius: 0.625rem;
+  }
 }
 
 .promo-image-bottom {
@@ -131,9 +166,30 @@ definePageMeta({
     -29px 176px 71px 0px #031f3014,
     -45px 276px 78px 0px #031f3003;
 }
+@media (max-width: 1365px) {
+  .promo-image-bottom {
+    max-width: 15rem;
+    left: -2.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .promo-image-bottom {
+    left: 0;
+  }
+}
 
 .promo-image-bottom img {
   border-radius: 1.25rem;
+}
+@media (max-width: 480px) {
+  .promo-image-bottom {
+    max-width: 8.75rem;
+    padding: 0.375rem;
+    border-radius: 0.5rem;
+  }
+  .promo-image-bottom img {
+    border-radius: 0.3125rem;
+  }
 }
 
 .promo-green-button {
@@ -154,6 +210,16 @@ definePageMeta({
     0px 83px 33px 0px #031f3014,
     0px 130px 36px 0px #031f3003;
   transition: transform 0.2s ease 0s;
+}
+
+@media (max-width: 768px) {
+  .promo-green-button {
+    max-width: 19.375rem;
+    margin: 0 auto;
+    padding: 1.4375rem 2.5rem;
+    display: block;
+    margin-top: 2rem;
+  }
 }
 
 .promo-green-button:hover {
@@ -179,5 +245,9 @@ definePageMeta({
     0px 132px 79px 0px #0000000d,
     0px 235px 94px 0px #00000003,
     0px 366px 103px 0px #00000000;
+}
+
+.form_shadow {
+  box-shadow: 0px 46px 54px 0px #0000000a;
 }
 </style>
