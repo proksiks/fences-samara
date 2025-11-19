@@ -19,10 +19,7 @@
             class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
           >
             <div class="bg-white p-4 sub-menu_shadow rounded-lg">
-              <button
-                class="flex items-center gap-3 w-full justify-between font-medium"
-                @click="showDesctopFences = !showDesctopFences"
-              >
+              <button class="flex items-center gap-3 w-full justify-between font-medium" @click="showDesctopFences = !showDesctopFences">
                 Заборы
                 <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" :class="{ 'rotate-180': showDesctopFences }" />
               </button>
@@ -36,7 +33,6 @@
               >
                 <div v-show="showDesctopFences" class="overflow-hidden">
                   <ul class="opacity-0 transition-opacity duration-200 px-2 mt-3 border-t border-black/5" :class="{ 'opacity-100': showDesctopFences }">
-                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Иконка стрелки</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из профнастила</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор на ленточном фундаменте</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из сетки рабицы</nuxt-link></li>

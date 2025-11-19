@@ -36,7 +36,7 @@ const closeModal = () => {
           <h2 class="text-green-505 font-medium text-xl" v-html="title"></h2>
 
           <template v-if="price">
-            <div class="text-[1.125rem] font-medium mt-2" v-html="price"></div>
+            <div class="font-medium" v-html="price"></div>
           </template>
 
           <div class="flex items-center gap-3 mt-2">
@@ -94,7 +94,7 @@ const closeModal = () => {
 
 .modal-image img {
   width: 100%;
-  max-height: 12rem;
+  max-height: 10.5rem;
   object-fit: cover;
 }
 </style>
