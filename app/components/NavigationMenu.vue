@@ -10,19 +10,19 @@
           <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/" @click="closeMenu">Главная</nuxt-link>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/catalog" @click="closeMenu"
-            >Каталог</nuxt-link
-          >
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/catalog" @click="closeMenu">
+            Каталог
+          </nuxt-link>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu"
-            >Контакты</nuxt-link
-          >
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu">
+            Контакты
+          </nuxt-link>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu"
-            >Наши проекты</nuxt-link
-          >
+          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu">
+            Наши проекты
+          </nuxt-link>
         </li>
       </ul>
 
@@ -45,7 +45,7 @@
           <icon name="name:phone" class="w-4! h-4! bg-white!" />
         </a>
 
-        <button class="burger ml-auto" :class="{ _active: showMenu }" @click="showMenu = !showMenu">
+        <button class="burger ml-auto" :class="{ _active: showMenu }" @click="toggleMenu">
           <span class="burger-line"></span>
           <span class="burger-line"></span>
           <span class="burger-line"></span>
@@ -67,7 +67,6 @@
           </nuxt-link>
         </li>
         <li class="mt-6">
-          <!-- <nuxt-link class="inline-block border-b-2 border-white transition-colors" active-class="border-green-105! font-medium" to="/catalog">Каталог</nuxt-link> -->
           <button class="flex items-center justify-between text-[1.5rem] gap-3 w-full" @click="showCatalog = !showCatalog">
             <icon name="name:arrow-up" class="w-8! h-8! bg-green-105! transition duration-300" :class="{ 'rotate-180': showCatalog }" />
             Каталог
@@ -157,6 +156,7 @@ watch(
   () => route.path,
   () => {
     showMenu.value = false;
+    disableScroll();
   },
 );
 
@@ -164,7 +164,30 @@ const { beforeEnter, enter, afterEnter, beforeLeave, leave, afterLeave } = useHe
 
 const closeMenu = () => {
   showMenu.value = false;
+  disableScroll();
 };
+
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
+
+  disableScroll();
+};
+
+function disableScroll() {
+  if (showMenu.value) {
+    document.body.setAttribute('data-position', '');
+    const pagePosition = window.scrollY;
+    document.body.classList.add('disable-scroll');
+    document.body.dataset.position = String(pagePosition);
+    document.body.style.top = -pagePosition + 'px';
+  } else {
+    const pagePosition = parseInt(String(document.body.dataset.position), 10);
+    document.body.style.top = 'auto';
+    document.body.classList.remove('disable-scroll');
+    window.scroll({ top: pagePosition, left: 0, behavior: 'instant' });
+    document.body.removeAttribute('data-position');
+  }
+}
 </script>
 
 <style>
