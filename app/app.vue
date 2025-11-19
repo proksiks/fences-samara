@@ -1,6 +1,6 @@
 <template>
   <nuxt-layout>
-    <nuxt-page :transition="{ name: 'fade' }" />
+    <nuxt-page />
   </nuxt-layout>
 </template>
 

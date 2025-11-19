@@ -1,5 +1,8 @@
 <template>
-  <header class="sticky z-10 top-0 border-b border-green-105 bg-white">
+  <header
+    class="sticky z-10 top-0 border-b"
+    :class="{ 'border-green-105 bg-white': !transparent, 'bg-transparent border-white text-white header-effect': transparent }"
+  >
     <nav class="container flex items-center">
       <span class="flex items-center gap-2 uppercase font-bold text-2xl py-6 lg:py-0">
         <span>забор</span>
@@ -7,7 +10,14 @@
       </span>
       <ul class="hidden lg:flex items-center gap-8 ml-4 xl:ml-32">
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/" @click="closeMenu">Главная</nuxt-link>
+          <nuxt-link
+            :class="{ transparent: transparent }"
+            class="block py-8 border-b-2 border-transparent transition-colors"
+            active-class="border-green-105!"
+            to="/"
+            @click="closeMenu"
+            >Главная</nuxt-link
+          >
         </li>
         <li class="group">
           <button class="flex items-center gap-3 w-full justify-between cursor-pointer py-8">
@@ -18,7 +28,7 @@
           <div
             class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
           >
-            <div class="bg-white p-4 sub-menu_shadow rounded-lg">
+            <div class="bg-white text-black p-4 sub-menu_shadow rounded-lg">
               <button class="flex items-center gap-3 w-full justify-between font-medium" @click="showDesctopFences = !showDesctopFences">
                 Заборы
                 <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" :class="{ 'rotate-180': showDesctopFences }" />
@@ -46,12 +56,12 @@
           </div>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu">
+          <nuxt-link class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu">
             Контакты
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu">
+          <nuxt-link class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu">
             Наши проекты
           </nuxt-link>
         </li>
@@ -61,7 +71,11 @@
         <div>
           <a
             href="tel:+79203447027"
-            class="bg-gray-105 flex items-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl hover:bg-gray-100 active:bg-gray-200 transition"
+            :class="{
+              'bg-gray-105 hover:bg-gray-100 active:bg-gray-200': !transparent,
+              'bg-transparent border-2 hover:bg-white/15 active:bg-white/25': transparent,
+            }"
+            class="flex items-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl transition"
           >
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>
@@ -89,7 +103,7 @@
       <ul class="text-right">
         <li>
           <nuxt-link
-            class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
+            class="inline-block border-b-2 border-transparent transition-colors text-[1.5rem]"
             active-class="border-green-105! font-medium"
             to="/"
             @click="closeMenu"
@@ -176,6 +190,12 @@
 </template>
 
 <script lang="ts" setup>
+interface Props {
+  transparent?: boolean;
+}
+
+defineProps<Props>();
+
 const { show } = storeToRefs(useCallbackModalStore());
 
 const showMenu = ref(false);
@@ -282,5 +302,9 @@ function disableScroll() {
     2.71px 29.83px 17.63px 0px #00000008,
     5.42px 54.24px 21.7px 0px #00000003,
     8.14px 84.08px 23.05px 0px #00000000;
+}
+
+.header-effect {
+  backdrop-filter: blur(1rem);
 }
 </style>

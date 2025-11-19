@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-green-505 md:pt-20 pt-16 text-white">
+  <footer class="md:pt-20 pt-16 text-white relative z-10" :class="{ 'with-effect': transparent, 'bg-green-505': !transparent }">
     <div class="container">
       <div class="mb-12 md:mb-20 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
         <div class="max-w-121.5 md:order-0 order-1">
@@ -137,4 +137,16 @@
 <script lang="ts" setup>
 const fencesOpen = ref(false);
 const { beforeEnter, enter, afterEnter, beforeLeave, leave, afterLeave } = useHeightAnimation();
+
+interface Props {
+  transparent?: boolean;
+}
+defineProps<Props>();
 </script>
+
+<style>
+.with-effect {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(1rem);
+}
+</style>

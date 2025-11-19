@@ -1,15 +1,19 @@
-.fade-enter-active,
-.fade-leave-active {
+.layout-enter-active,
+.layout-leave-active {
   transition: all 0.2s;
 }
-
-.fade-enter-from,
-.fade-leave-to {
+.layout-enter-from,
+.layout-leave-to {
   opacity: 0;
 }
 
-.fade-leave-to {
-  position: absolute;
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }
 
 .container {
@@ -48,7 +52,7 @@ body {
   width: 0.3125rem;
   background: transparent;
 }
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   *::-webkit-scrollbar {
     display: none;
   }
