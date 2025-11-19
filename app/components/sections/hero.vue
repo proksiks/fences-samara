@@ -44,6 +44,7 @@
               <shared-button
                 class="md:w-auto w-full font-bold mt-auto py-4 md:px-8 px-2 rounded-4xl inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm group"
                 variant="border"
+                @click="show = true"
               >
                 Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
               </shared-button>

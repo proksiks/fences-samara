@@ -48,6 +48,11 @@ body {
   width: 0.3125rem;
   background: transparent;
 }
+@media(max-width: 480px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
 *::-webkit-scrollbar-thumb {
   background: var(--color-green-105);
   padding: 1.875rem 0;

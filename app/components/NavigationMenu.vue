@@ -35,7 +35,7 @@
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>
         </div>
-        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green">
+        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green" @click="show = true">
           Заказать
         </shared-button>
       </span>
@@ -145,6 +145,8 @@
 </template>
 
 <script lang="ts" setup>
+const { show } = storeToRefs(useCallbackModalStore());
+
 const showMenu = ref(false);
 
 const showCatalog = ref(false);
