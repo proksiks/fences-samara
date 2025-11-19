@@ -9,6 +9,7 @@
     <span class="relative block">
       <textarea
         :id="id"
+        v-model="model"
         :placeholder="placeholder"
         :class="[
           'block border-gray-250 w-full py-4 pl-4 pr-10 rounded-4xl border hover:ring-gray-205 hover:ring-1 focus:outline-none focus:ring-2 focus:ring-green-105 placeholder:text-gray-150 transition duration-300 ease-in-out',
@@ -36,7 +37,11 @@ interface Props {
   errorText?: string;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  isError: false,
+});
+
+const model = defineModel<string>();
 </script>
 
 <style scoped>

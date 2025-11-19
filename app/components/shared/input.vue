@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-import IMask from 'imask';
+import IMask, { type InputMask } from 'imask';
 
 import { onMounted, ref, watch, onUnmounted, computed } from 'vue';
 
@@ -47,15 +47,22 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   type: 'text',
+  isError: false,
+  errorText: '',
+  iconName: '',
+  placeholder: '',
+  labelText: '',
+  id: '',
+  mask: '',
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const model = defineModel();
+const model = defineModel<string>();
 
 const inputRef = ref<HTMLInputElement | null>(null);
 
-let maskInstance = null;
+let maskInstance: InputMask | null = null;
 
 const inputType = computed(() => {
   if (props.mask) return 'text';
@@ -76,7 +83,7 @@ onMounted(() => {
     });
 
     if (model.value) {
-      maskInstance.value = model.value;
+      maskInstance.value = String(model.value);
     }
 
     maskInstance.on('accept', () => {
@@ -108,7 +115,7 @@ watch(
       });
 
       if (model.value) {
-        maskInstance.value = model.value;
+        maskInstance.value = String(model.value);
       }
 
       maskInstance.on('accept', () => {
@@ -120,7 +127,7 @@ watch(
 
 watch(model, (newValue) => {
   if (maskInstance) {
-    maskInstance.value = newValue || '';
+    maskInstance.value = String(newValue || '');
   } else if (inputRef.value) {
     inputRef.value.value = String(newValue || '');
   }
