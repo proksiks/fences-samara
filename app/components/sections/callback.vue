@@ -7,47 +7,48 @@
             <div class="flex md:items-center md:flex-row flex-col gap-6 md:gap-7.5">
               <shared-input
                 id="callback-telegram"
+                v-model="formData.email"
                 label-text="Почта"
                 class="flex-1"
+                type="email"
                 placeholder="Почта"
                 icon-name="telegram"
-                v-model="formData.email"
                 :is-error="v$.email.$error"
                 :error-text="getErrorText(v$.email)"
               />
               <shared-input
                 id="callback-phone"
+                v-model="formData.phone"
                 label-text="Номер"
                 class="flex-1"
-                placeholder="Номер"
+                placeholder="+7 (777) 777 77 77"
                 icon-name="phone"
-                v-model="formData.phone"
                 :is-error="v$.phone.$error"
                 :error-text="getErrorText(v$.phone)"
-                v-phone-mask
+                mask="+7 (000) 000 00 00"
               />
             </div>
-            <shared-input 
-              id="callback-location" 
-              label-text="Район" 
-              class="flex-1 mt-6 block" 
-              placeholder="Район" 
-              icon-name="location"
+            <shared-input
+              id="callback-location"
               v-model="formData.district"
+              label-text="Район"
+              class="flex-1 mt-6 block"
+              placeholder="Район"
+              icon-name="location"
               :is-error="v$.district.$error"
               :error-text="getErrorText(v$.district)"
             />
-            <shared-textarea 
-              id="callback-textarea" 
-              label-text="Комментарий" 
-              class="flex-1 mt-6 block" 
-              placeholder="Комментарий" 
-              icon-name="message"
+            <shared-textarea
+              id="callback-textarea"
               v-model="formData.comment"
+              label-text="Комментарий"
+              class="flex-1 mt-6 block"
+              placeholder="Комментарий"
+              icon-name="message"
             />
 
-            <shared-button 
-              class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group" 
+            <shared-button
+              class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group"
               variant="green"
               type="submit"
             >
@@ -138,55 +139,55 @@
 </template>
 
 <script lang="ts" setup>
-import { useVuelidate } from '@vuelidate/core'
-import { required, email, minLength, helpers } from '@vuelidate/validators'
+import { useVuelidate } from '@vuelidate/core';
+import { required, email, minLength, helpers } from '@vuelidate/validators';
 
 const formData = reactive({
   email: '',
   phone: '',
   district: '',
-  comment: ''
-})
+  comment: '',
+});
 
 const rules = computed(() => {
   return {
     email: {
       required: helpers.withMessage('Некорректный email', required),
-      email: helpers.withMessage('Некорректный email', email)
+      email: helpers.withMessage('Некорректный email', email),
     },
     phone: {
       required: helpers.withMessage('Некорректный номер телефона', required),
       validPhone: helpers.withMessage('Некорректный номер телефона', (value: string) => {
-        if (!value) return true
-        // Проверяем, что введено 10 цифр
-        const digitsOnly = value.replace(/\D/g, '')
-        return digitsOnly.length === 10
-      })
+        if (!value) return true;
+        // Проверяем, что номер соответствует формату +7 (XXX) XXX-XX-XX
+        const phoneRegex = /^\+7\s\(\d{3}\)\s\d{3}s\\d{2}s\\d{2}$/;
+        return phoneRegex.test(value);
+      }),
     },
     district: {
       required: helpers.withMessage('Район должен быть длиннее 3-х символов', required),
       minLength: helpers.withMessage('Район должен быть длиннее 3-х символов', minLength(4)),
       notOnlySpaces: helpers.withMessage('Район должен быть длиннее 3-х символов', (value: string) => {
-        if (!value) return false
-        return value.trim().length >= 4
-      })
-    }
- }
-})
+        if (!value) return false;
+        return value.trim().length >= 4;
+      }),
+    },
+  };
+});
 
-const v$ = useVuelidate(rules, formData)
+const v$ = useVuelidate(rules, formData);
 
 const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
- if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
-    return field.$errors[0].$message as string
- }
- return ''
-}
+  if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
+    return field.$errors[0].$message as string;
+  }
+  return '';
+};
 
 const submitForm = async () => {
-  const result = await v$.value.$validate()
+  const result = await v$.value.$validate();
   if (result) {
-    console.log('Форма отправлена', formData)
+    console.log('Форма отправлена', formData);
   }
-}
+};
 </script>

@@ -27,7 +27,16 @@
             </div>
           </div>
           <div>
-            <div><nuxt-picture src="/images/sections/recommended/2.png" quality="20" width="270" height="181" alt="Коричневый забор" /></div>
+            <div>
+              <nuxt-picture
+                class="overflow-hidden rounded-[1.25rem] block"
+                src="/images/sections/recommended/2.jpg"
+                quality="20"
+                width="270"
+                height="181"
+                alt="Коричневый забор"
+              />
+            </div>
             <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="270" height="353" alt="Чёрный забор" /></div>
           </div>
         </div>
