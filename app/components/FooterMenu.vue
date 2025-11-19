@@ -43,7 +43,7 @@
           <ul>
             <li class="mt-3">
               <button class="text-medium flex items-center gap-2 cursor-pointer" @click="fencesOpen = !fencesOpen">
-                Заборы <icon name="name:arrow-up" class="w-5! h-5! bg-green-105!" />
+                Заборы <icon name="name:arrow-up" class="w-5! h-5! bg-green-105! transition duration-300" :class="{ 'rotate-180': fencesOpen }" />
               </button>
 
               <transition

@@ -28,9 +28,9 @@
           </div>
         </div>
 
-        <div class="flex xl:flex-col flex-col-reverse gap-6 xl:gap-7.5">
+        <div class="flex xl:flex-col flex-col-reverse gap-6 xl:gap-7.5 w-full">
           <div class="rounded-3xl bg-white flex md:flex-row flex-col-reverse md:gap-4 xl:gap-15">
-            <div class="flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
+            <div class="max-w-106 flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
               <div class="w-18 h-18 bg-green-105 rounded-full flex items-center justify-center">
                 <nuxt-picture src="/images/icons/fence.svg" width="42" height="42" alt="Иконка забора" loading="lazy" />
               </div>
@@ -44,9 +44,9 @@
                 Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
               </shared-button>
             </div>
-            <div class="lg:shrink-0 flex justify-center">
+            <div class="flex-1 flex justify-center lg:justify-end">
               <nuxt-picture
-                class="hero-image block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden w-full"
+                class="max-w-105 hero-image block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden w-full"
                 src="/images/pages/main/fence.png"
                 width="420"
                 height="363"
@@ -54,7 +54,7 @@
               />
             </div>
           </div>
-          <div class="md:py-14 md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
+          <div class="md:py-16 md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
             <ul class="flex md:flex-row flex-col justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
               <li>
                 <p class="text-5xl leading-small font-bold">5000+</p>
@@ -92,7 +92,8 @@
 <style>
 .hero-image img {
   width: 100%;
-  max-height: 20rem;
+  height: 100%;
+  max-height: 364px;
   object-position: center;
   object-fit: cover;
 }

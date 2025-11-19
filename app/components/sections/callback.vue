@@ -3,16 +3,54 @@
     <div class="container-small">
       <div class="flex items-center justify-between lg:flex-row flex-col-reverse gap-8">
         <div class="md:max-w-157.5 bg-white md:p-10 p-6 rounded-[1.25rem]">
-          <form>
+          <form @submit.prevent="submitForm">
             <div class="flex md:items-center md:flex-row flex-col gap-6 md:gap-7.5">
-              <shared-input id="callback-telegram" label-text="Почта" class="flex-1" placeholder="Почта" icon-name="telegram" />
-              <shared-input id="callback-phone" label-text="Номер" class="flex-1" placeholder="Номер" icon-name="phone" />
+              <shared-input
+                id="callback-telegram"
+                label-text="Почта"
+                class="flex-1"
+                placeholder="Почта"
+                icon-name="telegram"
+                v-model="formData.email"
+                :is-error="v$.email.$error"
+                :error-text="getErrorText(v$.email)"
+              />
+              <shared-input 
+                id="callback-phone" 
+                label-text="Номер" 
+                class="flex-1" 
+                placeholder="Номер" 
+                icon-name="phone"
+                v-model="formData.phone"
+                :is-error="v$.phone.$error"
+                :error-text="getErrorText(v$.phone)"
+              />
             </div>
-            <shared-input id="callback-location" label-text="Район" class="flex-1 mt-6 block" placeholder="Район" icon-name="location" />
-            <shared-textarea id="callback-textarea" label-text="Комментарий" class="flex-1 mt-6 block" placeholder="Комментарий" icon-name="message" />
+            <shared-input 
+              id="callback-location" 
+              label-text="Район" 
+              class="flex-1 mt-6 block" 
+              placeholder="Район" 
+              icon-name="location"
+              v-model="formData.district"
+              :is-error="v$.district.$error"
+              :error-text="getErrorText(v$.district)"
+            />
+            <shared-textarea 
+              id="callback-textarea" 
+              label-text="Комментарий" 
+              class="flex-1 mt-6 block" 
+              placeholder="Комментарий" 
+              icon-name="message"
+              v-model="formData.comment"
+            />
 
-            <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group" variant="green">
-              Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
+            <shared-button 
+              class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-6 group" 
+              variant="green"
+              type="submit"
+            >
+              Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-30" />
             </shared-button>
 
             <span class="text-center text-black/25 block text-xs mt-3">
@@ -89,7 +127,7 @@
           * Рассрочка — это форма кредита (займа) с оплатой товаров или услуг несколькими частями, при котором проценты по кредиту (займу) частично или
           полностью компенсируется продавцом. Пос-кредит (займ) — это форма кредита (займа), предоставленная непосредственно в точке продаж или на сайте
           интернет-магазина. АО "ТБанк": полная стоимость потребительского кредита (займа) — от 0% до 60% годовых, процентная ставка от 0% до 100%
-          годовых,Минимальная сумма - 3000 р., максимальная сумма — 500 000 рублей. Срок предоставления — от 3 до 36 месяцев. Условия обслуживания будут
+          годовых,Минимальная сумма - 300 р., максимальная сумма — 500 000 рублей. Срок предоставления — от 3 до 36 месяцев. Условия обслуживания будут
           определены по результатам рассмотрения заявки.
           <a class="underline" href="https://acdn.tinkoff.ru/static/documents/b5802475-a663-4ac2-90b3-aeb7781df0a9.pdf" target="_blank">Подробные условия</a>.
         </p>
@@ -97,3 +135,49 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useVuelidate } from '@vuelidate/core'
+import { required, email, minLength } from '@vuelidate/validators'
+
+const formData = reactive({
+  email: '',
+  phone: '',
+  district: '',
+  comment: ''
+})
+
+const rules = computed(() => {
+  return {
+    email: {
+      required,
+      email
+    },
+    phone: {
+      required,
+      minLength: minLength(10)
+    },
+    district: {
+      required
+    }
+ }
+})
+
+const v$ = useVuelidate(rules, formData)
+
+const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
+ if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
+    return field.$errors[0].$message as string
+ }
+ return ''
+}
+
+const submitForm = async () => {
+  const result = await v$.value.$validate()
+  if (result) {
+    // Форма валидна, можно отправлять
+    console.log('Форма отправлена', formData)
+    // Здесь будет логика отправки формы
+  }
+}
+</script>
