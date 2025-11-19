@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ['./app/assets/css/tailwind.css', './app/assets/css/global.css', './app/assets/css/fonts.css'],
-  modules: ['@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxt/eslint'],
+  modules: ['@nuxt/icon', '@nuxt/image', '@nuxt/fonts', '@nuxt/eslint', '@nuxtjs/sitemap'],
   icon: {
     size: '',
     customCollections: [
