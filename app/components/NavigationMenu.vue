@@ -9,10 +9,45 @@
         <li>
           <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/" @click="closeMenu">Главная</nuxt-link>
         </li>
-        <li>
-          <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/catalog" @click="closeMenu">
+        <li class="group">
+          <button class="flex items-center gap-3 w-full justify-between cursor-pointer py-8">
             Каталог
-          </nuxt-link>
+            <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" />
+          </button>
+
+          <div
+            class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
+          >
+            <div class="bg-white p-4 sub-menu_shadow rounded-lg">
+              <button
+                class="flex items-center gap-3 w-full justify-between font-medium"
+                @click="showDesctopFences = !showDesctopFences"
+              >
+                Заборы
+                <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" :class="{ 'rotate-180': showDesctopFences }" />
+              </button>
+              <transition
+                @before-enter="beforeEnter"
+                @enter="enter"
+                @after-enter="afterEnter"
+                @before-leave="beforeLeave"
+                @leave="leave"
+                @after-leave="afterLeave"
+              >
+                <div v-show="showDesctopFences" class="overflow-hidden">
+                  <ul class="opacity-0 transition-opacity duration-200 px-2 mt-3 border-t border-black/5" :class="{ 'opacity-100': showDesctopFences }">
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Иконка стрелки</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из профнастила</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор на ленточном фундаменте</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из сетки рабицы</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Газонные ограждения</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из 3D сетки</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из штакетника</nuxt-link></li>
+                  </ul>
+                </div>
+              </transition>
+            </div>
+          </div>
         </li>
         <li>
           <nuxt-link class="block py-8 border-b-2 border-white transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu">
@@ -150,6 +185,7 @@ const { show } = storeToRefs(useCallbackModalStore());
 const showMenu = ref(false);
 
 const showCatalog = ref(false);
+const showDesctopFences = ref(true);
 const showFences = ref(false);
 
 const route = useRoute();
@@ -240,5 +276,15 @@ function disableScroll() {
 }
 .mobile-menu._active {
   transform: translateX(0);
+}
+
+.sub-menu_shadow {
+  box-shadow:
+    0px 0px 0px 0px #0000000d,
+    0px 2.71px 6.78px 0px #0000000d,
+    1.36px 13.56px 13.56px 0px #0000000a,
+    2.71px 29.83px 17.63px 0px #00000008,
+    5.42px 54.24px 21.7px 0px #00000003,
+    8.14px 84.08px 23.05px 0px #00000000;
 }
 </style>
