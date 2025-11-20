@@ -27,12 +27,12 @@ const closeModal = () => {
     content-class="flex-1 flex overflow-y-auto py-4 px-4"
   >
     <div class="md:max-w-157.5 m-auto">
-      <div class="rounded-3xl bg-white flex items-center">
-        <div class="flex-1 flex items-center justify-center lg:justify-end">
-          <nuxt-picture class="modal-image rounded-3xl overflow-hidden w-full" :src="image" width="420" height="363" alt="Зелёный забор" />
+      <div class="rounded-3xl bg-white sm:w-auto w-full flex items-center sm:flex-row flex-col">
+        <div class="flex-1 flex items-center justify-center lg:justify-end sm:w-auto w-full">
+          <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="image" width="420" height="363" alt="Зелёный забор" />
         </div>
 
-        <div class="p-4">
+        <div class="p-4 sm:w-auto w-full">
           <h2 class="text-green-505 font-medium text-xl" v-html="title"></h2>
 
           <template v-if="price">
@@ -96,5 +96,11 @@ const closeModal = () => {
   width: 100%;
   max-height: 10.5rem;
   object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .modal-image img {
+    max-height: 7.5rem;
+  }
 }
 </style>

@@ -9,10 +9,18 @@
     <modals-container />
 
     <nuxt-picture
-      class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10"
+      class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10 sm:block hidden"
       height="2562"
       width="1913"
       src="/images/layouts/promo-bg.jpg"
+      alt="Background Image"
+      priority
+    />
+    <nuxt-picture
+      class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10 sm:hidden"
+      height="2562"
+      width="1913"
+      src="/images/layouts/bg_m.jpg"
       alt="Background Image"
       priority
     />

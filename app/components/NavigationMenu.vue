@@ -22,7 +22,7 @@
         <li class="group">
           <button class="flex items-center gap-3 w-full justify-between cursor-pointer py-8">
             Каталог
-            <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" />
+            <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300 group-hover:rotate-180" />
           </button>
 
           <div
@@ -99,7 +99,7 @@
     </nav>
   </header>
   <div class="mobile-menu fixed top-0 left-0 bottom-0 z-9 w-full bg-white flex flex-col py-10 px-6 overflow-auto lg:hidden" :class="{ _active: showMenu }">
-    <div class="pt-20">
+    <div class="pt-20 flex-1 flex flex-col">
       <ul class="text-right">
         <li>
           <nuxt-link
@@ -185,6 +185,41 @@
           </nuxt-link>
         </li>
       </ul>
+
+      <div class="mt-auto">
+        <div class="flex justify-center items-center my-4 gap-2">
+          <div>
+            <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="91" height="91" alt="prize" loading="lazy" />
+          </div>
+          <div>
+            <h2 class="text-green-505 font-bold text-lg">Выезд и замер бесплатно</h2>
+            <p class="text-gray-150 underline font-light">При оформлении заказа!*</p>
+          </div>
+        </div>
+
+        <div>
+          <a
+            href="tel:+79203447027"
+            :class="{
+              'bg-gray-105 hover:bg-gray-100 active:bg-gray-200': !transparent,
+              'bg-transparent border-2 hover:bg-white/15 active:bg-white/25': transparent,
+            }"
+            class="flex items-center justify-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl transition"
+          >
+            <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
+          </a>
+        </div>
+
+        <div class="mt-4">
+          <shared-button
+            class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
+            variant="green"
+            @click="show = true"
+          >
+            Заказать забор <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
+          </shared-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>

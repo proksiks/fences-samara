@@ -13,7 +13,7 @@
 
           <div class="flex justify-center items-center my-8 md:my-15 gap-2">
             <div>
-              <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="111" height="92" alt="prize" loading="lazy" />
+              <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="91" height="91" alt="prize" loading="lazy" />
             </div>
             <div>
               <h2 class="text-green-505 font-bold text-lg">Выезд и замер бесплатно</h2>
