@@ -68,7 +68,7 @@
                 <div v-show="fencesOpen" class="overflow-hidden">
                   <ul class="opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': fencesOpen }">
                     <li class="mt-5">
-                      <nuxt-link class="hover:underline" to="/">Забор из профнастила</nuxt-link>
+                      <nuxt-link class="hover:underline" to="/catalog/profiled-flooring">Забор из профнастила</nuxt-link>
                     </li>
                     <li class="mt-5">
                       <nuxt-link class="hover:underline" to="/">Забор на ленточном фундаменте</nuxt-link>

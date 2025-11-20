@@ -18,7 +18,7 @@
               Не переплачивайте в сезон — экономьте сегодня.
             </p>
 
-            <button class="promo-green-button" @click="show = true">предзаказ</button>
+            <button class="promo-green-button" @click="openModal">предзаказ</button>
           </div>
           <div>
             <div class="relative lg:pl-0 pl-20 max-w-100 lg:max-w-none mx-auto">
@@ -108,7 +108,11 @@ definePageMeta({
   layout: 'promo',
 });
 
-const { show } = storeToRefs(useCallbackModalStore());
+const callbackModalStore = useCallbackModalStore();
+
+const openModal = () => {
+  callbackModalStore.open();
+};
 </script>
 
 <style>

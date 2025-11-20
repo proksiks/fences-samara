@@ -41,8 +41,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useCallbackModalStore } from '~/stores/modal/callback';
-
 const callbackModalStore = useCallbackModalStore();
 
 const openCallbackModal = () => {

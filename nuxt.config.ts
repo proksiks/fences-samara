@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/fonts',
+    // '@nuxt/fonts',
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
     ['@pinia/nuxt', { autoImports: ['defineStore', 'acceptHMRUpdate'] }],

@@ -51,7 +51,7 @@
               >
                 <div v-show="showDesctopFences" class="overflow-hidden">
                   <ul class="opacity-0 transition-opacity duration-200 px-2 mt-3 border-t border-black/5" :class="{ 'opacity-100': showDesctopFences }">
-                    <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из профнастила</nuxt-link></li>
+                    <li><nuxt-link class="py-2 block hover:font-medium" to="/catalog/profiled-flooring">Забор из профнастила</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор на ленточном фундаменте</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Забор из сетки рабицы</nuxt-link></li>
                     <li><nuxt-link class="py-2 block hover:font-medium" to="/">Газонные ограждения</nuxt-link></li>
@@ -150,7 +150,7 @@
                       <div class="opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': showFences }">
                         <ul>
                           <li class="mt-5">
-                            <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор из профнастила</nuxt-link>
+                            <nuxt-link class="hover:underline text-lg" to="/catalog/profiled-flooring" @click="closeMenu">Забор из профнастила</nuxt-link>
                           </li>
                           <li class="mt-5">
                             <nuxt-link class="hover:underline text-lg" to="/" @click="closeMenu">Забор на ленточном фундаменте</nuxt-link>

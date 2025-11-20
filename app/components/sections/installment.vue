@@ -13,7 +13,7 @@
             <shared-button
               class="sm:w-auto w-full py-4 px-8 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
               variant="green"
-              @click="show = true"
+              @click="callbackModalStore.open"
             >
               Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
@@ -38,5 +38,5 @@
 </template>
 
 <script lang="ts" setup>
-const { show } = storeToRefs(useCallbackModalStore());
+const callbackModalStore = useCallbackModalStore();
 </script>

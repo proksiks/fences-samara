@@ -17,9 +17,9 @@
       priority
     />
     <nuxt-picture
-      class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10 sm:hidden"
-      height="2562"
-      width="1913"
+      class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10 sm:hidden bg-[#477a95]"
+      height="4091"
+      width="390"
       src="/images/layouts/bg_m.jpg"
       alt="Background Image"
       priority

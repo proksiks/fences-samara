@@ -1,15 +1,7 @@
 <script setup lang="ts">
 import { VueFinalModal } from 'vue-final-modal';
-import { useCallbackModalStore } from '~/stores/modal/callback';
-import { storeToRefs } from 'pinia';
-
-// Данные теперь берутся из store
 const callbackModalStore = useCallbackModalStore();
 const { data } = storeToRefs(callbackModalStore);
-
-const closeModal = () => {
-  callbackModalStore.close();
-};
 </script>
 
 <template>
@@ -49,7 +41,7 @@ const closeModal = () => {
       <div class="bg-white md:p-10 p-6 rounded-[1.25rem] mt-4">
         <shared-callback-form />
       </div>
-      <button class="modal-close" @click="closeModal">
+      <button class="modal-close" @click="callbackModalStore.close">
         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M17.2212 1.22119L1.22119 17.2212M1.22119 1.22119L17.2212 17.2212"

@@ -25,7 +25,7 @@
             <shared-button
               class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
               variant="green"
-              @click="show = true"
+              @click="callbackModalStore.open()"
             >
               Заказать звонок <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
             </shared-button>
@@ -44,7 +44,7 @@
               <shared-button
                 class="md:w-auto w-full font-bold mt-auto py-4 md:px-8 px-2 rounded-4xl inline-flex items-center justify-center gap-2 text-green-505 md:text-default text-sm group"
                 variant="border"
-                @click="show = true"
+                @click="callbackModalStore.open()"
               >
                 Получить обратный звонок <icon name="name:arrow" class="w-5! h-5! fill-green-505! group-hover:translate-x-1 transition duration-300" />
               </shared-button>
@@ -96,7 +96,7 @@
 </template>
 
 <script lang="ts" setup>
-const { show } = storeToRefs(useCallbackModalStore());
+const callbackModalStore = useCallbackModalStore();
 </script>
 
 <style>

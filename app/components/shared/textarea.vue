@@ -12,7 +12,7 @@
         v-model="model"
         :placeholder="placeholder"
         :class="[
-          'block border-gray-250 w-full py-4 pl-4 pr-10 rounded-4xl border hover:ring-gray-205 hover:ring-1 focus:outline-none focus:ring-2 focus:ring-green-105 placeholder:text-gray-150 transition duration-300 ease-in-out',
+          'block border-gray-250 w-full py-4 pl-4 pr-10 rounded-2xl border hover:ring-gray-205 hover:ring-1 focus:outline-none focus:ring-2 focus:ring-green-105 placeholder:text-gray-150 transition duration-300 ease-in-out',
           isError ? 'border-red-500 focus:ring-red-500' : ''
         ]"
       />
