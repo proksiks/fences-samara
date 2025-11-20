@@ -59,7 +59,7 @@ body {
   width: 0.3125rem;
   background: transparent;
 }
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   *::-webkit-scrollbar {
     display: none;
   }

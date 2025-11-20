@@ -20,13 +20,13 @@ const closeModal = () => {
 
 <template>
   <VueFinalModal
-    class="flex"
+    class="flex px-4"
     swipe-to-close="down"
     overlay-transition="vfm-fade"
     content-transition="vfm-slide-down"
-    content-class="flex-1 flex overflow-y-auto py-4 px-4"
+    content-class="flex-1 py-4 md:max-w-157.5 m-auto h-screen overflow-y-auto"
   >
-    <div class="md:max-w-157.5 m-auto">
+    <div class="">
       <div class="rounded-3xl bg-white sm:w-auto w-full flex items-center sm:flex-row flex-col">
         <div class="flex-1 flex items-center justify-center lg:justify-end sm:w-auto w-full">
           <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="image" width="420" height="363" alt="Зелёный забор" />

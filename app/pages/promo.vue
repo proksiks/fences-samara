@@ -47,7 +47,7 @@
     <div class="pt-40 pb-12 md:py-20">
       <div class="container-big">
         <div class="py-10 px-4 md:px-26.25 custom-features">
-          <h2 class="text-[2rem] md:text-[3rem] font-medium leading-small md:text-left text-center">
+          <h2 class="text-[2rem] md:text-[3rem] font-medium leading-small text-center">
             Почему предзаказ — это <span class="text-green-105">выгодно</span> и удобно?
           </h2>
           <div class="grid lg:grid-cols-3 gap-6 mt-6 md:mt-10">
