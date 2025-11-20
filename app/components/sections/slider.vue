@@ -7,7 +7,7 @@
             <div>
               <div class="flex items-center gap-2.5">
                 <div>
-                  <nuxt-picture src="/images/icons/cases.svg" width="24" height="24" alt="Иконка" />
+                  <nuxt-picture src="/images/icons/cases.svg" width="24" height="24" alt="Иконка" loading="lazy" />
                 </div>
                 <div class="uppercase font-bold">Наши проекты</div>
               </div>
@@ -39,6 +39,7 @@
                     alt="Фотография забора с участка"
                     width="594"
                     height="464"
+                    loading="lazy"
                   />
                 </div>
               </div>

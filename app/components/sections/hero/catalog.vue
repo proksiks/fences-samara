@@ -71,10 +71,9 @@
 <script lang="ts" setup>
 interface Props {
   image: string;
+  breadcrumbs?: { title: string; to?: string }[];
 }
 defineProps<Props>();
-
-const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Каталог', to: '/catalog' }, { title: 'Заборы на ленточном фундаменте' }];
 </script>
 
 <style>

@@ -5,7 +5,7 @@
         <div class="md:pl-0 pl-6">
           <div class="flex items-center gap-2.5">
             <div>
-              <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" />
+              <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" loading="lazy" />
             </div>
             <div class="uppercase font-bold text-green-505">КАТАЛОГ ЗАБОРОВ</div>
           </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 2xl:gap-15 mt-10 md:mt-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-15 mt-10 md:mt-14">
         <div v-for="item in catalog" :key="item.image">
           <shared-card :image="item.image" :shield="item.shield" :title="item.title" :price="item.price" :tags="item.tags" :description="item.description" />
         </div>

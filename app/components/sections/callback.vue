@@ -9,7 +9,7 @@
           <div class="flex items-center gap-2.5">
             <div class="text-sm text-green-505 leading-snug font-bold uppercase">ОСТАВЬТЕ ЗАЯВКУ</div>
             <div>
-              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" alt="Иконка" />
+              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" alt="Иконка" loading="lazy" />
             </div>
           </div>
           <h2 class="text-[2rem] lg:text-[3rem] font-bold leading-small text-green-505 mt-2.5">Мы оперативно ответим на&nbsp;вопросы</h2>

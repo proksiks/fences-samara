@@ -16,7 +16,7 @@ const { data } = storeToRefs(callbackModalStore);
     <div class="">
       <div class="rounded-3xl bg-white sm:w-auto w-full flex items-center sm:flex-row flex-col">
         <div class="flex-1 flex items-center justify-center lg:justify-end sm:w-auto w-full">
-          <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="data.image" width="420" height="363" alt="Зелёный забор" />
+          <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="data.image" width="420" height="363" alt="Зелёный забор" loading="lazy" />
         </div>
 
         <div class="p-4 sm:w-auto w-full">

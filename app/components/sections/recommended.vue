@@ -8,6 +8,7 @@
               <nuxt-picture
                 class="overflow-hidden rounded-3xl block"
                 quality="5"
+                loading="lazy"
                 alt="Серый забор"
                 width="300"
                 height="470"
@@ -17,7 +18,7 @@
             <div class="flex items-center gap-4 px-4.5 mt-7">
               <div>
                 <div class="flex items-center justify-center bg-green-105 rounded-full size-13.75">
-                  <nuxt-picture src="/images/icons/call.svg" width="24" height="24" alt="Позвонить" />
+                  <nuxt-picture src="/images/icons/call.svg" width="24" height="24" alt="Позвонить" loading="lazy" />
                 </div>
               </div>
               <div class="leading-small">
@@ -35,25 +36,26 @@
                 width="270"
                 height="181"
                 alt="Коричневый забор"
+                loading="lazy"
               />
             </div>
-            <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="270" height="353" alt="Чёрный забор" /></div>
+            <div class="mt-7.5"><nuxt-picture src="/images/sections/recommended/3.png" quality="20" width="270" height="353" alt="Чёрный забор" loading="lazy" /></div>
           </div>
         </div>
         <div class="lg:hidden flex flex-col lg:items-center">
           <div>
-            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1_m.jpg" quality="20" width="358" height="240" alt="Серый забор" />
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1_m.jpg" quality="20" width="358" height="240" alt="Серый забор" loading="lazy" />
           </div>
           <div class="mt-10">
-            <nuxt-picture class="recommended-image" src="/images/sections/recommended/3.png" quality="20" width="358" height="468" alt="Коричневый забор" />
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/3.png" quality="20" width="358" height="468" alt="Коричневый забор" loading="lazy" />
           </div>
           <div class="mt-10">
-            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1.jpg" quality="20" width="358" height="558" alt="Чёрный забор" />
+            <nuxt-picture class="recommended-image" src="/images/sections/recommended/1.jpg" quality="20" width="358" height="558" alt="Чёрный забор" loading="lazy" />
           </div>
           <div class="flex items-center gap-4 px-4.5 mt-7">
             <div>
               <div class="flex items-center justify-center bg-green-105 rounded-full size-13.75">
-                <nuxt-picture src="/images/icons/call.svg" width="24" height="24" alt="Позвонить" />
+                <nuxt-picture src="/images/icons/call.svg" width="24" height="24" alt="Позвонить" loading="lazy" />
               </div>
             </div>
             <div class="leading-small">
@@ -67,7 +69,7 @@
           <div class="flex items-center gap-2.5">
             <div class="text-sm text-green-505 leading-snug font-bold uppercase">Отвечаем на вопросы</div>
             <div>
-              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" alt="Иконка" />
+              <nuxt-picture src="/images/icons/arr.svg" width="52" height="10" alt="Иконка" loading="lazy" />
             </div>
           </div>
           <h2 class="text-[2rem] lg:text-[3rem] font-bold leading-small text-green-505 mt-2.5">Почему выбирают нас?</h2>

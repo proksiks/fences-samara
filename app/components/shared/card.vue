@@ -2,7 +2,7 @@
   <div class="catalog-card">
     <div class="relative">
       <div class="2xl:w-107.5 2xl:h-85">
-        <nuxt-picture class="block w-full overflow-hidden rounded-xl" :src="image" :alt="shield" />
+        <nuxt-picture class="block w-full overflow-hidden rounded-xl" :src="image" :alt="shield" loading="lazy" />
       </div>
       <div class="absolute py-1 px-4 bg-green-105 text-white top-6 right-0 rounded-l-4xl">{{ shield }}</div>
     </div>

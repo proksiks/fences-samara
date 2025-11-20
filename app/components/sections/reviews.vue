@@ -13,18 +13,33 @@
                     src="/images/sections/reviews/slide_1.webp"
                     width="816"
                     height="794"
-                    alt="Забор "
+                    alt="Забор"
+                    loading="lazy"
                   />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div>
-                  <nuxt-picture class="block overflow-hidden rounded-3xl" src="/images/sections/reviews/slide_2.png" width="712" height="693" alt="Забор " />
+                  <nuxt-picture
+                    class="block overflow-hidden rounded-3xl"
+                    src="/images/sections/reviews/slide_2.png"
+                    width="712"
+                    height="693"
+                    alt="Забор"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               <div class="swiper-slide">
                 <div>
-                  <nuxt-picture class="block overflow-hidden rounded-3xl" src="/images/sections/reviews/slide_3.jpg" width="712" height="693" alt="Забор " />
+                  <nuxt-picture
+                    class="block overflow-hidden rounded-3xl"
+                    src="/images/sections/reviews/slide_3.jpg"
+                    width="712"
+                    height="693"
+                    alt="Забор"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -39,7 +54,7 @@
                 <div class="swiper-slide">
                   <div class="md:py-15 py-8 md:px-10 px-6">
                     <div>
-                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор " />
+                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор" loading="lazy" />
                     </div>
                     <div>
                       <p class="mt-5 text-gray-205 leading-snug md:text-[1.5rem]">
@@ -57,6 +72,7 @@
                             width="70"
                             height="70"
                             alt="Владимир И."
+                            loading="lazy"
                           />
                         </div>
                         <div>
@@ -70,7 +86,7 @@
                 <div class="swiper-slide">
                   <div class="md:py-15 py-8 md:px-10 px-6">
                     <div>
-                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор " />
+                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор" loading="lazy" />
                     </div>
                     <div>
                       <p class="mt-5 text-gray-205 leading-snug md:text-[1.5rem]">
@@ -89,6 +105,7 @@
                             width="70"
                             height="70"
                             alt="Александр Д."
+                            loading="lazy"
                           />
                         </div>
                         <div>
@@ -102,7 +119,7 @@
                 <div class="swiper-slide">
                   <div class="md:py-15 py-8 md:px-10 px-6">
                     <div>
-                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор " />
+                      <nuxt-picture class="md:max-w-none max-w-11.25 block" src="/images/icons/quote.svg" width="68" height="52" alt="Забор" loading="lazy" />
                     </div>
                     <div>
                       <p class="mt-5 text-gray-205 leading-snug md:text-[1.5rem]">
@@ -121,6 +138,7 @@
                             width="70"
                             height="70"
                             alt="Александр Д."
+                            loading="lazy"
                           />
                         </div>
                         <div>

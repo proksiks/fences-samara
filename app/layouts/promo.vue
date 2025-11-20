@@ -15,6 +15,7 @@
       src="/images/layouts/promo-bg.jpg"
       alt="Background Image"
       priority
+      loading="lazy"
     />
     <nuxt-picture
       class="layout-promo-bg absolute h-full w-full left-0 top-0 -z-10 sm:hidden bg-[#477a95]"
@@ -23,6 +24,7 @@
       src="/images/layouts/bg_m.jpg"
       alt="Background Image"
       priority
+      loading="lazy"
     />
 
     <div class="snow-container">
