@@ -3,10 +3,19 @@
     <div class="container">
       <div class="mb-12 md:mb-20 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
         <div class="max-w-121.5 md:order-0 order-1">
-          <div class="flex items-center gap-2 uppercase font-bold text-2xl">
-            <span>забор</span>
-            <span class="text-green-505 bg-white rounded-sm p-1">163</span>
-          </div>
+          <template v-if="$route.path === '/'">
+            <div class="flex items-center gap-2 uppercase font-bold text-2xl">
+              <span>забор</span>
+              <span class="text-green-505 bg-white rounded-sm p-1">163</span>
+            </div>
+          </template>
+          <template v-else>
+            <nuxt-link to="/" class="flex items-center gap-2 uppercase font-bold text-2xl">
+              <span>забор</span>
+              <span class="text-green-505 bg-white rounded-sm p-1">163</span>
+            </nuxt-link>
+          </template>
+
           <div class="leading-snug mt-6">
             Изготовление и установка заборов под ключ <br />
             в Самаре и&nbsp;Самарской области.
@@ -25,7 +34,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div :class="{ hidden: transparent }">
           <h3 class="font-medium text-lg">Меню</h3>
           <ul class="mt-3">
             <li>

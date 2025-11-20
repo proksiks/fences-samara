@@ -22,12 +22,15 @@
 <script lang="ts" setup>
 const props = defineProps({
   show: { type: [Boolean, String], default: false },
+  active: { type: Boolean, default: false },
 });
+
+const emit = defineEmits(['activate']);
 
 const isOpen = ref(false);
 
 onMounted(() => {
-  isOpen.value = props.show === '' || props.show === true || props.show === 'true';
+  isOpen.value = props.show === '' || props.show === true || props.show === 'true' || props.active;
 });
 
 watch(
@@ -37,8 +40,15 @@ watch(
   },
 );
 
+watch(
+  () => props.active,
+  (val) => {
+    isOpen.value = val;
+  },
+);
+
 function toggle() {
-  isOpen.value = !isOpen.value;
+  emit('activate');
 }
 
 const { beforeEnter, enter, afterEnter, beforeLeave, leave, afterLeave } = useHeightAnimation();

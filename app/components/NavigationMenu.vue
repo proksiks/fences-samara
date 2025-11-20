@@ -1,13 +1,21 @@
 <template>
   <header
-    class="sticky z-10 top-0 border-b"
+    class="sticky z-50 top-0 border-b"
     :class="{ 'border-green-105 bg-white': !transparent, 'bg-transparent border-white text-white header-effect': transparent }"
   >
     <nav class="container flex items-center">
-      <span class="flex items-center gap-2 uppercase font-bold text-2xl py-6 lg:py-0">
-        <span class="logo-text transition-colors duration-300">забор</span>
-        <span class="text-white bg-green-105 rounded-sm p-1">163</span>
-      </span>
+      <template v-if="$route.path === '/'">
+        <span class="flex items-center gap-2 uppercase font-bold text-2xl py-6 lg:py-0">
+          <span class="logo-text transition-colors duration-300">забор</span>
+          <span class="text-white bg-green-105 rounded-sm p-1">163</span>
+        </span>
+      </template>
+      <template v-else>
+        <nuxt-link to="/" class="flex items-center gap-2 uppercase font-bold text-2xl py-6 lg:py-0">
+          <span class="logo-text transition-colors duration-300">забор</span>
+          <span class="text-white bg-green-105 rounded-sm p-1">163</span>
+        </nuxt-link>
+      </template>
       <ul class="hidden lg:flex items-center gap-8 ml-4 xl:ml-32">
         <li>
           <nuxt-link
@@ -60,7 +68,7 @@
             Контакты
           </nuxt-link>
         </li>
-        <li>
+        <li :class="{ hidden: transparent }">
           <nuxt-link class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu">
             Наши проекты
           </nuxt-link>
@@ -80,7 +88,11 @@
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>
         </div>
-        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green" @click="callbackModalStore.open()">
+        <shared-button
+          class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2"
+          variant="green"
+          @click="callbackModalStore.open()"
+        >
           Заказать
         </shared-button>
       </span>

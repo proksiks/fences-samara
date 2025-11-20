@@ -75,7 +75,7 @@
           <div>
             <div class="mt-10">
               <div>
-                <shared-accordion show>
+                <shared-accordion :active="activeAccordion === 'accordion1'" @activate="setActiveAccordion('accordion1')">
                   <template #title>Под ключ</template>
                   <template #content>
                     <p class="text-gray-205 leading-snug">
@@ -85,7 +85,7 @@
                 </shared-accordion>
               </div>
               <div class="mt-6">
-                <shared-accordion>
+                <shared-accordion :active="activeAccordion === 'accordion2'" @activate="setActiveAccordion('accordion2')">
                   <template #title>Сертификат гарантии</template>
                   <template #content>
                     <p class="text-gray-205 leading-snug">
@@ -96,7 +96,7 @@
                 </shared-accordion>
               </div>
               <div class="mt-6">
-                <shared-accordion>
+                <shared-accordion :active="activeAccordion === 'accordion3'" @activate="setActiveAccordion('accordion3')">
                   <template #title>Команда профессионалов</template>
                   <template #content>
                     <p class="text-gray-205 leading-snug">
@@ -113,6 +113,14 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const activeAccordion = ref('accordion1')
+
+function setActiveAccordion(accordionId: string) {
+  activeAccordion.value = accordionId
+}
+</script>
 
 <style>
 .recommended-image img {

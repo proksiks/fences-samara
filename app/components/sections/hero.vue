@@ -34,7 +34,7 @@
 
         <div class="flex xl:flex-col flex-col-reverse gap-6 xl:gap-7.5 w-full">
           <div class="rounded-3xl bg-white flex md:flex-row flex-col-reverse md:gap-4 xl:gap-15">
-            <div class="max-w-106 flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
+            <div class="max-w-126 flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
               <div class="w-18 h-18 bg-green-105 rounded-full flex items-center justify-center">
                 <nuxt-picture src="/images/icons/fence.svg" width="42" height="42" alt="Иконка забора" loading="lazy" />
               </div>
