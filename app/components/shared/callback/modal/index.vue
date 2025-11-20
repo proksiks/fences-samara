@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import { VueFinalModal } from 'vue-final-modal';
 import { useCallbackModalStore } from '~/stores/modal/callback';
+import { storeToRefs } from 'pinia';
 
-interface Props {
-  title: string;
-  tags: string[];
-  text: string;
-  image: string;
-  price?: string;
-}
-
-defineProps<Props>();
-
+// Данные теперь берутся из store
 const callbackModalStore = useCallbackModalStore();
+const { data } = storeToRefs(callbackModalStore);
+
 const closeModal = () => {
   callbackModalStore.close();
 };
@@ -20,6 +14,7 @@ const closeModal = () => {
 
 <template>
   <VueFinalModal
+    v-model="callbackModalStore.show"
     class="flex px-4"
     swipe-to-close="down"
     overlay-transition="vfm-fade"
@@ -29,24 +24,24 @@ const closeModal = () => {
     <div class="">
       <div class="rounded-3xl bg-white sm:w-auto w-full flex items-center sm:flex-row flex-col">
         <div class="flex-1 flex items-center justify-center lg:justify-end sm:w-auto w-full">
-          <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="image" width="420" height="363" alt="Зелёный забор" />
+          <nuxt-picture class="modal-image rounded-t-3xl sm:rounded-3xl overflow-hidden w-full" :src="data.image" width="420" height="363" alt="Зелёный забор" />
         </div>
 
         <div class="p-4 sm:w-auto w-full">
-          <h2 class="text-green-505 font-medium text-xl" v-html="title"></h2>
+          <h2 class="text-green-505 font-medium text-xl" v-html="data.title"></h2>
 
-          <template v-if="price">
-            <div class="font-medium" v-html="price"></div>
+          <template v-if="data.priceText">
+            <div class="font-medium" v-html="data.priceText"></div>
           </template>
 
           <div class="flex items-center gap-3 mt-2">
-            <div v-for="tag in tags" :key="tag" class="px-4 py-1 text-[0.5rem] text-green-105 border border-green-105 rounded-4xl font-medium">
+            <div v-for="tag in data.tags" :key="tag" class="px-4 py-1 text-[0.5rem] text-green-105 border border-green-105 rounded-4xl font-medium">
               {{ tag }}
             </div>
           </div>
 
           <p class="text-gray-150 text-[0.625rem] max-w-68 mt-2">
-            {{ text }}
+            {{ data.text }}
           </p>
         </div>
       </div>

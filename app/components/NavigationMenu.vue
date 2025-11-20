@@ -80,7 +80,7 @@
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>
         </div>
-        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green" @click="show = true">
+        <shared-button class="w-full px-5 py-3 rounded-4xl font-medium text-white flex items-center justify-center gap-2" variant="green" @click="callbackModalStore.open()">
           Заказать
         </shared-button>
       </span>
@@ -214,9 +214,9 @@
           <shared-button
             class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
             variant="green"
-            @click="show = true"
+            @click="callbackModalStore.open()"
           >
-            Заказать забор <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
+            Заказать забор <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-30" />
           </shared-button>
         </div>
       </div>
@@ -231,7 +231,7 @@ interface Props {
 
 defineProps<Props>();
 
-const { show } = storeToRefs(useCallbackModalStore());
+const callbackModalStore = useCallbackModalStore();
 
 const showMenu = ref(false);
 

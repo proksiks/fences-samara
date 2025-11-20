@@ -52,7 +52,7 @@ const openModal = () => {
   callbackModalStore.data.text = props.description;
   callbackModalStore.data.image = props.image;
   callbackModalStore.data.priceText = props.price;
-  callbackModalStore.open();
+  callbackModalStore.open(false); // Открываем без сброса к стандартным значениям
 };
 </script>
 

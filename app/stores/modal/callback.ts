@@ -10,7 +10,10 @@ export const useCallbackModalStore = defineStore('callbackModal', () => {
   const data = ref({ ...defaultData });
 
   const show = ref(false);
-  function open() {
+  function open(withDefaultData = true) {
+    if (withDefaultData) {
+      data.value = { ...defaultData };
+    }
     show.value = true;
   }
   function close() {

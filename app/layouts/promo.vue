@@ -5,7 +5,7 @@
       <slot />
     </div>
     <footer-menu transparent />
-    <shared-callback-modal v-model="show" :text="data.text" :title="data.title" :tags="data.tags" :image="data.image" :price="data.priceText" />
+    <shared-callback-modal />
     <modals-container />
 
     <nuxt-picture
@@ -33,7 +33,6 @@
 
 <script lang="ts" setup>
 import { ModalsContainer } from 'vue-final-modal';
-const { show, data } = storeToRefs(useCallbackModalStore());
 </script>
 
 <style lang="scss">
