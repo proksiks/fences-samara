@@ -1,19 +1,33 @@
-.layout-enter-active,
-.layout-leave-active {
-  transition: all 0.2s;
+html {
+  scroll-behavior: smooth;
+  /* offest */
+  scroll-padding-top: 5rem;
 }
-.layout-enter-from,
-.layout-leave-to {
-  opacity: 0;
+html .vfm--overlay {
+  backdrop-filter: blur(0.625rem);
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.2s;
+*::-webkit-scrollbar {
+  width: 0.3125rem;
+  background: transparent;
 }
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
+@media (max-width: 1024px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-green-105);
+  padding: 1.875rem 0;
+  border-radius: 20.9375rem;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20.9375rem;
+}
+
+body {
+  font-family: var(--font-gotham);
 }
 
 .container {
@@ -38,10 +52,6 @@
   padding-right: 1rem;
 }
 
-body {
-  font-family: var(--font-gotham);
-}
-
 .button_shadow {
   box-shadow: 0px 8px 14px 0px #00000029;
 }
@@ -55,25 +65,20 @@ body {
   width: 100%;
 }
 
-*::-webkit-scrollbar {
-  width: 0.3125rem;
-  background: transparent;
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.2s;
 }
-@media (max-width: 1024px) {
-  *::-webkit-scrollbar {
-    display: none;
-  }
-}
-*::-webkit-scrollbar-thumb {
-  background: var(--color-green-105);
-  padding: 1.875rem 0;
-  border-radius: 20.9375rem;
-}
-*::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 20.9375rem;
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
 }
 
-html .vfm--overlay {
-  backdrop-filter: blur(0.625rem);
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }

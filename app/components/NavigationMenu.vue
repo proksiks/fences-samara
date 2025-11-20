@@ -64,9 +64,9 @@
           </div>
         </li>
         <li>
-          <nuxt-link class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" to="/contacts" @click="closeMenu">
+          <a class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" href="#callbackForm" @click="closeMenu">
             Контакты
-          </nuxt-link>
+          </a>
         </li>
         <li :class="{ hidden: transparent }">
           <nuxt-link class="block py-8 border-b-2 border-transparent transition-colors" active-class="border-green-105!" to="/projects" @click="closeMenu">
