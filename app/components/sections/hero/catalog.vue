@@ -2,10 +2,10 @@
   <div class="bg-gray-105 pb-16 md:pb-20">
     <div class="container">
       <shared-breadcrumbs :custom-crumbs="breadcrumbs" />
-      <div class="flex xl:flex-row flex-col gap-6 xl:gap-7.5">
-        <div class="flex xl:flex-col flex-col-reverse gap-6 xl:gap-7.5 w-full">
+      <div class="flex xl:flex-row flex-col-reverse gap-6 xl:gap-7.5">
+        <div class="flex xl:flex-col flex-col gap-6 xl:gap-7.5 w-full">
           <div class="rounded-3xl bg-white flex md:flex-row flex-col-reverse md:gap-4">
-            <div class="max-w-133 flex flex-col items-center md:items-start pl-10 py-10 md:text-left text-center">
+            <div class="max-w-133 flex flex-col items-center md:items-start md:pl-10 md:py-10 p-4 md:text-left text-center">
               <slot />
 
               <div class="flex justify-center items-center gap-2">
@@ -13,7 +13,7 @@
                   <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="91" height="91" alt="prize" loading="lazy" />
                 </div>
                 <div>
-                  <h2 class="text-green-505 font-bold text-lg">Выезд и замер бесплатно</h2>
+                  <h2 class="text-green-505 font-bold md:text-lg text-left">Выезд и замер бесплатно</h2>
                   <p class="text-gray-150 underline font-light">При оформлении заказа!*</p>
                 </div>
               </div>
@@ -29,7 +29,7 @@
               />
             </div>
           </div>
-          <div class="md:py-7 md:px-14 px-4 rounded-3xl bg-gray-155">
+          <div class="md:px-14 py-10 px-4 rounded-3xl bg-gray-155">
             <ul class="flex md:flex-row flex-col justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
               <li>
                 <p class="text-5xl leading-small font-bold">5000+</p>
@@ -59,9 +59,9 @@
             </ul>
           </div>
         </div>
-        <div class="xl:max-w-102.5 bg-white py-10 md:px-6 px-4 rounded-[1.25rem]">
+        <div class="xl:max-w-102.5 bg-white py-6 md:py-10 md:px-6 px-4 rounded-[1.25rem]">
           <h2 class="text-[1.75rem] text-green-505 text-center font-medium">Оставить заявку</h2>
-          <shared-callback-form-short class="mt-10" />
+          <shared-callback-form-short class="md:mt-10 mt-6" />
         </div>
       </div>
     </div>

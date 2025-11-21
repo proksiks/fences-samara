@@ -2,7 +2,7 @@
   <div class="py-16 md:py-20">
     <div class="container">
       <div class="grid lg:grid-cols-3 gap-6">
-        <div class="p-8 border border-black/10 rounded-3xl">
+        <div class="md:p-8 p-6 border border-black/10 rounded-3xl">
           <div class="flex items-center gap-5">
             <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
               <nuxt-picture src="/images/icons/doc-star.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />
@@ -14,7 +14,7 @@
             забора в течение 1 года
           </p>
         </div>
-        <div class="p-8 border border-black/10 rounded-3xl">
+        <div class="md:p-8 p-6 border border-black/10 rounded-3xl">
           <div class="flex items-center gap-5">
             <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
               <nuxt-picture src="/images/icons/present.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />
@@ -26,7 +26,7 @@
             дизайнером.
           </p>
         </div>
-        <div class="p-8 border border-black/10 rounded-3xl">
+        <div class="md:p-8 p-6 border border-black/10 rounded-3xl">
           <div class="flex items-center gap-5">
             <div class="size-10 bg-green-105 flex items-center justify-center rounded-full">
               <nuxt-picture src="/images/icons/mingcute.svg" width="24" height="24" alt="Иконка файла" loading="lazy" />

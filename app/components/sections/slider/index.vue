@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:py-15 xl:px-15 px-4 py-16">
+  <div class="lg:py-15 2xl:px-15 px-4 py-16">
     <div class="bg-green-505 md:rounded-[3.125rem] rounded-[1.25rem] md:py-20 md:px-4 py-6 px-2 overflow-hidden">
       <div class="container">
         <div class="text-white">
@@ -55,8 +55,10 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+const mainSlider = ref();
+
 onMounted(() => {
-  const swiper = new Swiper('.works-slider', {
+  mainSlider.value = new Swiper('.works-slider', {
     modules: [Navigation, Pagination],
     grabCursor: true,
     slidesPerView: 'auto',
@@ -65,10 +67,10 @@ onMounted(() => {
       prevEl: '.main-slider-button-prev',
     },
   });
+});
 
-  onBeforeUnmount(() => {
-    swiper.destroy();
-  });
+onBeforeUnmount(() => {
+  mainSlider.value.destroy();
 });
 </script>
 

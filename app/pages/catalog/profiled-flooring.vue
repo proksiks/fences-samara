@@ -13,8 +13,12 @@
     </lazy-sections-hero-catalog>
     <lazy-sections-features />
     <lazy-sections-banner />
-    <lazy-sections-features-catalog />
-    <div class="md:py-20 py-16">
+    <div class="md:py-20 pt-16 pb-4">
+      <div class="container">
+        <lazy-sections-features-catalog />
+      </div>
+    </div>
+    <div class="md:py-20 pt-4 pb-16">
       <div class="container">
         <h2 class="text-[2rem] font-medium text-center text-green-505">Стоимость заборов из профнастила</h2>
         <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
@@ -22,13 +26,11 @@
     </div>
     <lazy-sections-stages />
     <lazy-sections-tabs />
-
-    <lazy-sections-slider />
-    <lazy-sections-catalog />
-    <lazy-sections-installment />
     <lazy-sections-recommended />
-    <lazy-sections-reviews />
+    <lazy-sections-colors :colors="colors" />
+    <lazy-sections-slider-works />
     <lazy-sections-callback />
+    <lazy-sections-slider-recommendations />
   </main>
 </template>
 
@@ -95,6 +97,59 @@ const tableData: Record<string, string>[] = [
     cost: 'От 4 000',
   },
 ];
+
+const colors = ref([
+  {
+    image: '/images/colors/1.jpg',
+    shade: 'RAL 3003',
+    title: 'Рубиново-красный',
+  },
+  {
+    image: '/images/colors/2.jpg',
+    shade: 'RAL 3005',
+    title: 'Винно-красный',
+  },
+  {
+    image: '/images/colors/3.jpg',
+    shade: 'RAL 6002',
+    title: 'Лиственно-зелёный',
+  },
+  {
+    image: '/images/colors/4.jpg',
+    shade: 'RAL 6005',
+    title: 'Зелёный мох',
+  },
+  {
+    image: '/images/colors/5.jpg',
+    shade: 'RAL 8017',
+    title: 'Шоколадно-коричневый',
+  },
+  {
+    image: '/images/colors/6.jpg',
+    shade: 'RAL 9002',
+    title: 'Светло-серый',
+  },
+  {
+    image: '/images/colors/7.jpg',
+    shade: 'RAL 9003',
+    title: 'Сигнальный белый',
+  },
+  {
+    image: '/images/colors/8.jpg',
+    shade: 'RAL 7004',
+    title: 'Сигнальный серый',
+  },
+  {
+    image: '/images/colors/9.jpg',
+    shade: 'RAL 1018',
+    title: 'Цинково-жёлтый',
+  },
+  {
+    image: '/images/colors/10.jpg',
+    shade: 'RAL 5005',
+    title: 'Сигнальный синий',
+  },
+]);
 
 useSeo(data);
 </script>

@@ -34,7 +34,7 @@
           </button>
 
           <div
-            class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
+            class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
           >
             <div class="bg-white text-black p-4 sub-menu_shadow rounded-lg">
               <button class="flex items-center gap-3 w-full justify-between font-medium" @click="showDesctopFences = !showDesctopFences">
@@ -93,6 +93,7 @@
               'bg-transparent border-2 hover:bg-white/15 active:bg-white/25': transparent,
             }"
             class="flex items-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl transition"
+            aria-label="Позвонить"
           >
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>
@@ -107,7 +108,7 @@
       </span>
 
       <span class="flex items-center gap-6 ml-auto lg:hidden">
-        <a class="phone-call w-8 h-8 bg-green-105 flex items-center justify-center rounded-full" href="tel:+79203447027">
+        <a class="phone-call w-8 h-8 bg-green-105 flex items-center justify-center rounded-full" href="tel:+79203447027" aria-label="Позвонить">
           <icon name="name:phone" class="w-4! h-4! bg-white!" />
         </a>
 
@@ -242,6 +243,7 @@
               'bg-transparent border-2 hover:bg-white/15 active:bg-white/25': transparent,
             }"
             class="flex items-center justify-center whitespace-nowrap gap-2 px-5 py-3 rounded-4xl transition"
+            aria-label="Позвонить"
           >
             <icon name="name:phone" class="w-4! h-4! fill-black!" /> <span> +7 (920) 344 70 27</span>
           </a>

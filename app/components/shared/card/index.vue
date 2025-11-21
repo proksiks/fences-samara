@@ -1,14 +1,14 @@
 <template>
-  <div class="catalog-card">
-    <div class="relative">
-      <div class="2xl:w-107.5 2xl:h-85">
-        <nuxt-picture class="block w-full overflow-hidden rounded-xl" :src="image" :alt="shield" loading="lazy" />
+  <div class="catalog-card flex flex-col items-end">
+    <div class="">
+      <div class="2xl:w-102.5 2xl:h-85 relative">
+        <nuxt-picture class="block w-full overflow-hidden rounded-xl" width="410" height="324" :src="image" :alt="shield" loading="lazy" />
+        <div class="absolute py-1 px-4 bg-green-105 text-white top-6 right-0 rounded-l-4xl">{{ shield }}</div>
       </div>
-      <div class="absolute py-1 px-4 bg-green-105 text-white top-6 right-0 rounded-l-4xl">{{ shield }}</div>
     </div>
 
     <div class="-mt-20 relative pl-7">
-      <div class="bg-white p-6 rounded-[1.25rem] catalog-card_shadow">
+      <div class="bg-white p-6 rounded-l-[1.25rem] rounded-br-[1.25rem] catalog-card_shadow">
         <div class="flex justify-between">
           <div class="text-green-505 font-bold text-[1.375rem] pr-6">{{ title }}</div>
           <div>
@@ -23,9 +23,11 @@
             <div v-for="tag in tags" :key="tag" class="px-4 py-1 text-green-105 border border-green-105 rounded-4xl font-medium">{{ tag }}</div>
           </div>
         </div>
-        <div class="mt-3">
-          <p class="text-gray-205 text-xs">{{ description }}</p>
-        </div>
+        <template v-if="description">
+          <div class="mt-3">
+            <p class="text-gray-205 text-xs">{{ description }}</p>
+          </div>
+        </template>
       </div>
     </div>
   </div>
@@ -38,7 +40,7 @@ interface Props {
   title: string;
   price: string;
   tags: string[];
-  description: string;
+  description?: string;
 }
 
 const props = defineProps<Props>();
