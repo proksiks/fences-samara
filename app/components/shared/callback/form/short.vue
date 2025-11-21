@@ -101,13 +101,30 @@ const submitForm = async (e: Event) => {
   e.preventDefault();
   const result = await v$.value.$validate();
   if (result) {
-    const message = `
-      Данные формы:\n
-      Почта: ${formData.email}\n
-      Номер: ${formData.phone}\n
-      Комментарий: ${formData.comment || 'Не указан'}
-    `;
-    alert(message);
+    try {
+      await $fetch('/api/callback', {
+        method: 'POST',
+        body: {
+          email: formData.email,
+          phone: formData.phone,
+          comment: formData.comment,
+          formType: 'short',
+          timestamp: new Date().toISOString()
+        }
+      });
+      
+      // Показываем сообщение об успехе
+      alert('Заявка успешно отправлена!');
+      
+      // Сбрасываем форму
+      formData.email = '';
+      formData.phone = '';
+      formData.comment = '';
+      v$.value.$reset();
+    } catch (error: unknown) {
+      console.error('Ошибка при отправке формы:', error);
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+    }
   }
 };
 </script>
