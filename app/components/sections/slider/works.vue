@@ -20,11 +20,11 @@
       <div class="text-white bg-green-505 p-6 md:p-20 rounded-l-[1.25rem] relative">
         <div class="works-slider main-works">
           <div class="swiper-wrapper">
-            <div v-for="(img, index) in 7" :key="index" class="swiper-slide">
+            <div v-for="img in images" :key="img" class="swiper-slide">
               <div class="h-full">
                 <nuxt-picture
                   class="block overflow-hidden rounded-[1.25rem] works-slider-image h-full"
-                  :src="`/images/sections/slider/slide-${index + 1}.webp`"
+                  :src="img"
                   alt="Фотография забора с участка"
                   width="594"
                   height="464"
@@ -56,8 +56,16 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+interface Props {
+  images: string[];
+}
+
+defineProps<Props>();
+
+const worksSlider = ref();
+
 onMounted(() => {
-  const swiper = new Swiper('.works-slider', {
+  worksSlider.value = new Swiper('.works-slider', {
     modules: [Navigation, Pagination],
     grabCursor: true,
     slidesPerView: 'auto',
@@ -66,10 +74,10 @@ onMounted(() => {
       prevEl: '.main-works-button-prev',
     },
   });
+});
 
-  onBeforeUnmount(() => {
-    swiper.destroy();
-  });
+onBeforeUnmount(() => {
+  worksSlider.value.destroy();
 });
 </script>
 

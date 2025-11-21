@@ -15,7 +15,29 @@
     <lazy-sections-banner />
     <div class="md:py-20 pt-16 pb-4">
       <div class="container">
-        <lazy-sections-features-catalog />
+        <lazy-sections-features-catalog image="/images/pages/catalog/profiled-flooring/2.png">
+          <h2 class="text-[2rem] leading-small font-medium text-green-505">Почему выбирают заборы из профлиста</h2>
+          <ul class="mt-6">
+            <li class="relative pl-6 mt-3 text-gray-150 text-lg">
+              <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
+              <span class="text-green-105">Долговечность:</span> Забор из профнастила с металлическими столбами устойчив к коррозии, погодным условиям и
+              механическим повреждениям.
+            </li>
+            <li class="relative pl-6 mt-3 text-gray-150 text-lg">
+              <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
+              <span class="text-green-105">Эстетика:</span> Широкая цветовая палитра позволит выбрать любой оттенок на ваш вкус.
+            </li>
+            <li class="relative pl-6 mt-3 text-gray-150 text-lg">
+              <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
+              <span class="text-green-105">Цена:</span> Забор из профлиста – оптимальный выбор для бюджета, баланс цены и качества с прозрачным расчетом
+              стоимости.
+            </li>
+            <li class="relative pl-6 mt-3 text-gray-150 text-lg">
+              <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
+              <span class="text-green-105">Быстрая установка:</span> Монтаж забора из профлиста выполняется в кратчайшие сроки, обычно до 3 дней.
+            </li>
+          </ul>
+        </lazy-sections-features-catalog>
       </div>
     </div>
     <div class="md:py-20 pt-4 pb-16">
@@ -24,11 +46,15 @@
         <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
       </div>
     </div>
-    <lazy-sections-stages />
+    <lazy-sections-stages >
+      <template #title>
+        <h2 class="text-[2rem] lg:text-[2.5rem] font-medium mt-4 leading-small text-green-505">Этапы работы по установке забора из профнастила</h2>
+      </template>
+    </lazy-sections-stages>
     <lazy-sections-tabs />
     <lazy-sections-recommended />
     <lazy-sections-colors :colors="colors" />
-    <lazy-sections-slider-works />
+    <lazy-sections-slider-works :images="images" />
     <lazy-sections-callback />
     <lazy-sections-slider-recommendations />
   </main>
@@ -42,7 +68,7 @@ const data = reactive({
   image: '/images/catalog/9.png',
 });
 
-const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Заборы на ленточном фундаменте' }];
+const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из профнастила' }];
 
 const tableHeaders: string[] = ['Высота (M)', 'Толщина', 'Столбы', 'Покрытие', 'Стоимость (руб./п.м.)'];
 
@@ -150,6 +176,12 @@ const colors = ref([
     title: 'Сигнальный синий',
   },
 ]);
+
+const images = [
+  '/images/pages/catalog/profiled-flooring/3.png',
+  '/images/pages/catalog/profiled-flooring/4.png',
+  '/images/pages/catalog/profiled-flooring/5.png',
+];
 
 useSeo(data);
 </script>

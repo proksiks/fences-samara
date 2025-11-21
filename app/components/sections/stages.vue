@@ -20,7 +20,7 @@
                 <div class="uppercase font-bold text-green-505">Этапы работы</div>
               </div>
             </div>
-            <h2 class="text-[2rem] lg:text-[2.5rem] font-medium mt-4 leading-small text-green-505">Этапы работы по установке забора из профнастила</h2>
+            <slot name="title" />
           </div>
           <div>
             <p class="max-w-100 text-gray-205">

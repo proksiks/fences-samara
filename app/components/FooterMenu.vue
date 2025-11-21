@@ -87,7 +87,7 @@
                         <nuxt-link class="hover:underline" to="/catalog/profiled-flooring">Забор из профнастила</nuxt-link>
                       </li>
                       <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/">Забор на ленточном фундаменте</nuxt-link>
+                        <nuxt-link class="hover:underline" to="/catalog/ribbon">Забор на ленточном фундаменте</nuxt-link>
                       </li>
                       <li class="mt-5">
                         <nuxt-link class="hover:underline" to="/">Забор из сетки рабицы</nuxt-link>

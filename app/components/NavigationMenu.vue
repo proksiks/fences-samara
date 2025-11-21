@@ -33,9 +33,7 @@
             <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300 group-hover:rotate-180" />
           </button>
 
-          <div
-            class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 transition-opacity max-w-65 w-full pointer-events-none"
-          >
+          <div class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 transition-opacity max-w-65 w-full pointer-events-none">
             <div class="bg-white text-black p-4 sub-menu_shadow rounded-lg">
               <button class="flex items-center gap-3 w-full justify-between font-medium" @click="showDesctopFences = !showDesctopFences">
                 Заборы
@@ -56,7 +54,11 @@
                         >Забор из профнастила</nuxt-link
                       >
                     </li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор на ленточном фундаменте</nuxt-link></li>
+                    <li>
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/ribbon"
+                        >Забор на ленточном фундаменте</nuxt-link
+                      >
+                    </li>
                     <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор из сетки рабицы</nuxt-link></li>
                     <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Газонные ограждения</nuxt-link></li>
                     <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор из 3D сетки</nuxt-link></li>
@@ -169,29 +171,29 @@
                             >
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu"
-                              >Забор на ленточном фундаменте</nuxt-link
-                            >
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/ribbon" @click="closeMenu">
+                              Забор на ленточном фундаменте
+                            </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu"
-                              >Забор из сетки рабицы</nuxt-link
-                            >
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                              Забор из сетки рабицы
+                            </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu"
-                              >Газонные ограждения</nuxt-link
-                            >
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                              Газонные ограждения
+                            </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu"
-                              >Забор из 3D сетки</nuxt-link
-                            >
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                              Забор из 3D сетки
+                            </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu"
-                              >Забор из штакетника</nuxt-link
-                            >
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                              Забор из штакетника
+                            </nuxt-link>
                           </li>
                         </ul>
                       </div>
