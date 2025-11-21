@@ -44,6 +44,7 @@
       <div class="container">
         <h2 class="text-[2rem] font-medium text-center text-green-505">Стоимость заборов из профнастила</h2>
         <div class="relative">
+          <lazy-sections-land-calculator class="mt-6" :initial-sotki="6" />
           <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
           <lazy-sections-calculator
             class="mt-6 sticky bottom-0"
