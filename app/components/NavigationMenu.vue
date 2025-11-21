@@ -131,7 +131,7 @@
           <icon name="name:phone" class="w-4! h-4! bg-white!" />
         </a>
 
-        <button class="burger ml-auto" :class="{ _active: showMenu }" @click="toggleMenu">
+        <button class="burger ml-auto" aria-label="Открыть навигационное меню" :class="{ _active: showMenu }" @click="toggleMenu">
           <span class="burger-line"></span>
           <span class="burger-line"></span>
           <span class="burger-line"></span>
