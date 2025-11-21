@@ -1,46 +1,48 @@
 <template>
-  <div id="projects" class="lg:py-15 py-16 overflow-hidden flex flex-col items-end pl-4">
-    <div class="container">
-      <div>
-        <div class="flex items-center gap-2.5">
-          <div>
-            <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" loading="lazy" />
+  <div class="grid">
+    <div id="projects" class="lg:py-15 py-16 overflow-hidden flex flex-col items-end pl-4">
+      <div class="container">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <div>
+              <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" loading="lazy" />
+            </div>
+            <div class="uppercase font-bold text-green-505">Портфолио работ</div>
           </div>
-          <div class="uppercase font-bold text-green-505">Портфолио работ</div>
+  
+          <slot name="head" />
         </div>
-
-        <slot name="head" />
       </div>
-    </div>
-    <div class="max-w-[1660px] ml-auto overflow-hidden mt-14">
-      <div class="text-white bg-green-505 p-6 md:p-20 rounded-l-[1.25rem] relative">
-        <div class="works-slider main-works">
-          <div class="swiper-wrapper">
-            <div v-for="img in images" :key="img" class="swiper-slide">
-              <div class="h-full">
-                <nuxt-picture
-                  class="block overflow-hidden rounded-[1.25rem] works-slider-image h-full"
-                  :src="img"
-                  alt="Фотография забора с участка"
-                  width="594"
-                  height="464"
-                  loading="lazy"
-                />
+      <div class="max-w-[1660px] ml-auto overflow-hidden mt-14">
+        <div class="text-white bg-green-505 p-6 md:p-20 rounded-l-[1.25rem] relative">
+          <div class="works-slider main-works">
+            <div class="swiper-wrapper">
+              <div v-for="img in images" :key="img" class="swiper-slide">
+                <div class="h-full">
+                  <nuxt-picture
+                    class="block overflow-hidden rounded-[1.25rem] works-slider-image h-full"
+                    :src="img"
+                    alt="Фотография забора с участка"
+                    width="594"
+                    height="464"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="flex md:flex-row flex-col md:items-end justify-between md:gap-0 gap-8 mt-2.5 md:mt-14">
-          <div class="flex items-center gap-5">
-            <button
-              class="main-works-button-prev md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer"
-              aria-label="Предыдущий слайд"
-            >
-              <icon name="name:arrow" class="w-5! h-5! fill-green-505 rotate-180" />
-            </button>
-            <button class="main-works-button-next md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer" aria-label="Следующий слайд">
-              <icon name="name:arrow" class="w-5! h-5! fill-green-505" />
-            </button>
+          <div class="flex md:flex-row flex-col md:items-end justify-between md:gap-0 gap-8 mt-2.5 md:mt-14">
+            <div class="flex items-center gap-5">
+              <button
+                class="main-works-button-prev md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer"
+                aria-label="Предыдущий слайд"
+              >
+                <icon name="name:arrow" class="w-5! h-5! fill-green-505 rotate-180" />
+              </button>
+              <button class="main-works-button-next md:size-15 size-10 rounded-full flex items-center justify-center cursor-pointer" aria-label="Следующий слайд">
+                <icon name="name:arrow" class="w-5! h-5! fill-green-505" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

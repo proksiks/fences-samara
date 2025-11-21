@@ -43,22 +43,19 @@
     <div class="md:py-20 pt-4 pb-16">
       <div class="container">
         <h2 class="text-[2rem] font-medium text-center text-green-505">Стоимость заборов из профнастила</h2>
-        <lazy-sections-calculator
-          class="mt-6"
-          :initial-x="10"
-          :initial-y="2"
-          :initial-z="3200"
-          calculation-formula="multiplyXYbyZ"
-          title="Калькулятор стоимости забора из профнастила"
-          label-x="Длина участка"
-          label-y="Высота забора"
-          label-z="Стоимость за погонный метр"
-          result-label="Количество погонных метров"
-          total-label="Примерная общая стоимость"
-          calculation-description="Расчет: Длина участка × Высота забора × Стоимость за погонный метр = Общая стоимость"
-          formula-description="Формула: (X × Y) × Z = Общая стоимость"
-        />
-        <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
+        <div class="relative">
+          <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
+          <lazy-sections-calculator
+            class="mt-6 sticky bottom-0"
+            :initial-n1="98"
+            :initial-n2="3200"
+            title="Калькулятор стоимости забора из профнастила"
+            label-n1="Длина участка"
+            label-n2="Высота забора"
+            result-label="Количество погонных метров"
+            formula-description="Формула: n1 × n2 = n3"
+          />
+        </div>
       </div>
     </div>
     <lazy-sections-stages :stages="stagesData">
