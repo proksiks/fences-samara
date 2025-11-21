@@ -59,10 +59,22 @@
                         >Забор на ленточном фундаменте</nuxt-link
                       >
                     </li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/chain-link">Забор из сетки рабицы</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/picket-fence">Забор из штакетника</nuxt-link></li>
+                    <li>
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/chain-link"
+                        >Забор из сетки рабицы</nuxt-link
+                      >
+                    </li>
+                    <li>
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/picket-fence"
+                        >Забор из штакетника</nuxt-link
+                      >
+                    </li>
                   </ul>
                 </div>
               </transition>
@@ -70,16 +82,21 @@
           </div>
         </li>
         <li>
-          <a class="block py-8 border-b-2 border-transparent transition-colors" exact-active-class="border-green-105!" href="#callbackForm" @click="closeMenu">
+          <nuxt-link
+            class="block py-8 border-b-2 border-transparent transition-colors"
+            exact-active-class="border-green-105!"
+            href="#callbackForm"
+            @click.prevent="handleAnchorLink('#callbackForm')"
+          >
             Контакты
-          </a>
+          </nuxt-link>
         </li>
         <li :class="{ hidden: transparent }">
           <nuxt-link
             class="block py-8 border-b-2 border-transparent transition-colors"
             exact-active-class="border-green-105!"
             to="#projects"
-            @click="closeMenu"
+            @click="handleAnchorLink('#projects')"
           >
             Наши проекты
           </nuxt-link>
@@ -171,27 +188,52 @@
                             >
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/ribbon" @click="closeMenu">
+                            <nuxt-link
+                              exact-active-class="font-medium border-b border-green-105"
+                              class="hover:underline text-lg"
+                              to="/catalog/ribbon"
+                              @click="closeMenu"
+                            >
                               Забор на ленточном фундаменте
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/chain-link" @click="closeMenu">
+                            <nuxt-link
+                              exact-active-class="font-medium border-b border-green-105"
+                              class="hover:underline text-lg"
+                              to="/catalog/chain-link"
+                              @click="closeMenu"
+                            >
                               Забор из сетки рабицы
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/lawn-fences" @click="closeMenu">
+                            <nuxt-link
+                              exact-active-class="font-medium border-b border-green-105"
+                              class="hover:underline text-lg"
+                              to="/catalog/lawn-fences"
+                              @click="closeMenu"
+                            >
                               Газонные ограждения
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/3d-mesh-fence" @click="closeMenu">
+                            <nuxt-link
+                              exact-active-class="font-medium border-b border-green-105"
+                              class="hover:underline text-lg"
+                              to="/catalog/3d-mesh-fence"
+                              @click="closeMenu"
+                            >
                               Забор из 3D сетки
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/picket-fence" @click="closeMenu">
+                            <nuxt-link
+                              exact-active-class="font-medium border-b border-green-105"
+                              class="hover:underline text-lg"
+                              to="/catalog/picket-fence"
+                              @click="closeMenu"
+                            >
                               Забор из штакетника
                             </nuxt-link>
                           </li>
@@ -209,7 +251,7 @@
             class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
             exact-active-class="border-green-105! font-medium"
             to="#callbackForm"
-            @click="closeMenu"
+            @click="handleAnchorLink('#callbackForm')"
           >
             Контакты
           </nuxt-link>
@@ -219,7 +261,7 @@
             class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
             exact-active-class="border-green-105! font-medium"
             to="#projects"
-            @click="closeMenu"
+            @click="handleAnchorLink('#projects')"
           >
             Наши проекты
           </nuxt-link>
@@ -303,6 +345,23 @@ const toggleMenu = () => {
   disableScroll();
 };
 
+// Обработчик для якорных ссылок в мобильном меню
+const handleAnchorLink = (hash: string) => {
+  closeMenu();
+  // Даем время на закрытие меню перед скроллом
+  nextTick(() => {
+    const element = document.querySelector(hash);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      const headerHeight = document.querySelector('header')?.clientHeight || 0;
+      window.scrollTo({
+        top: offsetTop - headerHeight,
+        behavior: 'smooth',
+      });
+    }
+  });
+};
+
 function disableScroll() {
   if (showMenu.value) {
     document.body.setAttribute('data-position', '');
@@ -314,8 +373,13 @@ function disableScroll() {
     const pagePosition = parseInt(String(document.body.dataset.position), 10);
     document.body.style.top = 'auto';
     document.body.classList.remove('disable-scroll');
-    window.scroll({ top: pagePosition, left: 0, behavior: 'instant' });
     document.body.removeAttribute('data-position');
+    const hash = window.location.hash;
+    if (hash) {
+      return;
+    } else {
+      window.scroll({ top: pagePosition, left: 0, behavior: 'instant' });
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:py-15 py-16 overflow-hidden flex flex-col items-end pl-4">
+  <div id="projects" class="lg:py-15 py-16 overflow-hidden flex flex-col items-end pl-4">
     <div class="container">
       <div>
         <div class="flex items-center gap-2.5">
