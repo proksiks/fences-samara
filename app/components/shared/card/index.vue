@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog-card flex flex-col items-end">
+  <div class="catalog-card flex flex-col md:items-end">
     <div class="">
       <div class="2xl:w-102.5 2xl:h-85 relative">
         <nuxt-picture class="block w-full overflow-hidden rounded-xl" width="410" height="324" :src="image" :alt="shield" loading="lazy" />
