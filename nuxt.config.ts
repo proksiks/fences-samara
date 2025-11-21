@@ -20,10 +20,10 @@ export default defineNuxtConfig({
     },
   },
 
-  devServer: {
-    port: 3000,
-    host: '192.168.3.13',
-  },
+  // devServer: {
+  //   port: 3000,
+  //   host: '192.168.3.13',
+  // },
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
