@@ -57,10 +57,10 @@
                 <nuxt-link class="hover:underline" to="/">Главная</nuxt-link>
               </li>
               <li class="mt-2">
-                <nuxt-link class="hover:underline" to="/">Контакты</nuxt-link>
+                <nuxt-link class="hover:underline" to="#callbackForm">Контакты</nuxt-link>
               </li>
               <li class="mt-2">
-                <nuxt-link class="hover:underline" to="/">Наши проекты</nuxt-link>
+                <nuxt-link class="hover:underline" to="#projects">Наши проекты</nuxt-link>
               </li>
             </ul>
           </div>

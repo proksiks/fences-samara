@@ -78,7 +78,7 @@
           <nuxt-link
             class="block py-8 border-b-2 border-transparent transition-colors"
             exact-active-class="border-green-105!"
-            to="/projects"
+            to="#projects"
             @click="closeMenu"
           >
             Наши проекты
@@ -208,7 +208,7 @@
           <nuxt-link
             class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
             exact-active-class="border-green-105! font-medium"
-            to="/contacts"
+            to="#callbackForm"
             @click="closeMenu"
           >
             Контакты
@@ -218,7 +218,7 @@
           <nuxt-link
             class="inline-block border-b-2 border-white transition-colors text-[1.5rem]"
             exact-active-class="border-green-105! font-medium"
-            to="/projects"
+            to="#projects"
             @click="closeMenu"
           >
             Наши проекты

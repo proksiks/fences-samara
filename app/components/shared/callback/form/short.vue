@@ -22,24 +22,52 @@
     />
     <shared-textarea id="short-textarea" v-model="formData.comment" class="flex-1 mt-6 block" placeholder="Комментарий" icon-name="message" />
 
-    <shared-button class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-8 group" variant="green" type="submit">
+    <shared-button
+      class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 mt-8 group"
+      :class="{ 'opacity-50 cursor-not-allowed': !formData.policyAgreement }"
+      variant="green"
+      type="submit"
+      :disabled="!formData.policyAgreement"
+    >
       Отправить заявку <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
     </shared-button>
 
     <Recaptcha ref="recaptchaRef" @verify="onRecaptchaVerify" @expired="onRecaptchaExpired" @error="onRecaptchaError" />
 
-    <label class="flex items-center gap-4 text-sm text-gray-150 mt-3 cursor-pointer">
-      <span class="block size-8 p-1 shrink-0 relative cursor-pointer" @click="togglePolicyAgreement">
-        <input id="policy-agreement" v-model="formData.policyAgreement" class="hidden" type="checkbox" :class="{ 'is-error': v$.policyAgreement.$error }" />
-        <span class="block size-6 border-2 rounded-sm border-green-505 cursor-pointer transition-colors duration-200"></span>
-        <span v-show="formData.policyAgreement" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+    <label class="flex items-center gap-4 text-sm text-gray-150 mt-3">
+      <span
+        class="block size-8 p-1 shrink-0 relative"
+        @click="togglePolicyAgreement"
+      >
+        <input
+          id="policy-agreement"
+          v-model="formData.policyAgreement"
+          class="hidden"
+          type="checkbox"
+        />
+        <span
+          class="block size-6 border-2 rounded-sm cursor-pointer transition-colors duration-200"
+          :class="[
+            formData.policyAgreement ? 'border-green-505 bg-green-505' : 'border-green-505',
+            v$.policyAgreement.$error ? 'border-red-500' : ''
+          ]"
+          @click="togglePolicyAgreement"
+        ></span>
+        <span
+          v-show="formData.policyAgreement"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        >
           <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.5 0.5L4.1 10.5L0.5 6.5" stroke="#034833" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12.5 0.5L4.1 10.5L0.5 6.5" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </span>
       </span>
-      <span>Я согласен с политикой конфиденциальности и принимаю пользовательское соглашение</span>
+      <span class="cursor-pointer" @click="togglePolicyAgreement">Я согласен с политикой конфиденциальности и принимаю пользовательское соглашение</span>
     </label>
+    
+    <div v-if="v$.policyAgreement.$error" class="text-red-500 text-sm mt-1">
+      {{ getErrorText(v$.policyAgreement) }}
+    </div>
   </form>
 </template>
 
