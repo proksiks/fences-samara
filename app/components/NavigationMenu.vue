@@ -59,10 +59,10 @@
                         >Забор на ленточном фундаменте</nuxt-link
                       >
                     </li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор из сетки рабицы</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Газонные ограждения</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор из 3D сетки</nuxt-link></li>
-                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/">Забор из штакетника</nuxt-link></li>
+                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/chain-link">Забор из сетки рабицы</nuxt-link></li>
+                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link></li>
+                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link></li>
+                    <li><nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/picket-fence">Забор из штакетника</nuxt-link></li>
                   </ul>
                 </div>
               </transition>
@@ -176,22 +176,22 @@
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/chain-link" @click="closeMenu">
                               Забор из сетки рабицы
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/lawn-fences" @click="closeMenu">
                               Газонные ограждения
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/3d-mesh-fence" @click="closeMenu">
                               Забор из 3D сетки
                             </nuxt-link>
                           </li>
                           <li class="mt-5">
-                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/" @click="closeMenu">
+                            <nuxt-link exact-active-class="font-medium border-b border-green-105" class="hover:underline text-lg" to="/catalog/picket-fence" @click="closeMenu">
                               Забор из штакетника
                             </nuxt-link>
                           </li>

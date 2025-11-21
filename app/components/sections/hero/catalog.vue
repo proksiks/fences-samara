@@ -33,28 +33,28 @@
             <ul class="flex md:flex-row flex-col justify-center gap-6 xl:gap-16 text-green-505 md:text-left text-center">
               <li>
                 <p class="text-5xl leading-small font-bold">5000+</p>
-                <h4>
+                <h3>
                   Метров забора <br class="md:block hidden" />
                   установленно
-                </h4>
+                </h3>
               </li>
               <li>
                 <p class="text-5xl leading-small font-bold">20+</p>
-                <h4>
+                <h3>
                   Человек <br class="md:block hidden" />
                   в команде
-                </h4>
+                </h3>
               </li>
               <li>
                 <p class="text-5xl leading-small font-bold">1 год</p>
-                <h4>Гарантия</h4>
+                <h3>Гарантия</h3>
               </li>
               <li>
                 <p class="text-5xl leading-small font-bold">100+</p>
-                <h4>
+                <h3>
                   Выполненных <br class="md:block hidden" />
                   заказов
-                </h4>
+                </h3>
               </li>
             </ul>
           </div>

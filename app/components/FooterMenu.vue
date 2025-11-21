@@ -90,16 +90,16 @@
                         <nuxt-link class="hover:underline" to="/catalog/ribbon">Забор на ленточном фундаменте</nuxt-link>
                       </li>
                       <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/">Забор из сетки рабицы</nuxt-link>
+                        <nuxt-link class="hover:underline" to="/catalog/chain-link">Забор из сетки рабицы</nuxt-link>
                       </li>
                       <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/">Газонные ограждения</nuxt-link>
+                        <nuxt-link class="hover:underline" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link>
                       </li>
                       <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/">Забор из 3D сетки</nuxt-link>
+                        <nuxt-link class="hover:underline" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link>
                       </li>
                       <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/">Забор из штакетника</nuxt-link>
+                        <nuxt-link class="hover:underline" to="/catalog/picket-fence">Забор из штакетника</nuxt-link>
                       </li>
                     </ul>
                   </div>

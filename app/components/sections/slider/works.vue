@@ -6,14 +6,10 @@
           <div>
             <nuxt-picture src="/images/icons/fence-green.svg" alt="Иконка" width="24" height="24" loading="lazy" />
           </div>
-          <div class="uppercase font-bold text-green-505">цветовая палитра</div>
+          <div class="uppercase font-bold text-green-505">Портфолио работ</div>
         </div>
 
-        <h2 class="text-[2rem] lg:text-[2.5rem] font-medium mt-4 leading-small text-green-505">Готовые работы заборов из профнастила</h2>
-        <p class="text-gray-150 md:text-[1.5rem] mt-8">
-          Ознакомьтесь с нашими проектами заборов из профнастила на ленточном фундаменте в Самаре и Самарской области. Мы предлагаем разнообразные дизайны – от
-          классических до современных – с акцентом на качество и долговечность. Каждый проект отражает профессионализм нашей команды.
-        </p>
+        <slot name="head" />
       </div>
     </div>
     <div class="max-w-[1660px] ml-auto overflow-hidden mt-14">

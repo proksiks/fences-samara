@@ -1,11 +1,11 @@
 <template>
   <main>
     <lazy-sections-hero-catalog image="/images/pages/catalog/profiled-flooring/1.png" :breadcrumbs="breadcrumbs">
-      <h3 class="text-[1.5rem] font-medium text-green-505 leading-small">
+      <h1 class="text-[1.5rem] font-medium text-green-505 leading-small">
         Установка заборов из <br />
         профнастила в Самаре и <br />
         области
-      </h3>
+      </h1>
       <p class="my-4.5 text-gray-205">
         В компании «Забор163» вы можете заказать изготовление или установку готового забора из профлиста под ключ. Мы работаем по Самаре и Самарской области.
         Наши надёжные заборы из профнастила прослужат долго и идеально подойдут вашему участку.
@@ -46,7 +46,7 @@
         <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
       </div>
     </div>
-    <lazy-sections-stages>
+    <lazy-sections-stages :stages="stagesData">
       <template #title>
         <h2 class="text-[2rem] lg:text-[2.5rem] font-medium mt-4 leading-small text-green-505">Этапы работы по установке забора из профнастила</h2>
       </template>
@@ -54,7 +54,15 @@
     <lazy-sections-tabs :tabs="tabsData" />
     <lazy-sections-recommended />
     <lazy-sections-colors :colors="colors" />
-    <lazy-sections-slider-works :images="images" />
+    <lazy-sections-slider-works :images="images">
+      <template #head>
+        <h2 class="text-[2rem] lg:text-[2.5rem] font-medium mt-4 leading-small text-green-505">Готовые работы заборов из профнастила</h2>
+        <p class="text-gray-150 md:text-[1.5rem] mt-8">
+          Ознакомьтесь с нашими проектами заборов из профнастила на ленточном фундаменте в Самаре и Самарской области. Мы предлагаем разнообразные дизайны – от
+          классических до современных – с акцентом на качество и долговечность. Каждый проект отражает профессионализм нашей команды.
+        </p>
+      </template>
+    </lazy-sections-slider-works>
     <lazy-sections-callback />
     <lazy-sections-slider-recommendations />
   </main>
@@ -258,6 +266,38 @@ const tabsData = [
       'Компания «Забор163» обеспечивает быструю и надежную доставку всех необходимых материалов для изготовления и установки заборов из профлиста в Самаре, Тольятти и по всей Самарской области. Мы берем на себя все логистические процессы, чтобы вы могли сосредоточиться на выборе дизайна и планировании вашего забора из профнастила под ключ.',
     subDescription:
       'Мы располагаем современным автопарком, включающим грузовые автомобили, что позволяет оперативно доставлять материалы. Стоимость доставки рассчитывается индивидуально и зависит от расстояния до вашего участка, объёма заказа и срочности доставки. Все работы по погрузке и разгрузке материалов выполняют наши сотрудники. Это гарантирует сохранность профнастила и столбов для забора из профлиста во время транспортировки. Наши рабочие аккуратно размещают материалы на участке, чтобы облегчить последующий монтаж.',
+  },
+];
+const stagesData = [
+  {
+    icon: '/images/icons/doc-checkmark.svg',
+    title: 'Оформление заявки',
+    description: 'Заявка через сайт или по телефону',
+  },
+  {
+    icon: '/images/icons/measurement.svg',
+    title: 'Бесплатная замерка',
+    description: 'Бесплатный выезд замерщика на ваш участок',
+  },
+  {
+    icon: '/images/icons/doc-success.svg',
+    title: 'Подписание документации',
+    description: 'Составляем смету и подписываем договор',
+  },
+  {
+    icon: '/images/icons/delivery-truck.svg',
+    title: 'Доставка материалов',
+    description: 'Доставим материалы на ваш участок',
+  },
+  {
+    icon: '/images/icons/worker.svg',
+    title: 'Рабочий процесс',
+    description: 'Монтаж забора из профлиста и столбов под ключ (1–3 дня)',
+  },
+  {
+    icon: '/images/icons/ok-finger.svg',
+    title: 'Приемка работ',
+    description: 'Вы принимаете работу и получаете гарантию на 1 год',
   },
 ];
 
