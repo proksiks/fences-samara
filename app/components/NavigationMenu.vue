@@ -35,7 +35,7 @@
 
           <div class="absolute pt-0.5 group-hover:opacity-100 group-hover:pointer-events-auto opacity-0 transition-opacity max-w-65 w-full pointer-events-none">
             <div class="bg-white text-black p-4 sub-menu_shadow rounded-lg">
-              <button class="flex items-center gap-3 w-full justify-between font-medium" @click="showDesctopFences = !showDesctopFences">
+              <button class="flex items-center gap-3 w-full justify-between font-medium cursor-pointer" @click="showDesctopFences = !showDesctopFences">
                 Заборы
                 <icon name="name:arrow-up" class="w-6! h-6! bg-green-105! transition duration-300" :class="{ 'rotate-180': showDesctopFences }" />
               </button>
@@ -50,19 +50,19 @@
                 <div v-show="showDesctopFences" class="overflow-hidden">
                   <ul class="opacity-0 transition-opacity duration-200 px-2 mt-3 border-t border-black/5" :class="{ 'opacity-100': showDesctopFences }">
                     <li>
-                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/profiled-flooring"
-                        >Забор из профнастила</nuxt-link
-                      >
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/profiled-flooring">
+                        Забор из профнастила
+                      </nuxt-link>
                     </li>
                     <li>
-                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/ribbon"
-                        >Забор на ленточном фундаменте</nuxt-link
-                      >
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/ribbon">
+                        Забор на ленточном фундаменте
+                      </nuxt-link>
                     </li>
                     <li>
-                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/chain-link"
-                        >Забор из сетки рабицы</nuxt-link
-                      >
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/chain-link">
+                        Забор из сетки рабицы
+                      </nuxt-link>
                     </li>
                     <li>
                       <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link>
@@ -71,9 +71,9 @@
                       <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link>
                     </li>
                     <li>
-                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/picket-fence"
-                        >Забор из штакетника</nuxt-link
-                      >
+                      <nuxt-link exact-active-class="font-medium" class="py-2 block hover:font-medium" to="/catalog/picket-fence">
+                        Забор из штакетника
+                      </nuxt-link>
                     </li>
                   </ul>
                 </div>
@@ -86,7 +86,7 @@
             class="block py-8 border-b-2 border-transparent transition-colors"
             exact-active-class="border-green-105!"
             href="#callbackForm"
-            @click.prevent="handleAnchorLink('#callbackForm')"
+            @click.prevent="scrollToAnchor('#callbackForm')"
           >
             Контакты
           </nuxt-link>
@@ -96,7 +96,7 @@
             class="block py-8 border-b-2 border-transparent transition-colors"
             exact-active-class="border-green-105!"
             to="#projects"
-            @click="handleAnchorLink('#projects')"
+            @click.prevent="scrollToAnchor('#projects')"
           >
             Наши проекты
           </nuxt-link>
@@ -308,6 +308,8 @@
 </template>
 
 <script lang="ts" setup>
+import { nextTick } from 'vue';
+
 interface Props {
   transparent?: boolean;
 }
@@ -345,21 +347,25 @@ const toggleMenu = () => {
   disableScroll();
 };
 
-// Обработчик для якорных ссылок в мобильном меню
 const handleAnchorLink = (hash: string) => {
   closeMenu();
-  // Даем время на закрытие меню перед скроллом
   nextTick(() => {
-    const element = document.querySelector(hash);
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
-      const headerHeight = document.querySelector('header')?.clientHeight || 0;
-      window.scrollTo({
-        top: offsetTop - headerHeight,
-        behavior: 'smooth',
-      });
-    }
+    setTimeout(() => {
+      scrollToAnchor(hash);
+    }, 300);
   });
+};
+
+const scrollToAnchor = (hash: string) => {
+  const element = document.querySelector(hash);
+  if (element) {
+    const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+    const headerHeight = document.querySelector('header')?.clientHeight || 64;
+    window.scrollTo({
+      top: offsetTop - headerHeight,
+      behavior: 'smooth',
+    });
+  }
 };
 
 function disableScroll() {

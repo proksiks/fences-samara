@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-gray-155 py-16 md:py-20">
+    <div class="bg-gray-155 py-16 md:py-20" :class="{ hidden: transparent }">
       <div class="container-small">
         <div class="text-center">
           <h3 class="text-2xl md:text-[2rem] font-bold leading-small text-green-505">ОЦЕНИВАЙТЕ СВОИ ФИНАНСОВЫЕ ВОЗМОЖНОСТИ И РИСКИ</h3>
