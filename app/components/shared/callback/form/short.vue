@@ -26,11 +26,13 @@
       Отправить заявку <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
     </shared-button>
 
-    <label class="flex items-center gap-4 text-sm text-gray-150 mt-3">
-      <span class="block size-8 p-1 shrink-0 relative">
-        <input class="hidden" type="checkbox" />
-        <span class="block size-6 border-2 border-green-505 rounded-sm"></span>
-        <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <Recaptcha ref="recaptchaRef" @verify="onRecaptchaVerify" @expired="onRecaptchaExpired" @error="onRecaptchaError" />
+
+    <label class="flex items-center gap-4 text-sm text-gray-150 mt-3 cursor-pointer">
+      <span class="block size-8 p-1 shrink-0 relative cursor-pointer" @click="togglePolicyAgreement">
+        <input id="policy-agreement" v-model="formData.policyAgreement" class="hidden" type="checkbox" :class="{ 'is-error': v$.policyAgreement.$error }" />
+        <span class="block size-6 border-2 rounded-sm border-green-505 cursor-pointer transition-colors duration-200"></span>
+        <span v-show="formData.policyAgreement" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 0.5L4.1 10.5L0.5 6.5" stroke="#034833" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -44,11 +46,13 @@
 <script lang="ts" setup>
 import { useVuelidate } from '@vuelidate/core';
 import { required, email, helpers } from '@vuelidate/validators';
+import Recaptcha from '~/components/shared/Recaptcha.vue';
 
 const formData = reactive({
   email: '',
   phone: '',
   comment: '',
+  policyAgreement: false,
 });
 
 watch(
@@ -70,6 +74,13 @@ watch(
   () => {},
 );
 
+watch(
+  () => formData.policyAgreement,
+  () => {
+    v$.value.policyAgreement.$touch();
+  },
+);
+
 const rules = computed(() => {
   return {
     email: {
@@ -85,8 +96,14 @@ const rules = computed(() => {
         return phoneRegex.test(value);
       }),
     },
+    policyAgreement: {
+      required: helpers.withMessage('Необходимо согласие с политикой конфиденциальности', required),
+      mustBeTrue: helpers.withMessage('Необходимо согласие с политикой конфиденциальности', (value: boolean) => value === true),
+    },
   };
 });
+
+const recaptchaRef = ref<InstanceType<typeof Recaptcha> | null>(null);
 
 const v$ = useVuelidate(rules, formData, { $autoDirty: true });
 
@@ -97,34 +114,60 @@ const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unkno
   return '';
 };
 
+// Функция для переключения состояния чекбокса
+const togglePolicyAgreement = () => {
+  formData.policyAgreement = !formData.policyAgreement;
+};
+
+// Обработчики событий reCAPTCHA
+const onRecaptchaVerify = async (token: string) => {
+  try {
+    await $fetch('/api/callback', {
+      method: 'POST',
+      body: {
+        email: formData.email,
+        phone: formData.phone,
+        comment: formData.comment,
+        formType: 'short',
+        timestamp: new Date().toISOString(),
+        recaptchaToken: token,
+      },
+    });
+
+    // Показываем сообщение об успехе
+    alert('Заявка успешно отправлена!');
+
+    // Сбрасываем форму
+    formData.email = '';
+    formData.phone = '';
+    formData.comment = '';
+    v$.value.$reset();
+  } catch (error: unknown) {
+    console.error('Ошибка при отправке формы:', error);
+    alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+  } finally {
+    // Сбрасываем reCAPTCHA
+    if (recaptchaRef.value) {
+      recaptchaRef.value.reset();
+    }
+  }
+};
+
+const onRecaptchaExpired = () => {
+  console.warn('reCAPTCHA token expired');
+  alert('Время действия проверки истекло. Пожалуйста, попробуйте отправить форму снова.');
+};
+
+const onRecaptchaError = () => {
+  console.error('reCAPTCHA verification error');
+  alert('Произошла ошибка при проверке. Пожалуйста, попробуйте отправить форму снова.');
+};
+
 const submitForm = async (e: Event) => {
   e.preventDefault();
   const result = await v$.value.$validate();
   if (result) {
-    try {
-      await $fetch('/api/callback', {
-        method: 'POST',
-        body: {
-          email: formData.email,
-          phone: formData.phone,
-          comment: formData.comment,
-          formType: 'short',
-          timestamp: new Date().toISOString()
-        }
-      });
-      
-      // Показываем сообщение об успехе
-      alert('Заявка успешно отправлена!');
-      
-      // Сбрасываем форму
-      formData.email = '';
-      formData.phone = '';
-      formData.comment = '';
-      v$.value.$reset();
-    } catch (error: unknown) {
-      console.error('Ошибка при отправке формы:', error);
-      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
-    }
+    recaptchaRef.value?.execute();
   }
 };
 </script>

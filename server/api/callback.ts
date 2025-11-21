@@ -12,13 +12,48 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody(event);
-  const { email, phone, district, comment, formType, timestamp } = body;
+ const { email, phone, district, comment, formType, timestamp, recaptchaToken } = body;
 
-  // Проверяем обязательные поля в зависимости от типа формы
+ // Проверяем обязательные поля в зависимости от типа формы
   if (!email || !phone) {
     throw createError({
       statusCode: 400,
       statusMessage: 'Missing required fields',
+    });
+  }
+
+  // Проверяем reCAPTCHA токен
+  const recaptchaSecretKey = config.recaptchaSecretKey;
+
+  if (!recaptchaSecretKey) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'reCAPTCHA secret key not configured',
+    });
+  }
+
+  if (!recaptchaToken) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'reCAPTCHA token is required',
+    });
+  }
+
+  // Отправляем токен на проверку в Google
+  const verificationResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `secret=${recaptchaSecretKey}&response=${recaptchaToken}`
+  });
+
+  const verificationResult = await verificationResponse.json();
+
+  if (!verificationResult.success) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'reCAPTCHA verification failed',
     });
   }
 

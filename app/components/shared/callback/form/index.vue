@@ -47,6 +47,8 @@
       Поможем выбрать <icon name="name:arrow" class="w-5! h-5! group-hover:translate-x-1 transition duration-300" />
     </shared-button>
 
+    <Recaptcha ref="recaptchaRef" @verify="onRecaptchaVerify" @expired="onRecaptchaExpired" @error="onRecaptchaError" />
+
     <span class="text-center text-black/25 block text-xs mt-3">
       Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
       определяемой положениями Статьи 437 (2) Гражданского кодекса Российской Федерации. Для получения подробной информации о наличии и стоимости указанных
@@ -58,6 +60,7 @@
 <script lang="ts" setup>
 import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength, helpers } from '@vuelidate/validators';
+import Recaptcha from '~/components/shared/Recaptcha.vue';
 
 const formData = reactive({
   email: '',
@@ -118,13 +121,61 @@ const rules = computed(() => {
   };
 });
 
+const recaptchaRef = ref<InstanceType<typeof Recaptcha> | null>(null);
+
 const v$ = useVuelidate(rules, formData, { $autoDirty: true });
 
 const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
-  if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
+ if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
     return field.$errors[0].$message as string;
-  }
+ }
   return '';
+};
+
+// Обработчики событий reCAPTCHA
+const onRecaptchaVerify = async (token: string) => {
+  try {
+    await $fetch('/api/callback', {
+      method: 'POST',
+      body: {
+        email: formData.email,
+        phone: formData.phone,
+        district: formData.district,
+        comment: formData.comment,
+        formType: 'index',
+        timestamp: new Date().toISOString(),
+        recaptchaToken: token
+      }
+    });
+    
+    // Показываем сообщение об успехе
+    alert('Заявка успешно отправлена!');
+    
+    // Сбрасываем форму
+    formData.email = '';
+    formData.phone = '';
+    formData.district = '';
+    formData.comment = '';
+    v$.value.$reset();
+  } catch (error: unknown) {
+    console.error('Ошибка при отправке формы:', error);
+    alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+  } finally {
+    // Сбрасываем reCAPTCHA
+    if (recaptchaRef.value) {
+      recaptchaRef.value.reset();
+    }
+  }
+};
+
+const onRecaptchaExpired = () => {
+  console.warn('reCAPTCHA token expired');
+  alert('Время действия проверки истекло. Пожалуйста, попробуйте отправить форму снова.');
+};
+
+const onRecaptchaError = () => {
+  console.error('reCAPTCHA verification error');
+  alert('Произошла ошибка при проверке. Пожалуйста, попробуйте отправить форму снова.');
 };
 
 const submitForm = async (e: Event) => {
