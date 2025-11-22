@@ -44,17 +44,14 @@
       <div class="container">
         <h2 class="text-[2rem] font-medium text-center text-green-505">Стоимость заборов из профнастила</h2>
         <div class="relative">
-          <lazy-sections-land-calculator class="mt-6" :initial-sotki="6" />
           <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
-          <lazy-sections-calculator
+          <lazy-sections-universal-calculator
             class="mt-6 sticky bottom-0"
-            :initial-n1="98"
-            :initial-n2="3200"
+            :initial-n1="10"
+            :initial-n2="2"
+            :initial-sotki="6"
+            :initial-price="3200"
             title="Калькулятор стоимости забора из профнастила"
-            label-n1="Длина участка"
-            label-n2="Высота забора"
-            result-label="Количество погонных метров"
-            formula-description="Формула: n1 × n2 = n3"
           />
         </div>
       </div>
