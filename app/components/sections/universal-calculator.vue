@@ -68,7 +68,7 @@
         </div>
 
         <div>
-          <p class="text-sm text-gray-600">Общая стоимость:</p>
+          <p class="text-sm text-gray-600">Общая стоимость от:</p>
           <p class="text-xl font-semibold text-green-505">{{ formatCurrency(totalCost) }}</p>
         </div>
       </div>
