@@ -45,14 +45,16 @@
         <h2 class="text-[2rem] font-medium text-center text-green-505">Стоимость заборов из профнастила</h2>
         <div class="relative">
           <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
-          <lazy-sections-universal-calculator
-            class="mt-6 lg:sticky bottom-0"
-            :initial-n1="1"
-            :initial-n2="1"
-            :initial-sotki="6"
-            :initial-price="3200"
-            title="Калькулятор стоимости забора из профнастила"
-          />
+          <template v-if="false">
+            <lazy-sections-universal-calculator
+              class="mt-6 lg:sticky bottom-0"
+              :initial-n1="1"
+              :initial-n2="1"
+              :initial-sotki="6"
+              :initial-price="3200"
+              title="Калькулятор стоимости забора из профнастила"
+            />
+          </template>
         </div>
       </div>
     </div>
