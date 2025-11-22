@@ -46,9 +46,9 @@
         <div class="relative">
           <lazy-sections-table class="mt-6" :headers="tableHeaders" :table-data="tableData" />
           <lazy-sections-universal-calculator
-            class="mt-6 sticky bottom-0"
-            :initial-n1="10"
-            :initial-n2="2"
+            class="mt-6 lg:sticky bottom-0"
+            :initial-n1="1"
+            :initial-n2="1"
             :initial-sotki="6"
             :initial-price="3200"
             title="Калькулятор стоимости забора из профнастила"

@@ -35,7 +35,7 @@ const componentProps = computed(() => {
 
 const variant = computed(() => {
   if (props.variant === 'green') {
-    return 'bg-green-105 hover:bg-green-505 active:bg-green-700 transition-colors duration-200 text-white';
+    return 'bg-green-105 border border-green-105 hover:bg-green-505 hover:border-green-505 active:bg-green-700 active:border-green-700 transition-colors duration-200 text-white';
   }
   if (props.variant === 'white') {
     return 'bg-blue-600';
