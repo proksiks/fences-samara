@@ -2,8 +2,8 @@
   <div>
     <div class="bg-gray-155 py-16 md:py-20" :class="{ hidden: transparent }">
       <div class="container-small">
-        <div class="text-center">
-          <h3 class="text-2xl md:text-[2rem] font-bold leading-small text-green-505">ОЦЕНИВАЙТЕ СВОИ ФИНАНСОВЫЕ ВОЗМОЖНОСТИ И РИСКИ</h3>
+        <div>
+          <h3 class="text-2xl md:text-[2rem] font-bold leading-small text-green-505 text-center">ОЦЕНИВАЙТЕ СВОИ ФИНАНСОВЫЕ ВОЗМОЖНОСТИ И РИСКИ</h3>
           <p class="mt-6 text-gray-150">
             * Рассрочка — это форма кредита (займа) с оплатой товаров или услуг несколькими частями, при котором проценты по кредиту (займу) частично или
             полностью компенсируется продавцом. Пос-кредит (займ) — это форма кредита (займа), предоставленная непосредственно в точке продаж или на сайте
@@ -17,7 +17,7 @@
     </div>
     <footer class="md:pt-20 pt-16 text-white relative z-10" :class="{ 'with-effect border-t border-white/50': transparent, 'bg-green-505': !transparent }">
       <div class="container">
-        <div class="mb-12 md:mb-20 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
+        <div class="mb-12 md:mb-18 flex justify-between md:flex-row flex-col gap-4 xl:flex-nowrap flex-wrap">
           <div class="max-w-121.5 md:order-0 order-1">
             <template v-if="$route.path === '/'">
               <div class="flex items-center gap-2 uppercase font-bold text-2xl">
@@ -56,10 +56,10 @@
               <li>
                 <nuxt-link class="hover:underline" to="/">Главная</nuxt-link>
               </li>
-              <li class="mt-2">
+              <li class="mt-1">
                 <nuxt-link class="hover:underline" to="#callbackForm">Контакты</nuxt-link>
               </li>
-              <li class="mt-2">
+              <li class="mt-1">
                 <nuxt-link class="hover:underline" to="#projects">Наши проекты</nuxt-link>
               </li>
             </ul>
@@ -83,23 +83,23 @@
                 >
                   <div v-show="fencesOpen" class="overflow-hidden">
                     <ul class="opacity-0 transition-opacity duration-200" :class="{ 'opacity-100': fencesOpen }">
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/profiled-flooring">Забор из профнастила</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/profiled-flooring">Забор из профнастила</nuxt-link>
                       </li>
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/ribbon">Забор на ленточном фундаменте</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/ribbon">Забор на ленточном фундаменте</nuxt-link>
                       </li>
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/chain-link">Забор из сетки рабицы</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/chain-link">Забор из сетки рабицы</nuxt-link>
                       </li>
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/lawn-fences">Газонные ограждения</nuxt-link>
                       </li>
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/3d-mesh-fence">Забор из 3D сетки</nuxt-link>
                       </li>
-                      <li class="mt-5">
-                        <nuxt-link class="hover:underline" to="/catalog/picket-fence">Забор из штакетника</nuxt-link>
+                      <li class="mt-1">
+                        <nuxt-link class="text-xs hover:underline" to="/catalog/picket-fence">Забор из штакетника</nuxt-link>
                       </li>
                     </ul>
                   </div>

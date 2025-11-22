@@ -17,9 +17,11 @@
             </shared-button>
           </div>
         </div>
-        <div class="flex items-center mt-3">
-          <div class="text-[1.25rem] font-medium" v-html="price"></div>
-          <div class="flex gap-3 text-[0.5rem] mx-auto">
+        <div class="flex md:items-center gap-2 md:flex-row flex-col mt-3">
+          <div class="text-[1.25rem] font-medium">
+            {{ price }}
+          </div>
+          <div class="flex gap-2 text-[0.5rem] md:mx-auto md:mt-0 mt-2">
             <div v-for="tag in tags" :key="tag" class="px-4 py-1 text-green-105 border border-green-105 rounded-4xl font-medium">{{ tag }}</div>
           </div>
         </div>

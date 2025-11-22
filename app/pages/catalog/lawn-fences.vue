@@ -17,26 +17,26 @@
           <ul class="mt-6">
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Эстетика и стиль:</span> Металлические газонные ограждения придают участку аккуратный и современный вид, подчеркивая
+              <span class="text-green-105 font-medium">Эстетика и стиль:</span> Металлические газонные ограждения придают участку аккуратный и современный вид, подчеркивая
               красоту клумб и газонов.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Долговечность:</span> Изготовленные из оцинкованной стали с полимерным покрытием, наши ограждения устойчивы к
+              <span class="text-green-105 font-medium">Долговечность:</span> Изготовленные из оцинкованной стали с полимерным покрытием, наши ограждения устойчивы к
               коррозии, погодным условиям и механическим повреждениям.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Простота установки:</span> Монтаж газонного ограждения занимает всего 1–2 дня, что экономит ваше время.
+              <span class="text-green-105 font-medium">Простота установки:</span> Монтаж газонного ограждения занимает всего 1–2 дня, что экономит ваше время.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Функциональность:</span> Уличное газонное ограждение защищает газоны и клумбы от вытаптывания, сохраняя их ухоженный
+              <span class="text-green-105 font-medium">Функциональность:</span> Уличное газонное ограждение защищает газоны и клумбы от вытаптывания, сохраняя их ухоженный
               вид.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Доступная цена:</span> Газонные ограждения в Самаре от «Забор163» – это оптимальное сочетание качества и стоимости.
+              <span class="text-green-105 font-medium">Доступная цена:</span> Газонные ограждения в Самаре от «Забор163» – это оптимальное сочетание качества и стоимости.
             </li>
           </ul>
         </lazy-sections-features-catalog>
@@ -89,7 +89,7 @@ const data = reactive({
   image: '/images/catalog/9.png',
 });
 
-const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из профнастила' }];
+const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Газонные ограждения' }];
 
 const tableHeaders: string[] = ['Высота (M)', 'Длина', 'Материал', 'Покрытие', 'Стоимость (руб./п.м.)'];
 

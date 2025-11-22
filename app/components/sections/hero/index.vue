@@ -2,7 +2,7 @@
   <div class="bg-gray-105 pt-10 md:pt-14 pb-16 md:pb-20">
     <div class="container">
       <div class="flex xl:flex-row flex-col gap-6 xl:gap-7.5">
-        <div class="xl:max-w-102.5 bg-white py-10 md:px-6 px-4 rounded-[1.25rem]">
+        <div class="flex flex-col xl:max-w-102.5 bg-white py-10 md:px-6 px-4 rounded-[1.25rem]">
           <h1 class="text-2xl md:text-[2rem] text-green-505 font-medium md:text-left text-center">
             Установка забора под&nbsp;ключ в Самаре и&nbsp;Самарской области
           </h1>
@@ -11,7 +11,7 @@
             вашего дома или дачи.
           </p>
 
-          <div class="flex justify-center items-center my-8 md:my-15 gap-2">
+          <div class="flex justify-center items-center my-8 md:my-8 gap-2">
             <div>
               <nuxt-picture class="md:max-w-none max-w-20 block" src="/images/pages/main/prize.png" width="91" height="91" alt="prize" loading="lazy" />
             </div>
@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <div class="md:mt-15">
+          <div class="mt-auto">
             <shared-button
               class="w-full p-4 rounded-4xl font-medium text-white flex items-center justify-center gap-2 button_shadow group"
               variant="green"
@@ -34,7 +34,7 @@
 
         <div class="flex xl:flex-col flex-col-reverse gap-6 xl:gap-7.5 w-full">
           <div class="rounded-3xl bg-white flex md:flex-row flex-col-reverse md:gap-4 xl:gap-8">
-            <div class="max-w-126 flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
+            <div class="lg:max-w-126 max-w-86 flex flex-col items-center md:items-start xl:py-8 xl:px-8 md:py-10 py-8 px-6 md:text-left text-center">
               <div class="w-18 h-18 bg-green-105 rounded-full flex items-center justify-center">
                 <nuxt-picture src="/images/icons/fence.svg" width="42" height="42" alt="Иконка забора" loading="lazy" />
               </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="flex-1 flex justify-center lg:justify-end">
               <nuxt-picture
-                class="max-w-105 hero-image block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden w-full"
+                class="md:max-w-105 hero-image block rounded-tr-2xl md:rounded-br-2xl rounded-tl-2xl md:rounded-tl-none overflow-hidden w-full"
                 src="/images/pages/main/fence.png"
                 width="420"
                 height="341"

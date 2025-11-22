@@ -52,8 +52,10 @@
 
     <Recaptcha ref="recaptchaRef" @verify="onRecaptchaVerify" @expired="onRecaptchaExpired" @error="onRecaptchaError" />
 
-    <span class="text-center text-black/25 block text-xs mt-6">
-      Нажимая кнопку «Отправить» я ознакомился с политикой конфиденциальности и принимаю пользовательское соглашение
+    <span class="text-center text-black/25 block text-xs mt-3">
+      Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
+      определяемой положениями Статьи 437 (2) Гражданского кодекса Российской Федерации. Для получения подробной информации о наличии и стоимости указанных
+      товаров и (или) услуг, пожалуйста, обращайтесь к менеджерам отдела клиентского обслуживания с помощью специальной формы связи или по телефону.
     </span>
   </form>
 </template>
@@ -127,9 +129,9 @@ const recaptchaRef = ref<InstanceType<typeof Recaptcha> | null>(null);
 const v$ = useVuelidate(rules, formData, { $autoDirty: true });
 
 const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unknown }> }) => {
- if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
+  if (field.$error && field.$errors.length > 0 && field.$errors[0] && field.$errors[0].$message) {
     return field.$errors[0].$message as string;
- }
+  }
   return '';
 };
 
@@ -145,13 +147,13 @@ const onRecaptchaVerify = async (token: string) => {
         comment: formData.comment,
         formType: 'promo',
         timestamp: new Date().toISOString(),
-        recaptchaToken: token
-      }
+        recaptchaToken: token,
+      },
     });
-    
+
     // Показываем сообщение об успехе
     alert('Заявка успешно отправлена!');
-    
+
     // Сбрасываем форму
     formData.email = '';
     formData.phone = '';
@@ -192,13 +194,13 @@ const submitForm = async (e: Event) => {
           district: formData.district,
           comment: formData.comment,
           formType: 'promo',
-          timestamp: new Date().toISOString()
-        }
+          timestamp: new Date().toISOString(),
+        },
       });
-      
+
       // Показываем сообщение об успехе
       alert('Заявка успешно отправлена!');
-      
+
       // Сбрасываем форму
       formData.email = '';
       formData.phone = '';

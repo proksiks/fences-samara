@@ -10,9 +10,11 @@
           :alt="title"
           loading="lazy"
         />
-        <div class="absolute -right-0.5 -bottom-7.5 colors-card_shadow bg-white rounded-[1.25rem] px-4 py-6 text-green-505">
-          <h3 class="leading-small font-bold text-lg">{{ title }}</h3>
-          <p class="leading-small font-medium text-lg">{{ shade }}</p>
+        <div class="absolute -right-0.5 -bottom-7.5 w-full pl-7.5">
+          <div class="colors-card_shadow bg-white rounded-[1.25rem] px-4 py-6 text-green-505">
+            <h3 class="leading-small font-bold text-lg">{{ title }}</h3>
+            <p class="leading-small font-medium text-lg">{{ shade }}</p>
+          </div>
         </div>
       </div>
     </div>

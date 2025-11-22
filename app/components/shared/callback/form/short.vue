@@ -35,36 +35,21 @@
     <Recaptcha ref="recaptchaRef" @verify="onRecaptchaVerify" @expired="onRecaptchaExpired" @error="onRecaptchaError" />
 
     <label class="flex items-center gap-4 text-sm text-gray-150 mt-3">
-      <span
-        class="block size-8 p-1 shrink-0 relative"
-        @click="togglePolicyAgreement"
-      >
-        <input
-          id="policy-agreement"
-          v-model="formData.policyAgreement"
-          class="hidden"
-          type="checkbox"
-        />
+      <span class="block size-8 p-1 shrink-0 relative">
+        <input id="policy-agreement" v-model="formData.policyAgreement" class="opacity-0 absolute pointer-events-none" type="checkbox" />
         <span
           class="block size-6 border-2 rounded-sm cursor-pointer transition-colors duration-200"
-          :class="[
-            formData.policyAgreement ? 'border-green-505 bg-green-505' : 'border-green-505',
-            v$.policyAgreement.$error ? 'border-red-500' : ''
-          ]"
-          @click="togglePolicyAgreement"
+          :class="[formData.policyAgreement ? 'border-green-505 bg-green-505' : 'border-green-505', v$.policyAgreement.$error ? 'border-red-500' : '']"
         ></span>
-        <span
-          v-show="formData.policyAgreement"
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        >
+        <span v-show="formData.policyAgreement" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 0.5L4.1 10.5L0.5 6.5" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </span>
       </span>
-      <span class="cursor-pointer" @click="togglePolicyAgreement">Я согласен с политикой конфиденциальности и принимаю пользовательское соглашение</span>
+      <span class="block cursor-pointer">Я согласен с политикой конфиденциальности и принимаю пользовательское соглашение</span>
     </label>
-    
+
     <div v-if="v$.policyAgreement.$error" class="text-red-500 text-sm mt-1">
       {{ getErrorText(v$.policyAgreement) }}
     </div>
@@ -80,7 +65,7 @@ const formData = reactive({
   email: '',
   phone: '',
   comment: '',
-  policyAgreement: false,
+  policyAgreement: true,
 });
 
 watch(
@@ -142,12 +127,6 @@ const getErrorText = (field: { $error: boolean; $errors: Array<{ $message: unkno
   return '';
 };
 
-// Функция для переключения состояния чекбокса
-const togglePolicyAgreement = () => {
-  formData.policyAgreement = !formData.policyAgreement;
-};
-
-// Обработчики событий reCAPTCHA
 const onRecaptchaVerify = async (token: string) => {
   try {
     await $fetch('/api/callback', {
@@ -162,10 +141,8 @@ const onRecaptchaVerify = async (token: string) => {
       },
     });
 
-    // Показываем сообщение об успехе
     alert('Заявка успешно отправлена!');
 
-    // Сбрасываем форму
     formData.email = '';
     formData.phone = '';
     formData.comment = '';
@@ -174,7 +151,6 @@ const onRecaptchaVerify = async (token: string) => {
     console.error('Ошибка при отправке формы:', error);
     alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
   } finally {
-    // Сбрасываем reCAPTCHA
     if (recaptchaRef.value) {
       recaptchaRef.value.reset();
     }

@@ -16,25 +16,25 @@
           <ul class="mt-6">
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Экономичность:</span> Заборы из металлической сетки рабицы – одно из самых бюджетных решений для ограждения,
+              <span class="text-green-105 font-medium">Экономичность:</span> Заборы из металлической сетки рабицы – одно из самых бюджетных решений для ограждения,
               обеспечивающее отличное соотношение цены и качества.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Прозрачность:</span> Сетка пропускает свет, сохраняя открытость участка и не препятствуя росту растений.
+              <span class="text-green-105 font-medium">Прозрачность:</span> Сетка пропускает свет, сохраняя открытость участка и не препятствуя росту растений.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Долговечность:</span> Оцинкованная или полимерная сетка устойчива к коррозии, погодным условиям и механическим
+              <span class="text-green-105 font-medium">Долговечность:</span> Оцинкованная или полимерная сетка устойчива к коррозии, погодным условиям и механическим
               повреждениям.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Быстрая установка:</span> Монтаж забора из сетки рабицы выполняется быстро, обычно за 1–2 дня.
+              <span class="text-green-105 font-medium">Быстрая установка:</span> Монтаж забора из сетки рабицы выполняется быстро, обычно за 1–2 дня.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Универсальность:</span> Подходит для дачных участков, садов, огородов и временных ограждений.
+              <span class="text-green-105 font-medium">Универсальность:</span> Подходит для дачных участков, садов, огородов и временных ограждений.
             </li>
           </ul>
         </lazy-sections-features-catalog>

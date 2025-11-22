@@ -17,27 +17,27 @@
           <ul class="mt-6">
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Долговечность:</span> Забор из евроштакетника изготовлен из оцинкованной стали с полимерным покрытием, устойчив к
+              <span class="text-green-105 font-medium">Долговечность:</span> Забор из евроштакетника изготовлен из оцинкованной стали с полимерным покрытием, устойчив к
               коррозии, погодным условиям и механическим повреждениям, обеспечивая срок службы до 30 лет.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Эстетика:</span> Широкий выбор цветов (RAL-палитра) и текстур, включая имитацию дерева, позволяет создать забор из
+              <span class="text-green-105 font-medium">Эстетика:</span> Широкий выбор цветов (RAL-палитра) и текстур, включая имитацию дерева, позволяет создать забор из
               евроштакетника, который гармонично впишется в любой ландшафт.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Гибкость дизайна:</span> Возможность выбора одностороннего или двустороннего покрытия, а также горизонтального
+              <span class="text-green-105 font-medium">Гибкость дизайна:</span> Возможность выбора одностороннего или двустороннего покрытия, а также горизонтального
               штакетника или шахматного расположения для большей приватности.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Простота установки:</span> Монтаж занимает всего 1–2 дня, что делает забор из штакетника металлического удобным и
+              <span class="text-green-105 font-medium">Простота установки:</span> Монтаж занимает всего 1–2 дня, что делает забор из штакетника металлического удобным и
               быстрым решением.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Экономичность:</span> Цена за погонный метр у забора из штакетника остается доступной, обеспечивая оптимальное
+              <span class="text-green-105 font-medium">Экономичность:</span> Цена за погонный метр у забора из штакетника остается доступной, обеспечивая оптимальное
               соотношение качества и стоимости.
             </li>
           </ul>
@@ -87,7 +87,7 @@ const data = reactive({
   image: '/images/catalog/9.png',
 });
 
-const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из профнастила' }];
+const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из штакетника' }];
 
 const tableHeaders: string[] = ['Тип штакетника', 'Вид штакетника', 'Столбы (Проф. труба)', 'Покрытие', 'Стоимость (руб./п.м.)'];
 

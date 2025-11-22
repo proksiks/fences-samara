@@ -17,27 +17,27 @@
           <ul class="mt-6">
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Прочность и долговечность:</span> 3D-сетка для забора изготовлена из оцинкованной стали с полимерным покрытием,
+              <span class="text-green-105 font-medium">Прочность и долговечность:</span> 3D-сетка для забора изготовлена из оцинкованной стали с полимерным покрытием,
               устойчивым к коррозии и погодным условиям, что гарантирует срок службы более 20 лет.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Современность:</span> Дизайн забора из 3D-сетки с объемной структурой и разнообразием цветов (например, тёмная
+              <span class="text-green-105 font-medium">Современность:</span> Дизайн забора из 3D-сетки с объемной структурой и разнообразием цветов (например, тёмная
               металлическая или классическая зелёная 3D-сетка для забора) идеально вписывается в любой ландшафт.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Прозрачность и легкость:</span> Сетка пропускает свет, не создавая тени, что делает её отличным выбором для садов и
+              <span class="text-green-105 font-medium">Прозрачность и легкость:</span> Сетка пропускает свет, не создавая тени, что делает её отличным выбором для садов и
               дачных участков.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Быстрая установка:</span> Монтаж 3D-забора занимает 1–2 дня, благодаря простоте конструкции и профессионализму наших
+              <span class="text-green-105 font-medium">Быстрая установка:</span> Монтаж 3D-забора занимает 1–2 дня, благодаря простоте конструкции и профессионализму наших
               бригад.
             </li>
             <li class="relative pl-6 mt-3 text-gray-150 text-lg">
               <span class="absolute w-1.5 h-1.5 rounded-full bg-green-105 top-2.5 left-1"></span>
-              <span class="text-green-105">Функциональность:</span> Подходит для частных домов, дач, спортивных площадок и промышленных объектов.
+              <span class="text-green-105 font-medium">Функциональность:</span> Подходит для частных домов, дач, спортивных площадок и промышленных объектов.
             </li>
           </ul>
         </lazy-sections-features-catalog>
@@ -88,7 +88,7 @@ const data = reactive({
   image: '/images/catalog/9.png',
 });
 
-const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из профнастила' }];
+const breadcrumbs = [{ title: 'Главная', to: '/' }, { title: 'Забор из 3D сетки' }];
 
 const tableHeaders: string[] = ['Высота (M)', 'Тип сетки', 'Столбы', 'Покрытие', 'Стоимость (руб./п.м.)'];
 

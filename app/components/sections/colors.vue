@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-4 mt-8 md:mt-14">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-14 mt-8 md:mt-14">
         <div v-for="item in colors" :key="item.image">
           <shared-card-color :image="item.image" :title="item.title" :shade="item.shade" />
         </div>
